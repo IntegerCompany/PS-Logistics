@@ -1,14 +1,16 @@
 .input-incorrect{
 	border: 1px solid red;
 }
-
-.error{
-	display: none;
-}
-.error-show{
-	display: block;
+.modal-header, .modal-body, .modal-footer{
+	border:none;
 }
 
+
+/*form*/
+#myModalLabel{
+	text-align: center;
+}
+/*form*/
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
