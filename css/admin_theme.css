@@ -145,20 +145,21 @@ body.opened #navigation{
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 18px;
+	border: none;
 }
 	._btn:hover{
 		color: #fff;
 	}
-	.add_new{
+	._btn.add_new{
 		background: #65b4ce;
 	}
-	.add_old{
+	._btn.add_old{
 		background: #aaaaaa;
 	}
-	.edit{
+	._btn.edit{
 		background: #65b4ce;
 	}
-	.delete{
+	._btn.delete{
 		background: #aaaaaa;
 	}
 
@@ -177,8 +178,25 @@ body.opened #navigation{
 	}
 	.global_table tr{}
 	.global_table td{
-		vertical-align: middle;
+		vertical-align: middle !important;
 	}
 		.global_table tr:first-child td{
 			border-top: none;
 		}
+
+/* stylize forms*/
+.global_form{
+
+}
+	.global_form .caption{
+		text-align: center;
+		font-size: 24px;
+    color: #2e2e2e;
+	}
+	.global_form label{
+		text-transform: uppercase;
+	}
+	.global_form textarea,
+	.global_form select {
+		margin-bottom: 15px;
+	}
