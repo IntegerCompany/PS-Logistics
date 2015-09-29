@@ -10,7 +10,7 @@
 <body>
 
 <!-- login modal -->
-<div class="modal fade" id="trailerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="truckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -26,18 +26,18 @@
 								new
 							</div>
 							<div class="form-group">
-							  <label for="trailer_id">trailer #</label>
-							  <input type="text" class="form-control" id="trailer_id">
+							  <label for="truck_id">truck #</label>
+							  <input type="text" class="form-control" id="truck_id">
 							</div>
 							<div class="form-group">
-							  <label for="trailer_license_plate">license plate</label>
-							  <input type="text" class="form-control" id="trailer_license_plate">
+							  <label for="truck_license_plate">license plate</label>
+							  <input type="text" class="form-control" id="truck_license_plate">
 							</div>
 							<div class="form-group">
-								<label for="trailer_license_plate_exp">exp. license plate</label>
+								<label for="truck_license_plate_exp">exp. license plate</label>
 								<div class="row">
 									<div class="col-md-4">
-										<select class="form-control" id="trailer_license_plate_exp">
+										<select class="form-control" id="truck_license_plate_exp">
 									    <option value="">2015</option>
 									    <option value="">2016</option>
 									  </select>
@@ -71,19 +71,23 @@
 								</div>
 							</div>
 							<div class="form-group">
-							  <label for="trailer_make">make</label>
-							  <input type="text" class="form-control" id="trailer_make">
+							  <label for="truck_make">make</label>
+							  <input type="text" class="form-control" id="truck_make">
 							</div>
 							<!-- make more years... -->
 							<div class="form-group">
-							  <label for="trailer_year">year</label>
-							  <select class="form-control" id="trailer_year">
+							  <label for="truck_year">year</label>
+							  <select class="form-control" id="truck_year">
 							    <option value="">1990</option>
 							    <option value="">1991</option>
 							    <option value="">1992</option>
 							    <option value="">1993</option>
 							    <option value="">1994</option>
 							  </select>
+							</div>
+							<div class="form-group">
+							  <label for="truck_color">color</label>
+							  <input type="text" class="form-control" id="truck_color">
 							</div>
 							<div class="form-group">
 							  <label for="trailer_vin">VIN #</label>
@@ -128,6 +132,30 @@
 							</div>
 							<div class="form-group">
 							  <label for="trailer_owner">owner</label>
+							  <select class="form-control">
+								  <option value="">Jason Statham</option>
+								  <option value="">Tommy</option>
+								  <option value="">Boris Britva</option>
+								</select>
+							</div>
+							<div class="form-group">
+							  <label for="trailer_trl">trl #</label>
+							  <select class="form-control">
+								  <option value="">1202</option>
+								  <option value="">Tommy</option>
+								  <option value="">Boris Britva</option>
+								</select>
+							</div>
+							<div class="form-group">
+							  <label for="trailer_driver">driver</label>
+							  <select class="form-control">
+								  <option value="">Jason Statham</option>
+								  <option value="">Tommy</option>
+								  <option value="">Boris Britva</option>
+								</select>
+							</div>
+							<div class="form-group">
+							  <label for="trailer_dispatcher">dispatcher</label>
 							  <select class="form-control">
 								  <option value="">Jason Statham</option>
 								  <option value="">Tommy</option>
@@ -185,8 +213,8 @@
 				<a class="visible-xs visible-sm toggle_menu" href="javascript:;">
 					toggle
 				</a>
-				<h2 class="admin_title">trailer</h2>
-				<button type="button" class="_btn add_new" data-toggle="modal" data-target="#trailerModal">
+				<h2 class="admin_title">truck</h2>
+				<button type="button" class="_btn add_new" data-toggle="modal" data-target="#truckModal">
 				  new
 				</button>
 			</div>
@@ -195,9 +223,11 @@
 				<thead>
 					<tr>
 						<th width="10"> &nbsp; </th>
+						<th>#</th>
 						<th>License plate</th>
 						<th>Make</th>
 						<th>Year</th>
+						<th>Color</th>
 						<th>VIN</th>
 					</tr>
 				</thead>
@@ -208,9 +238,11 @@
 								<i class="icon-params"></i>
 							</a>
 						</td>
+						<td>59</td>
 						<td>1202</td>
 						<td>Some</td>
 						<td>2000</td>
+						<td>pink</td>
 						<td>1234567890ABCDEFG</td>
 					</tr>
 					<tr>
@@ -219,9 +251,11 @@
 								<i class="icon-params"></i>
 							</a>
 						</td>
+						<td>60</td>
 						<td>1203</td>
 						<td>Some1</td>
 						<td>2001</td>
+						<td>red</td>
 						<td>1234567890ABCDEFGaaaa</td>
 					</tr>
 				</tbody>
