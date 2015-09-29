@@ -138,7 +138,7 @@ body.opened #navigation{
 /* button add / new / old / etc*/
 ._btn{
 	display: inline-block;
-	padding: 0 15px;
+	padding: 0 10px;
 
 	line-height: 30px;
 	text-align: center;
@@ -147,8 +147,12 @@ body.opened #navigation{
 	font-size: 18px;
 	border: none;
 }
+	._btn i{
+		font-size: 14px;
+	}
 	._btn:hover{
 		color: #fff;
+		text-decoration: none;
 	}
 	._btn.add_new{
 		background: #65b4ce;
