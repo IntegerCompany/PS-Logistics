@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PS Logistics LLC</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/application.css">
+	<link rel="stylesheet" href="css/admin_theme.css">
+</head>
+<body>
+
+<!-- login modal -->
+<div class="modal fade" id="brokerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<div class="container-fluid">
+      		<div class="col-md-12">
+						
+						<!-- 
+							new form, make same for edit
+							ps. delete this comment after done
+						-->
+						<form class="form global_form">
+							<div class="caption">
+								new
+							</div>
+							<div class="form-group">
+							  <label for="broker_mc">mc</label>
+							  <input type="text" class="form-control" id="broker_mc">
+							</div>
+							<div class="form-group">
+							  <label for="broker_name">name</label>
+							  <input type="text" class="form-control" id="broker_name">
+							</div>
+							<div class="form-group">
+							  <label for="broker_adress">adress</label>
+							  <input type="text" class="form-control" id="broker_adress">
+							</div>
+							<div class="form-group">
+							  <label for="broker_city">city</label>
+							  <input type="text" class="form-control" id="broker_city">
+							</div>
+							<!-- add usa states -->
+							<div class="form-group">
+							  <label for="broker_state">state</label>
+							  <select class="form-control" id="broker_state">
+							    <option value="">1</option>
+							    <option value="">2</option>
+							    <option value="">3</option>
+							    <option value="">4</option>
+							    <option value="">5</option>
+							  </select>
+							</div>
+							<div class="form-group">
+							  <label for="broker_city">city</label>
+							  <input type="text" class="form-control" id="broker_city">
+							</div>
+							<div class="form-group">
+							  <label for="broker_zip">zip</label>
+							  <input type="text" class="form-control" id="broker_zip">
+							</div>
+							<!-- this select data was takken from original site -->
+							<div class="form-group">
+							  <label for="broker_payment_type">payment type</label>
+							  <select class="form-control" id="broker_payment_type">
+							    <option>Factoring</option>
+							    <option>QP</option>
+							    <option>Direct</option>
+							  </select>
+							</div>
+							<div class="form-group">
+							  <label for="broker_payment_form">payment form</label>
+								<select class="form-control" id="broker_payment_form">
+								    <option>ACH</option>
+								    <option>Check /M</option>
+								    <option>Comcheck</option>
+								    <option>T-Check</option>
+								    <option>EFS-Check</option>
+								  </select>
+							</div>
+							<div class="form-group">
+							  <label for="broker_interest">interest</label>
+							  <input type="text" class="form-control" id="broker_interest">
+							</div>
+							<div class="form-group">
+							  <label for="broker_days">days</label>
+							  <input type="text" class="form-control" id="broker_days">
+							</div>
+							<div class="form-group">
+								<label for="broker_notes">notes</label>
+								<textarea class="form-control" rows="3"></textarea>
+								<button type="submit" class="_btn add_new">Submit</button>
+								<button type="submit" class="_btn delete">Discard</button>
+							</div>
+						</form>
+
+	        </div>
+	      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-2" id="navigation">
+	<ul class="row">
+		<!-- add class .active to LI when this page active -->
+		<li class="active">
+			<a href="javascript:;">map</a>
+		</li>
+		<li>
+			<a href="javascript:;">shipping</a>
+		</li>
+		<li>
+			<a href="javascript:;">stuff</a>
+		</li>
+		<li>
+			<a href="javascript:;">trucks</a>
+		</li>
+		<li>
+			<a href="javascript:;">trailers</a>
+		</li>
+		<li>
+			<a href="javascript:;">brokers</a>
+		</li>
+		<li>
+			<a href="javascript:;">phone search</a>
+		</li>
+	</ul>
+	<div class="controls">
+		<a href="javascript:;" class="logout col-md-6 col-xs-12">logout</a>
+		<a href="javascript:;" class="change_pass col-md-6 col-xs-12">change pass</a>
+	</div>
+</div>
+<div class="col-md-10" id="content">
+	<div class="row">
+		<div class="container-fluid">
+
+			<div class="admin_top">
+				<a class="visible-xs visible-sm toggle_menu" href="javascript:;">
+					toggle
+				</a>
+				<h2 class="admin_title">Broker</h2>
+				<button type="button" class="_btn add_new" data-toggle="modal" data-target="#brokerModal">
+				  new
+				</button>
+			</div>
+			
+			<table class="global_table table">
+				<thead>
+					<tr>
+						<th width="10"> &nbsp; </th>
+						<th>Name</th>
+						<th>Adress</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<a href="javascript:;" class="_btn edit">
+								<i class="icon-params"></i>
+							</a>
+						</td>
+						<td>Jason Statham</td>
+						<td>Trailer</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="javascript:;" class="_btn edit">
+								<i class="icon-params"></i>
+							</a>
+						</td>
+						<td>Tommy</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>	
+<script type="text/javascript" src="js/bootstrap.min.js"></script>	
+<script type="text/javascript" src="js/core.js"></script>
+
+</body>
+</html>
