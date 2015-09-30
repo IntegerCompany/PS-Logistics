@@ -9,6 +9,12 @@
 .modal-header, .modal-body, .modal-footer{
 	border:none;
 }
+.error-span{
+	font-size: 1rem;
+    color: #D40505;
+    font-weight: bold;
+    font-style: italic;
+}
 /*form*/
 
 
