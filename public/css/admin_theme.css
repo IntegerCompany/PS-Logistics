@@ -155,7 +155,7 @@ body.opened #navigation{
 /* button add / new / old / etc*/
 ._btn{
 	display: inline-block;
-	padding: 0 10px;
+	padding: 0 22px;
 
 	line-height: 30px;
 	text-align: center;
