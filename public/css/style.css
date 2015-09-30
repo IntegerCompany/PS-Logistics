@@ -9,6 +9,15 @@
 .modal-header, .modal-body, .modal-footer{
 	border:none;
 }
+.error-span{
+	font-size: 1rem;
+    color: #D40505;
+    font-weight: bold;
+    font-style: italic;
+}
+.form-btns{
+	margin-top: 20px;
+}
 /*form*/
 
 
@@ -46,6 +55,10 @@
 }
 #add-customer hgroup  h4{
 	font-weight: bold;
+}
+#add-customer .title{
+	font-size: 1.2rem;
+    color: #988E8E;
 }
 .table-header{
 	background: #fbc02d;
