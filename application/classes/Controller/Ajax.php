@@ -11,6 +11,7 @@ class Controller_Ajax extends Controller {
                         $info = Model::factory('Users')->check_user($v);
                         if(!empty($info)){
                             Session::instance()->set('user',$info[0]);
+                            //Session::instance()->delete('user');
                             echo true;
                         }
                         break;

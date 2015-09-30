@@ -2,13 +2,54 @@
 
 class Controller_Admin extends Controller {
 
-	public function action_index()
+
+	public function action_shipping()
 	{
-		$this->response->body("dddd");
+		if(Session::instance()->get('user')){
+			$this->response->body(View::factory('/admin/shipping'));
+		} else {
+			HTTP::redirect(URL::base_url());
+		}
+
 	}
-	public function action_ajax()
+	public function action_broker()
 	{
-		return $_POST;
+		if(Session::instance()->get('user')){
+			$this->response->body(View::factory('/admin/broker'));
+		} else {
+			HTTP::redirect(URL::base_url());
+		}
 	}
+	public function action_stuff()
+	{
+		if(Session::instance()->get('user')){
+			$this->response->body(View::factory('/admin/stuff'));
+		} else {
+			HTTP::redirect(URL::base_url());
+		}
+	}
+	public function action_trailer()
+	{
+		if(Session::instance()->get('user')){
+			$this->response->body(View::factory('/admin/trailer'));
+		} else {
+			HTTP::redirect(URL::base_url());
+		}
+	}
+	public function action_truck()
+	{
+		if(Session::instance()->get('user')){
+			$this->response->body(View::factory('/admin/truck'));
+		} else {
+			HTTP::redirect(URL::base_url());
+		}
+	}
+	public function action_logout()
+	{
+		Session::instance()->delete('user');
+		HTTP::redirect(URL::base_url());
+	}
+
+
 
 } // End Welcome

@@ -3,15 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PS Logistics LLC</title>
-	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../public/css/application.css">
-	<link rel="stylesheet" href="../../public/css/admin_theme.css">
+	<link rel="stylesheet" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/public/css/application.css">
+	<link rel="stylesheet" href="/public/css/admin_theme.css">
 	<!-- add shipping.css -->
-	<link rel="stylesheet" href="../../public/css/shipping.css">
+	<link rel="stylesheet" href="/public/css/shipping.css">
 </head>
 <body>
+
 <div id="navigation">
-	<img src="../../public/img/logo.png" class="img-responsive nav_logo" alt="">
+	<img src="/public/img/logo.png" class="img-responsive nav_logo" alt="">
 	<ul>
 		<!-- add class .active to LI when this page active -->
 		<li>
@@ -21,39 +22,39 @@
 				map
 			</a>
 		</li>
-		<li class="active">
-			<a href="javascript:;">
+		<li  class="active">
+			<a href="/shipping">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
 				shipping
 			</a>
 		</li>
 		<li>
-			<a href="javascript:;">
+			<a href="/stuff">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
 				stuff
 			</a>
 		</li>
-		<li>
-			<a href="javascript:;">
+		<li >
+			<a href="/truck">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
-				trucks
+				truck
 			</a>
 		</li>
 		<li>
-			<a href="javascript:;">
+			<a href="/trailer">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
 				trailers
-				</a>
+			</a>
 		</li>
-		<li>
-			<a href="javascript:;">
+		<li >
+			<a href="/broker">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
-				brokers
+				broker
 			</a>
 		</li>
 		<li>
@@ -65,7 +66,7 @@
 		</li>
 	</ul>
 	<div class="controls">
-		<a href="javascript:;" class="logout col-md-6 col-xs-12">logout</a>
+		<a href="/logout" class="logout col-md-6 col-xs-12">logout</a>
 		<a href="javascript:;" class="change_pass col-md-6 col-xs-12">change pass</a>
 	</div>
 </div>
@@ -97,7 +98,7 @@
 					<tr>
 						<th>
 							#59 
-							<img src="../../public/img/test_ava.jpg" class="img-responsive img-circle" alt="">
+							<img src="/public/img/test_ava.jpg" class="img-responsive img-circle" alt="">
 							Jason Statham
 						</th>
 						<th colspan="2">
@@ -188,9 +189,9 @@
 </div>
 
 </body>
-<script type="text/javascript" src="../../public/js/jquery-2.1.4.min.js"></script>	
-<script type="text/javascript" src="../../public/js/bootstrap.min.js"></script>	
-<script type="text/javascript" src="../../public/js/core.js"></script>
+<script type="text/javascript" src="/public/js/jquery-2.1.4.min.js"></script>	
+<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>	
+<script type="text/javascript" src="/public/js/core.js"></script>
 
 </body>
 </html>

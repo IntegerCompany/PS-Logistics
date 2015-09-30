@@ -23,7 +23,7 @@ $( document ).ready(function() {
 					},
 					success: function (data) {
 						if(data){
-							location.replace('/admin');
+							location.replace('/shipping');
 						}
 
 					}
