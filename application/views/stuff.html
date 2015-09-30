@@ -13,93 +13,128 @@
   	<div class="modal-dialog">
     	<div class="modal-content">
       		<div class="modal-header">
-        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
         		<h3 id="myModalLabel">Add new stuff</h3>
       		</div>
       		<div class="modal-body">
         		<form id="add-form" class="form-horizontal col-sm-12">
-          			<div class="form-group">
-          				<label>First Name</label>
-          				<input name="user-name" class="form-control required" placeholder="First Name" type="text" required autocomplete="off">
-   					</div>
-          			<div class="form-group">
-          				<label>Last Name</label>
-          				<input name="user-last-name" class="form-control required" placeholder="Last Name"  type="text" required autocomplete="off">			
-          			</div>
-	  			    <div class="form-group">
-          				<label>Position</label>
-					    <select class="form-control" >
-						    <option value="">1</option>
-						    <option value="">2</option>
-						    <option value="">3</option>
-						    <option value="">4</option>
-						    <option value="">5</option>
-						</select>
+					<div class="row form-group">
+						<div class="col-md-6">
+		          			<label>First Name</label>
+		          			<input name="user-name" class="form-control required" placeholder="First Name" type="text" required autocomplete="off">
+						</div>
+						<div class="col-md-6">
+		          			<label>Last Name</label>
+		          			<input name="user-last-name" class="form-control required" placeholder="Last Name"  type="text" required autocomplete="off">			
+						</div>
 					</div>
-          			<div class="form-group">
-          				<label>Address</label>
-          				<textarea class="form-control" placeholder="Your address" data-placement="top" data-trigger="manual"></textarea>
+
+					<div class="row form-group">
+						<div class="col-md-6">
+		          			<label>Position</label>
+					    	<select class="form-control" >
+							    <option value="">1</option>
+							    <option value="">2</option>
+							    <option value="">3</option>
+							    <option value="">4</option>
+							    <option value="">5</option>
+							</select>
+						</div>
+						<div class="col-md-6">
+		          			<label>Address</label>
+          					<textarea class="form-control" placeholder="Your address" rows="1"></textarea>		
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<div class="col-md-6">
+		          			<label>Zip code</label>
+          					<input name="user-zip-code"  type="text" class="form-control" placeholder="Zip code" maxlength="5">
+						</div>
+						<div class="col-md-6">
+		          			<label>Phone</label>
+          					<input name="user-phone" class="form-control phone" placeholder="999-999-9999" type="text"  maxlength="12">	
+						</div>
           			</div>
-					<div class="form-group">
-          				<label>Zip code</label>
-          				<input name="user-zip-code" class="form-control" placeholder="Zip code" maxlength="5">	
+					
+					<div class="row form-group">
+						<div class="col-md-6">
+		          			<label>SSN</label>
+          					<input name="user-ssn" class="form-control " type="text"  placeholder="999-99-9999"  maxlength="11" type="text" />
+						</div>
+						<div class="col-md-6">
+		          			<label>E-Mail</label>
+          					<input  name="user-email" class="form-control email" placeholder="email@you.com" type="text" required autocomplete="off">	
+						</div>
           			</div>
-          			<div class="form-group">
-          				<label>Phone</label>
-          				<input name="user-phone" class="form-control phone" placeholder="999-999-9999" type="text"  maxlength="12">	
+
+					<div class="row form-group">
+						<div class="col-md-6">
+		          			<label>Driver Licence</label>
+          					<input class="form-control required" placeholder="Your Driver Licence " type="text" maxlength="8">
+						</div>
+						<div class="col-md-6">
+		          			<label>Class</label>
+		          			<select class="form-control" >
+							    <option value="">A</option>
+							    <option value="">B</option>
+							    <option value="">C</option>
+							    <option value="">D</option>
+							</select>
+	          				<!-- <input type="checkbox" name="ccard"> A
+	          				<input type="checkbox" name="ccard"> B
+	          				<input type="checkbox" name="ccard"> C
+	          				<input type="checkbox" name="ccard"> D	 -->
+						</div>
           			</div>
-          			<div class="form-group">
-          				<label>SSN</label>
-          				<input name="user-ssn" class="form-control " type="text"  placeholder="999-99-9999"  maxlength="11" type="text" />
+
+          			<div class="row form-group">
+						<div class="col-md-6">
+		          			<label>Enrolment</label>
+	          				<select class="form-control" >
+							    <option value="">1</option>
+							    <option value="">2</option>
+							    <option value="">3</option>
+							    <option value="">4</option>
+							    <option value="">5</option>
+							</select>
+						</div>
+						<div class="col-md-6">
+		          			<label>Exparation Date</label>				
+   							<input type="date" class="form-control required" >
+						</div>
           			</div>
-          			<div class="form-group">
-          				<label>E-Mail</label>
-          				<input  name="user-email" class="form-control email" placeholder="email@you.com" type="text" required autocomplete="off">			
+					
+					<div class="row form-group">
+						<div class="col-md-6">
+		          			<label>Medicine insurance number</label>
+   							<input type="text" class="form-control required" placeholder="Medicine insurance number" >
+						</div>
+						<div class="col-md-6">
+		          			<label>Emergency Contact</label>
+          					<input name="user-emergency-name" class="form-control required" placeholder="Emergency Contact name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text">
+						</div>
           			</div>
-          			<!--only 8 digits -->
-					<div class="form-group">
-          				<label>Driver Licence</label>
-          				<input class="form-control required" placeholder="Your Driver Licence " data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text" maxlength="8">
+					
+					<div class="row form-group">
+						<div class="col-md-6">
+							<label>Emergency Contact phone</label>
+          					<input name="user-emergency-phone" class="form-control phone" placeholder="999-999-9999" maxlength="12" type="text">
+						</div>
+						<div class="col-md-6">
+		          			<label>Add photo</label>
+          					<input type="file" name="img" accept="image/*">
+						</div>
           			</div>
-       				<div class="form-group">
-          				<label>Class</label>
-          				<input type="checkbox" name="ccard"> A
-          				<input type="checkbox" name="ccard"> B
-          				<input type="checkbox" name="ccard"> C
-          				<input type="checkbox" name="ccard"> D
+          			<div class="row form-group">
+          				<div class="col-md-3"></div>
+						<div class="col-md-6 form-btns">
+							<button type="submit" class="_btn add_new">Send It!</button>
+          					<button  data-dismiss="modal" aria-hidden="true" class="_btn delete">Discard</button>
+						</div>
+						<div class="col-md-3"></div>
           			</div>
-					<div class="form-group">
-          				<label>Enrolment</label>
-          				<input type="checkbox" name="ccard"> 1
-          				<input type="checkbox" name="ccard"> 2
-          				<input type="checkbox" name="ccard"> 3
-          				<input type="checkbox" name="ccard"> 4
-          			</div>
-					<div class="form-group">
-          				<label>Exparation Date</label>				
-   						<input type="date" >
- 					</div>
-					<div class="form-group">
-          				<label>Medicine insurance number</label>
-          				<label class="item item-input">
-   						<input type="number">
-          			</div>
-					<div class="form-group">
-          				<label>Emergency Contact</label>
-          				<input name="user-emergency-name" class="form-control required" placeholder="Emergency Contact name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text">
-          			</div>
-          			<div class="form-group">
-          				<label>Emergency Contact phone</label>
-          				<input name="user-emergency-phone" class="form-control phone" placeholder="999-999-9999" maxlength="12" type="text">
-    				</div>
-          			<div class="form-group">
-          				<label>Add photo</label>
-          				<input type="file" name="img" accept="image/*">
-          			</div>
-          			<div class="form-group">
-          				<button type="submit" class="_btn add_new">Send It!</button>
-          				<button  data-dismiss="modal" aria-hidden="true" class="_btn delete">Discard</button>
-          			</div>
+          			
         		</form>
       					</div>
       					<div class="modal-footer"></div>
@@ -137,10 +172,10 @@
 		<a href="javascript:;" class="change_pass col-md-6 col-xs-12">change pass</a>
 	</div>
 </div>
+
 <div class="col-md-10" id="content">
 	<div class="row">
 		<div class="container-fluid">
-
 			<div class="admin_top">
 				<a class="visible-xs visible-sm toggle_menu" href="javascript:;">
 					toggle
@@ -149,66 +184,57 @@
 				<a href="#myModal" class="_btn add_new" role="button"  data-toggle="modal">add new</a>
     			
 			</div>
-			<div class="home">Home>Stuff</div>
-
+			<ol class="breadcrumb">
+			  <li><a href="#">Home</a></li>
+			  <li><a href="#">Library</a></li>
+			  <li class="active">Data</li>
+			  <li class="print">
+			  	<i class="icon-print5"></i>
+			  </li>
+			</ol>
 			
-
-
-<!-- <table class="table-bordered"> -->
- <table id="add-customer" class="table " >
-   <tr>
-    <td rowspan="3" class="avatar-section border">
-    	<img src="../../public/img/example.jpg" class="img-circle avatar-img " alt="Cinque Terre">
-    	<hgroup>
-    		<h4>Helena Tankish</h4>
-    		<h5>Driver</h5>
-    	</hgroup>
-    	
-    </td>
-    <th colspan="5" class="table-header">2435-5324-42</th>
-    
-   </tr>
-   <tr>
-    <td>Driver License#</td>
-    <td>Enrolment</td>
-    <td class="border"></td>
-    <td >Medicine insurance #</td>
-    <td></td>
-     
-    
-   </tr>
-   <tr>
-    <td class="svg-icon-doc">4FL4DFG567</td>
-    <td class="svg-icon-emr">Fuel</td>
-    <td class="border">12/12/1212</td>
-    <td class="svg-icon-med">4FL4DFG567</td>
-    <td></td>
-    
-    
-   </tr>
-	<tr>
-	<td class="border">Address: Lviv, Doroshenka St. 12</td>
-    <td >Class</td>
-    <td class="svg-icon-emr">Toxic</td>
-    <td class="border">12/12/1212</td>
-    <td>Emergency contact</td>
-    <td ></td>
-    
-   </tr>
-   <tr >
-    <td class="border">SSN: 12345</td>
-    <td class="svg-icon-doc">A / B / C / D</td>
-    <td class="svg-icon-emr">Long trail</td>
-    <td class="border">12/12/1212</td>
-    <td class="svg-icon-call">3242-3232-2332</td>
-    <td>Joe Longcaster</td>
-     
-    
-   </tr>
-
-
-  </table>
-			
+			<table id="add-customer" class="global_table table " >
+			   	<tr>
+			    	<td rowspan="3" class="avatar-section border">
+			    		<img src="../../public/img/example.jpg" class="img-circle avatar-img " alt="Cinque Terre">
+				    	<hgroup>
+				    		<h4>Helena Tankish</h4>
+				    		<h5>Driver</h5>
+				    	</hgroup>
+			    	</td>
+			    	<th colspan="5" class="table-header">2435-5324-42</th>
+			   	</tr>
+			   	<tr>
+				    <td class="title">Driver License#</td>
+				    <td class="title">Enrolment</td>
+				    <td class="border"></td>
+				    <td class="title" >Medicine insurance #</td>
+				    <td></td>
+			  	 </tr>
+			   	<tr>
+				    <td class="svg-icon-doc">4FL4DFG567</td>
+				    <td class="svg-icon-emr">Fuel</td>
+				    <td class="border">12/12/1212</td>
+				    <td class="svg-icon-med">4FL4DFG567</td>
+				    <td></td>
+			   	</tr>
+				<tr>
+					<td class="border">Address: Lviv, Doroshenka St. 12</td>
+				    <td class="title">Class</td>
+				    <td class="svg-icon-emr">Toxic</td>
+				    <td class="border">12/12/1212</td>
+				    <td class="title">Emergency contact</td>
+				    <td ></td>
+			   </tr>
+			   <tr >
+				    <td class="border">SSN: 12345</td>
+				    <td class="svg-icon-doc">A / B / C / D</td>
+				    <td class="svg-icon-emr">Long trail</td>
+				    <td class="border">12/12/1212</td>
+				    <td class="svg-icon-call">3242-3232-2332</td>
+				    <td>Joe Longcaster</td>
+			   </tr>
+			</table>
 		</div>
 	</div>
 </div>
