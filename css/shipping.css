@@ -1,0 +1,31 @@
+.shipping_table{}
+	.shipping_table td{
+		vertical-align: top !important;
+	}
+	.shipping_table > div{
+		margin-bottom: 10px;
+	}
+	.shipping_table img{
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		margin: 0 10px;
+	}
+	.shipping_table tbody i{
+		font-size: 20px;
+		display: inline-block;
+		margin-top: 8px;
+		margin-right: 8px;
+	}
+	.shipping_table .model_name{
+	}
+	.shipping_table .model_type,
+	.shipping_table .contact_name{
+		color: #aaaaaa;
+		/*font-size: 12px;*/
+	}
+	.shipping_table .icon-frontal19{
+		display: inline-block;
+		margin-top: 8px;
+		margin-right: 8px;
+	}

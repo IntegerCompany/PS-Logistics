@@ -22,6 +22,54 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-calling3:before {
+  content: "\e60c";
+}
+.icon-certification:before {
+  content: "\e60d";
+}
+.icon-comment43:before {
+  content: "\e60e";
+}
+.icon-folder63:before {
+  content: "\e60f";
+}
+.icon-medical96:before {
+  content: "\e610";
+}
+.icon-money243:before {
+  content: "\e611";
+}
+.icon-phone54:before {
+  content: "\e612";
+}
+.icon-print5:before {
+  content: "\e613";
+}
+.icon-caravan1:before {
+  content: "\e604";
+}
+.icon-cart19:before {
+  content: "\e605";
+}
+.icon-dollar9:before {
+  content: "\e606";
+}
+.icon-frontal19:before {
+  content: "\e607";
+}
+.icon-loading1:before {
+  content: "\e608";
+}
+.icon-locator:before {
+  content: "\e609";
+}
+.icon-pin67:before {
+  content: "\e60a";
+}
+.icon-weight41:before {
+  content: "\e60b";
+}
 .icon-plus:before {
   content: "\e603";
 }
@@ -34,7 +82,6 @@
 .icon-params:before {
   content: "\e602";
 }
-
 
 html,
 body {
@@ -59,12 +106,59 @@ body {
 .clearfix { display: block; }
 
 /* reset bstp */
+.modal-content{
+  border-radius: 0;                               
+}
 .modal-open {
   padding-right: 0 !important;
 }
 .form-control{
   border-radius: 0;
 }
+.breadcrumb{
+  border-radius: 0;
+  float: left;
+  width: 100%;
+
+  background: #555555;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 15px 15px 12px;
+}
+  .breadcrumb .active{
+    color: #aaaaaa;
+  }
+  .breadcrumb a{
+    color: #fff;
+    text-decoration: underline;
+
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+  }
+    .breadcrumb a:hover{
+      color: #fbc02d;
+      text-decoration: none;
+    }
+  .breadcrumb .print{
+    float: right;
+    color: #fff;
+    cursor: pointer;
+  }
+    .breadcrumb .print:before{
+      content: ' ';
+    }
+    .breadcrumb .print:hover i{
+      color: #fbc02d;
+    }
+    .breadcrumb .print i{
+      font-size: 20px;
+
+      -webkit-transition: color .3s ease-in-out;
+      -o-transition: color .3s ease-in-out;
+      transition: color .3s ease-in-out;
+    }
 
 /* animate css*/
 .animated {
