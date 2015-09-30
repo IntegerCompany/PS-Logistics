@@ -1,0 +1,143 @@
+
+/*form*/
+#myModalLabel{
+	text-align: center;
+}
+.input-incorrect{
+	border: 1px solid red;
+}
+.modal-header, .modal-body, .modal-footer{
+	border:none;
+}
+/*form*/
+
+
+
+/*content*/
+
+
+.home{
+	width: 100%;
+	height: 45px;
+	background: #e2e2e2;
+	margin: 45px 0;
+}
+
+#add-customer{
+	border: 1px solid #000;
+}
+	 .table>tbody>tr>td{
+		border-top: none;
+		border-bottom:none;
+	}
+.border{
+	border-right: 1px solid #000;
+}
+.avatar-section{
+	width: 35%
+}
+.avatar-img{
+	display: inline-block;
+	width: 30%;
+}
+#add-customer hgroup{
+	display: inline-block;
+	padding-left: 10px;
+}
+#add-customer hgroup  h4{
+	font-weight: bold;
+}
+.table-header{
+	background: #fbc02d;
+	color:#2196F3;
+	text-align: right;
+    font-size: 2rem;
+
+}
+	.table-header:before{
+		content: "";
+		background-image: url(../img/phone54.svg); 
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	    padding-right: 70px;
+	}
+
+	.table-header:after{
+		content: "";
+		background-image: url(../img/edit45.svg); 
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	    padding-left: 129px;
+	    padding-right: 9px;
+	    margin-right: -24px;
+	}
+
+.table>tbody>tr>td.svg-icon-doc{
+	background-image: url(../img/document162.svg); 
+	background-repeat: no-repeat;
+	background-size: 20%;
+    display: inline-block;
+    padding-left: 28px;
+    margin-left: 10px;
+}
+.table>tbody>tr>td.svg-icon-emr{
+	background-image: url(../img/certification.svg); 
+	background-repeat: no-repeat;
+	background-size: 27%;
+    padding-left: 30px;
+    
+}
+.table>tbody>tr>td.svg-icon-med:before{
+    content: "";
+    background-image: url(../img/medical96.svg);
+    background-repeat: no-repeat;
+    padding-left: 28px;
+    padding-bottom: 20px;
+    margin-right: 10px;
+    padding-top: 10px;
+    
+}
+
+.table>tbody>tr>td.svg-icon-call:before{
+	content: "";
+	background-image: url(../img/calling3.svg); 
+	background-repeat: no-repeat;
+    padding-left: 28px;
+    padding-bottom: 20px;
+    margin-right: 10px;
+    padding-top: 10px;
+    
+}
+/*content*/
+
+
+
+
+
+
+
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	
+
+}
+@media (min-width: 480px) and (max-width: 620px) {
+	
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	
+
+}
