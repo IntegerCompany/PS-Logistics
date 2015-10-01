@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -10,7 +9,6 @@
 	<link rel="stylesheet" href="/public/css/shipping.css">
 </head>
 <body>
-
 <div id="navigation">
 	<img src="/public/img/logo.png" class="img-responsive nav_logo" alt="">
 	<ul>
@@ -22,7 +20,7 @@
 				map
 			</a>
 		</li>
-		<li  class="active">
+		<li class="active">
 			<a href="/shipping">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
@@ -36,7 +34,7 @@
 				stuff
 			</a>
 		</li>
-		<li >
+		<li>
 			<a href="/truck">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
@@ -47,10 +45,10 @@
 			<a href="/trailer">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
-				trailers
-			</a>
+				trailer
+				</a>
 		</li>
-		<li >
+		<li>
 			<a href="/broker">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
@@ -85,7 +83,7 @@
 			</div>
 
 			<ol class="breadcrumb">
-			  <li><a href="/">Home</a></li>
+			  <li><a href="#">Home</a></li>
 			  <li><a href="#">Library</a></li>
 			  <li class="active">Data</li>
 			  <li class="print">
@@ -189,8 +187,8 @@
 </div>
 
 </body>
-<script type="text/javascript" src="/public/js/jquery-2.1.4.min.js"></script>	
-<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>	
+<script type="text/javascript" src="/public/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/public/js/core.js"></script>
 
 </body>
