@@ -298,7 +298,8 @@
 <script type="text/javascript" src="/public/js/core.js"></script>
 <script>
     $(document).on('ready', function () {
-        $('.image-editor').cropit({});});
+        $('.image-editor').cropit({});
+    });
         var addStuff = document.querySelector('form#add-form'),
             submitBtn = addStuff.querySelector('.submit-btn'),
 

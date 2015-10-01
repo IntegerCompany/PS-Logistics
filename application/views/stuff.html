@@ -25,7 +25,7 @@
 						</div>
 						<div class="col-md-6">
 		          			<label>Last Name</label>
-		          			<input name="user-last-name" class="form-control required" placeholder="Last Name"  type="text" required autocomplete="off">			
+		          			<input name="user-last-name" class="form-control required" placeholder="Last Name"  type="text" required autocomplete="off">
 						</div>
 					</div>
 
@@ -42,7 +42,7 @@
 						</div>
 						<div class="col-md-6">
 		          			<label>Address</label>
-          					<textarea class="form-control" placeholder="Your address" rows="1"></textarea>		
+          					<textarea class="form-control" placeholder="Your address" rows="1"></textarea>
 						</div>
 					</div>
 
@@ -53,10 +53,10 @@
 						</div>
 						<div class="col-md-6">
 		          			<label>Phone</label>
-          					<input name="user-phone" class="form-control phone" placeholder="999-999-9999" type="text"  maxlength="12">	
+          					<input name="user-phone" class="form-control phone" placeholder="999-999-9999" type="text"  maxlength="12">
 						</div>
           			</div>
-					
+
 					<div class="row form-group">
 						<div class="col-md-6">
 		          			<label>SSN</label>
@@ -64,7 +64,7 @@
 						</div>
 						<div class="col-md-6">
 		          			<label>E-Mail</label>
-          					<input  name="user-email" class="form-control email" placeholder="email@you.com" type="text" required autocomplete="off">	
+          					<input  name="user-email" class="form-control email" placeholder="email@you.com" type="text" required autocomplete="off">
 						</div>
           			</div>
 
@@ -100,11 +100,11 @@
 							</select>
 						</div>
 						<div class="col-md-6">
-		          			<label>Exparation Date</label>				
+		          			<label>Exparation Date</label>
    							<input type="date" class="form-control required" >
 						</div>
           			</div>
-					
+
 					<div class="row form-group">
 						<div class="col-md-6">
 		          			<label>Medicine insurance number</label>
@@ -115,7 +115,7 @@
           					<input name="user-emergency-name" class="form-control required" placeholder="Emergency Contact name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text">
 						</div>
           			</div>
-					
+
 					<div class="row form-group">
 						<div class="col-md-6">
 							<label>Emergency Contact phone</label>
@@ -123,7 +123,15 @@
 						</div>
 						<div class="col-md-6">
 		          			<label>Add photo</label>
-          					<input type="file" name="img" accept="image/*">
+							<div class="image-editor">
+								<input type="file" class="cropit-image-input">
+
+								<div class="cropit-image-preview"></div>
+								<div class="image-size-label">
+									resize
+								</div>
+								<input type="range" class="cropit-image-zoom-input">
+							</div>
 						</div>
           			</div>
           			<div class="row form-group">
@@ -134,7 +142,7 @@
 						</div>
 						<div class="col-md-3"></div>
           			</div>
-          			
+
         		</form>
       					</div>
       					<div class="modal-footer"></div>
@@ -182,7 +190,7 @@
 				</a>
 				<h2 class="admin_title">Stuff</h2>
 				<a href="#myModal" class="_btn add_new" role="button"  data-toggle="modal">add new</a>
-    			
+
 			</div>
 			<ol class="breadcrumb">
 			  <li><a href="#">Home</a></li>
@@ -192,7 +200,7 @@
 			  	<i class="icon-print5"></i>
 			  </li>
 			</ol>
-			
+
 			<table id="add-customer" class="global_table table " >
 			   	<tr>
 			    	<td rowspan="3" class="avatar-section border">
@@ -241,11 +249,15 @@
 
 
 </body>
-<script type="text/javascript" src="../../public/js/jquery-2.1.4.min.js"></script>	
-<script type="text/javascript" src="../../public/js/bootstrap.min.js"></script>	
+<script type="text/javascript" src="../../public/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../public/js/jquery.cropit.js"></script>
+<script type="text/javascript" src="../../public/js/bootstrap.min.js"></script>
 <script src="../../public/js/jquery.maskedinput.min.js"></script>
 <script type="text/javascript" src="../../public/js/core.js"></script>
 <script>
+	$(document).on('ready', function () {
+		$('.image-editor').cropit({});
+	});
 				var addStuff = document.querySelector('form#add-form'),
 					submitBtn = addStuff.querySelector('.submit-btn'),
 
