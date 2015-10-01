@@ -2,13 +2,13 @@
 
 /*content*/
 .history-content{
-		border: solid 1px #7bbedc;
+		border: solid 1px #aaaaaa;
 	}
         h4 {
-            background: #3691b9 ;
+            background: #555555 ;
             padding: 7px 15px;
             margin: 0;
-            border: solid 1px #7bbedc;
+            border: solid 1px #aaaaaa;
             border-bottom: none;
             cursor: pointer;
             color: #fff;
@@ -21,11 +21,19 @@
             text-align: center;
         }
         h4:hover {
-            background-color: #7bbedc;
+            background-color: #aaaaaa;
         }
-        /*h4.active {
-            background-position: 580px -23px;
-        }*/
+.company-name{
+	width: 30%;
+}        
+.description{
+	width: 60%;
+}
+
+#frmFile {border-top:#F0F0F0 2px solid;background:#FAF8F8;padding:10px;}
+.demoInputBox{padding:10px; border:#F0F0F0 1px solid; border-radius:4px;background-color:#FFF;}
+#file_error{color: #FF0000;}
+#btnSubmit{background-color:#2FC332;border:0;padding:10px 40px; margin:15px 0px; color:#FFF;border:#F0F0F0 1px solid; border-radius:4px;}
 
 /*content*/
 

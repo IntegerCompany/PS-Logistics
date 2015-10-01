@@ -234,21 +234,18 @@
     <!--acardion --> 
 	        <section class="history-content">
 	            <h4>Date: 12/12/1215</h4>
-	            <table class="global_table table table-hover">
+	            <table class="global_table table table-bordered">
 					<thead>
 						<tr>
-							<th colspan="2"></th>
-							<th >Company Name</th>
-							<th>Description</th>
-							<th>Upload Files</th>
-						</tr>
+							<th class="company-name">Company Name</th>
+						 	<th class="description">Description</th>
+						 	<th >Upload Files</th>
+						 </tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td width="10"></td>
-							<td></td>
-							<td>ARCADA</td>
-							<td>Hello world!</td>
+						 	<td>ARCADA</td>
+							<td>Hello </td>
 							<td><input type="file" name="img" accept="image/*" multiple></td>
 						</tr>
 					</tbody>
@@ -257,33 +254,35 @@
 	            	<table class="global_table table table-bordered">
 						<thead>
 							<tr>
-								<th >Company Name</th>
-						 		<th>Description</th>
-						 		<th>Upload Files</th>
+								<th class="company-name">Company Name</th>
+						 		<th class="description">Description</th>
+						 		<th >Upload Files</th>
 						 	</tr>
 						</thead>
 						<tbody>
 						   <tr>
 						 		<td>ARCADA</td>
-								<td>Hello world!</td>
+								<td>Hello </td>
 								<td><input type="file" name="img" accept="image/*" multiple></td>
 						 	</tr>
 						</tbody>
 					</table>
 					<h4>Date: 13/12/1215</h4>
-	            	<table class="table">
+	            	<table class="global_table table table-bordered">
 						<thead>
 							<tr>
-								<th >Company Name</th>
-						 		<th>Description</th>
-						 		<th>Upload Files</th>
+								<th class="company-name">Company Name</th>
+						 		<th class="description">Description</th>
+						 		<th >Upload Files</th>
 						 	</tr>
 						</thead>
 						<tbody>
 						   <tr>
 						 		<td>ARCADA</td>
-								<td>Hello world!</td>
-								<td><input type="file" name="img" accept="image/*" multiple></td>
+								<td>Hello </td>
+								<td>
+									<input type="file" name="img" accept="image/*" multiple id="myFile" class="demoInputBox"><span id="file_error"></span>
+								</td>
 						 	</tr>
 						</tbody>
 					</table>
@@ -303,12 +302,28 @@
                     var $this = $(this);
                     $this
                         .next("table")
-                        .slideToggle("slow")
+                        .slideToggle("fast")
                         .siblings("table:visible")
-                        .slideUp("slow");
+                        .slideUp("fast");
                     $this.toggleClass("active");
                 })
         });
+			$('#myFile').bind('change', function() {
+				var l = this.files.length;
+				console.log(l);
+			for( var i =0;  i<l; i++){
+				if(this.files[i].size < 5242880) {
+						$(this).after('<span>'+this.files[i].name+'</span>');
+					$(".demoInputBox").css("border-color","#FF0000");
+					$("#file_error").html("File size is greater than 2MB");
+					
+				}
+			 		
+			  	$(".demoInputBox").css("border-color","#0FF000");
+					
+			  	}
+			});
+
 	})(window.jQuery)
 </script>
 </body>
