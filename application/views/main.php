@@ -44,9 +44,15 @@
 
 <!-- mainpage header -->
 <header id="header">
+	<?php if(!Session::instance()->get('user')){?>
 	<button type="button" class="button login" data-toggle="modal" data-target="#loginModal">
 	  login
 	</button>
+	<?php } else {?>
+	<a role="button" class="button login" href="/shipping">
+		admin
+	</a>
+	<?php } ?>
 </header>
 
 <!-- top section img -->
