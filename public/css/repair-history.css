@@ -1,0 +1,64 @@
+
+
+/*content*/
+.history-content{
+		border: solid 1px #aaaaaa;
+	}
+        h4 {
+            background: #555555 ;
+            padding: 7px 15px;
+            margin: 0;
+            border: solid 1px #aaaaaa;
+            border-bottom: none;
+            cursor: pointer;
+            color: #fff;
+        }
+        table {
+            padding: 10px 15px 20px;
+            display: none;
+        }
+        h2 {
+            text-align: center;
+        }
+        h4:hover {
+            background-color: #aaaaaa;
+        }
+.company-name{
+	width: 30%;
+}        
+.description{
+	width: 60%;
+}
+
+#frmFile {border-top:#F0F0F0 2px solid;background:#FAF8F8;padding:10px;}
+.demoInputBox{padding:10px; border:#F0F0F0 1px solid; border-radius:4px;background-color:#FFF;}
+#file_error{color: #FF0000;}
+#btnSubmit{background-color:#2FC332;border:0;padding:10px 40px; margin:15px 0px; color:#FFF;border:#F0F0F0 1px solid; border-radius:4px;}
+
+/*content*/
+
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	
+
+}
+@media (min-width: 480px) and (max-width: 620px) {
+	
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	
+
+}
