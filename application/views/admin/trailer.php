@@ -147,7 +147,7 @@
 </div>
 
 <div id="navigation">
-	<img src="/public/img/logo.png" class="img-responsive nav_logo" alt="">
+	<a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
 	<ul>
 		<!-- add class .active to LI when this page active -->
 		<li>
