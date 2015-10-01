@@ -254,18 +254,19 @@
 	$(document).on('ready', function () {
 		$('.image-editor').cropit({});
 	});
+
 				var addStuff = document.querySelector('form#add-form'),
 					submitBtn = addStuff.querySelector('.submit-btn'),
 
 					userNameInput = '[name="user-name"]',
 					userLastNameInput = '[name="user-last-name"]',
 					userPositionInput = '[name="user-position"]',
-					userAddressInput = '[name="user-address"]';
+					userAddressInput = '[name="user-address"]',
 					userZipCodeInput = '[name="user-zip-code"]',
 					userPhoneInput = '[name="user-phone"]',
-					userSSNInput = '[name = "user-ssn"]'
+					userSSNInput = '[name = "user-ssn"]',
 					userEmailInput = '[name="user-email"]',
-					userDriveLicenseInput ='[name= "user-drive-lic"]';
+					userDriveLicenseInput ='[name= "user-drive-lic"]',
 					userClassInput = '[name="user-class"]',
 					userEnrolmentInput = '[name="user-enrolment"]',
 					userDateInput = '[name="user-date"]',
@@ -411,7 +412,7 @@
 				}
 
 				function createDataObject() {
-					return {
+						var arr = {
 						"user-name": 	userName.value,
 						"user-last-name": 	userLastName.value,
 						"user-address" : userAddress.value,
@@ -429,8 +430,10 @@
 						"user-emergency-phone" : userEmergencyPhone.value,
 						"user-image" : $('.image-editor').cropit('export'),
 					};
+					console.log(arr);
+					return arr;
 				}
-
+				createDataObject();
 				function showAjaxMess(data) {
 
 					var responseData = JSON.parse(data);
@@ -486,8 +489,9 @@
 					// 		showAjaxMess(data);
 		   //              }
 		   //          });
-					alert(createDataObject);
-					//console.log(createDataObject);
+
+					alert(createDataObject());
+					//console.log(createDataObject());
 		           // return false;
 		        });
 
