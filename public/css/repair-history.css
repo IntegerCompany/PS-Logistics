@@ -1,0 +1,56 @@
+
+
+/*content*/
+.history-content{
+		border: solid 1px #7bbedc;
+	}
+        h4 {
+            background: #3691b9 ;
+            padding: 7px 15px;
+            margin: 0;
+            border: solid 1px #7bbedc;
+            border-bottom: none;
+            cursor: pointer;
+            color: #fff;
+        }
+        table {
+            padding: 10px 15px 20px;
+            display: none;
+        }
+        h2 {
+            text-align: center;
+        }
+        h4:hover {
+            background-color: #7bbedc;
+        }
+        /*h4.active {
+            background-position: 580px -23px;
+        }*/
+
+/*content*/
+
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	
+
+}
+@media (min-width: 480px) and (max-width: 620px) {
+	
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	
+
+}
