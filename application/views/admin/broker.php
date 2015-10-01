@@ -151,7 +151,7 @@
 			<a href="javascript:;">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
-				phone search
+				phone
 			</a>
 		</li>
 	</ul>

@@ -34,7 +34,7 @@
                     <div class="row form-group">
                         <div class="col-md-6">
                             <label>Position</label>
-                            <select class="form-control">
+                            <select class="form-control" name="user-position">
                                 <option value="">1</option>
                                 <option value="">2</option>
                                 <option value="">3</option>
@@ -44,7 +44,8 @@
                         </div>
                         <div class="col-md-6">
                             <label>Address</label>
-                            <textarea class="form-control" placeholder="Your address" rows="1"></textarea>
+                            <textarea name="user-address" class="form-control" placeholder="Your address"
+                                      rows="1"></textarea>
                         </div>
                     </div>
 
@@ -77,12 +78,12 @@
                     <div class="row form-group">
                         <div class="col-md-6">
                             <label>Driver Licence</label>
-                            <input class="form-control required" placeholder="Your Driver Licence " type="text"
-                                   maxlength="8">
+                            <input name="user-drive-lic" class="form-control required"
+                                   placeholder="Your Driver Licence " type="text" maxlength="8">
                         </div>
                         <div class="col-md-6">
                             <label>Class</label>
-                            <select class="form-control">
+                            <select class="form-control" name="user-class">
                                 <option value="">A</option>
                                 <option value="">B</option>
                                 <option value="">C</option>
@@ -98,7 +99,7 @@
                     <div class="row form-group">
                         <div class="col-md-6">
                             <label>Enrolment</label>
-                            <select class="form-control">
+                            <select class="form-control" name="user-enrolment">
                                 <option value="">1</option>
                                 <option value="">2</option>
                                 <option value="">3</option>
@@ -108,14 +109,15 @@
                         </div>
                         <div class="col-md-6">
                             <label>Exparation Date</label>
-                            <input type="date" class="form-control required">
+                            <input type="date" class="form-control required" name="user-date">
                         </div>
                     </div>
 
                     <div class="row form-group">
                         <div class="col-md-6">
                             <label>Medicine insurance number</label>
-                            <input type="text" class="form-control required" placeholder="Medicine insurance number">
+                            <input type="text" name="user-medicine" class="form-control required"
+                                   placeholder="Medicine insurance number">
                         </div>
                         <div class="col-md-6">
                             <label>Emergency Contact</label>
@@ -136,12 +138,9 @@
                             <label>Add photo</label>
 
                             <div class="image-editor">
-                                <input type="file" class="cropit-image-input">
+                                <input type="file" name="user-image" class="cropit-image-input">
 
                                 <div class="cropit-image-preview"></div>
-                                <div class="image-size-label">
-                                    resize
-                                </div>
                                 <input type="range" class="cropit-image-zoom-input">
                             </div>
                         </div>
@@ -162,67 +161,38 @@
     </div>
 </div>
 
-<div id="navigation">
-    <a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
-    <ul>
+<div class="col-md-2" id="navigation">
+    <ul class="row">
         <!-- add class .active to LI when this page active -->
         <li>
-            <a href="javascript:;">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                map
-            </a>
+            <a href="javascript:;">map</a>
         </li>
         <li>
-            <a href="/shipping">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                shipping
-            </a>
+            <a href="javascript:;">shipping</a>
         </li>
         <li class="active">
-            <a href="/stuff">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                stuff
-            </a>
+            <a href="javascript:;">stuff</a>
         </li>
         <li>
-            <a href="/truck">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                truck
-            </a>
+            <a href="javascript:;">trucks</a>
         </li>
         <li>
-            <a href="/trailer">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                trailer
-            </a>
+            <a href="javascript:;">trailers</a>
         </li>
         <li>
-            <a href="/broker">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                broker
-            </a>
+            <a href="javascript:;">brokers</a>
         </li>
         <li>
-            <a href="javascript:;">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                phone search
-            </a>
+            <a href="javascript:;">phone search</a>
         </li>
     </ul>
     <div class="controls">
-        <a href="/logout" class="logout col-md-6 col-xs-12">logout</a>
+        <a href="javascript:;" class="logout col-md-6 col-xs-12">logout</a>
         <a href="javascript:;" class="change_pass col-md-6 col-xs-12">change pass</a>
     </div>
 </div>
 
-<div id="content">
+<div class="col-md-10" id="content">
     <div class="row">
         <div class="container-fluid">
             <div class="admin_top">
@@ -300,224 +270,245 @@
     $(document).on('ready', function () {
         $('.image-editor').cropit({});
     });
-        var addStuff = document.querySelector('form#add-form'),
-            submitBtn = addStuff.querySelector('.submit-btn'),
+    var addStuff = document.querySelector('form#add-form'),
+        submitBtn = addStuff.querySelector('.submit-btn'),
 
-            userNameInput = '[name="user-name"]',
-            userLastNameInput = '[name="user-last-name"]',
-            userZipCodeInput = '[name="user-zip-code"]',
-            userPhoneInput = '[name="user-phone"]',
-            userSSNInput = '[name = "user-ssn"]',
-            userEmailInput = '[name="user-email"]',
-            userEmergencyNameInput = '[name="user-emergency-name"]',
-            userEmergencyPhoneInput = '[name="user-emergency-phone"]',
+        userNameInput = '[name="user-name"]',
+        userLastNameInput = '[name="user-last-name"]',
+        userPositionInput = '[name="user-position"]',
+        userAddressInput = '[name="user-address"]';
+    userZipCodeInput = '[name="user-zip-code"]',
+        userPhoneInput = '[name="user-phone"]',
+        userSSNInput = '[name = "user-ssn"]'
+    userEmailInput = '[name="user-email"]',
+        userDriveLicenseInput = '[name= "user-drive-lic"]';
+    userClassInput = '[name="user-class"]',
+        userEnrolmentInput = '[name="user-enrolment"]',
+        userDateInput = '[name="user-date"]',
+        userMedicineInput = '[name="user-medicine"]',
+        userEmergencyNameInput = '[name="user-emergency-name"]',
+        userEmergencyPhoneInput = '[name="user-emergency-phone"]',
+        userImageInput = '[name="user-image"]',
 
 
-            userName = addStuff.querySelector(userNameInput),
-            userLastName = addStuff.querySelector(userLastNameInput),
-            userEmail = addStuff.querySelector(userEmailInput),
-            userZipCode = addStuff.querySelector(userZipCodeInput);
-        userPhone = addStuff.querySelector(userPhoneInput);
-        userSSN = addStuff.querySelector(userSSNInput);
+        userName = addStuff.querySelector(userNameInput),
+        userLastName = addStuff.querySelector(userLastNameInput),
+        userPosition = addStuff.querySelector(userPositionInput),
+        userAddress = addStuff.querySelector(userAddressInput),
+        userZipCode = addStuff.querySelector(userZipCodeInput),
+        userPhone = addStuff.querySelector(userPhoneInput),
+        userSSN = addStuff.querySelector(userSSNInput),
+        userEmail = addStuff.querySelector(userEmailInput),
+        userDriveLicense = addStuff.querySelector(userDriveLicenseInput),
+        userClass = addStuff.querySelector(userClassInput),
+        userEnrolment = addStuff.querySelector(userEnrolmentInput),
+        userDate = addStuff.querySelector(userDateInput),
+        userMedicine = addStuff.querySelector(userMedicineInput),
         userEmergencyName = addStuff.querySelector(userEmergencyNameInput),
-            userEmergencyPhone = addStuff.querySelector(userEmergencyPhoneInput),
+        userEmergencyPhone = addStuff.querySelector(userEmergencyPhoneInput),
+        userImage = addStuff.querySelector(userImageInput),
 
-            labels = addStuff.querySelectorAll('label'),
+        labels = addStuff.querySelectorAll('label'),
 
-            gueryMessBoxId = 'guery-message-box',
+        gueryMessBoxId = 'guery-message-box',
 
-            loadClass = 'load',
-            inputIncorClass = 'input-incorrect',
-
-
-            ajaxFile = "action.php";
+        loadClass = 'load',
+        inputIncorClass = 'input-incorrect',
 
 
-        function addClass(el, cl) {
-            el.classList.add(cl);
+        ajaxFile = "action.php";
+
+
+    function addClass(el, cl) {
+        el.classList.add(cl);
+    }
+
+    function removeClass(el, cl) {
+        el.classList.remove(cl);
+    }
+    function insertAfter(referenceNode, newNode) {
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
+    function isNoValidEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return !re.test(email);
+    }
+
+    function isNoValidZipCode(zipCode) {
+        var reg = /^\d{5}$/;
+        return !reg.test(zipCode);
+    }
+    function isNoValidPhone(phone) {
+        var reg = /^\d{3}-\d{3}-\d{4}$/;
+        return !reg.test(phone);
+    }
+    function isNoValidEmergencyPhone(emergPhone) {
+        var reg = /^\d{3}-\d{3}-\d{4}$/;
+        return !reg.test(emergPhone);
+    }
+    function isNoValidSSN(ssn) {
+        var reg = /^\d{3}-\d{2}-\d{4}$/;
+        return !reg.test(ssn);
+    }
+
+
+    function isNotValidForm() {
+
+        var trouble = 0;
+
+        if (userName.value.length < 3) {
+            addClass(userName, inputIncorClass);
+            var span = document.createElement('span');
+            span.className = "error-span";
+            span.innerHTML = "Must be at least 3 characters long, and must only contain letters.";
+            insertAfter(userName, span);
+            trouble++;
         }
 
-        function removeClass(el, cl) {
-            el.classList.remove(cl);
+        if (userLastName.value.length < 3) {
+            addClass(userLastName, inputIncorClass);
+            var span = document.createElement('span');
+            span.className = "error-span";
+            span.innerHTML = "Must be at least 3 characters long, and must only contain letters.";
+            insertAfter(userLastName, span);
+            trouble++;
+        }
+        if (isNoValidZipCode(userZipCode.value)) {
+            addClass(userZipCode, inputIncorClass);
+            var span = document.createElement('span');
+            span.className = "error-span";
+            span.innerHTML = "Must be 5 characters long, and must only contain numbers.";
+            insertAfter(userZipCode, span);
+            trouble++;
+        }
+        if (isNoValidSSN(userSSN.value)) {
+            addClass(userSSN, inputIncorClass);
+            var span = document.createElement('span');
+            span.className = "error-span";
+            span.innerHTML = "Must be 9 characters long, and must only contain numbers.";
+            insertAfter(userSSN, span);
+            trouble++;
         }
 
-        function insertAfter(referenceNode, newNode) {
-            referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+        if (isNoValidEmail(userEmail.value)) {
+            addClass(userEmail, inputIncorClass);
+            var span = document.createElement('span');
+            span.className = "error-span";
+            span.innerHTML = "Must be a valid e-mail address (user@gmail.com)";
+            insertAfter(userEmail, span);
+            trouble++;
+        }
+        if (isNoValidPhone(userPhone.value)) {
+            addClass(userPhone, inputIncorClass);
+            var span = document.createElement('span');
+            span.className = "error-span";
+            span.innerHTML = "Must be a valid phone number (999-999-9999)";
+            insertAfter(userPhone, span);
+            trouble++;
+        }
+        if (userEmergencyName.value.length < 3) {
+            addClass(userEmergencyName, inputIncorClass);
+            var span = document.createElement('span');
+            span.className = "error-span";
+            span.innerHTML = "Must be at least 3 characters long, and must only contain letters.";
+            insertAfter(userEmergencyName, span);
+            trouble++;
+        }
+        if (isNoValidEmergencyPhone(userEmergencyPhone.value)) {
+            addClass(userEmergencyPhone, inputIncorClass);
+            var span = document.createElement('span');
+            span.className = "error-span";
+            span.innerHTML = "Must be a valid phone number (999-999-9999)";
+            insertAfter(userEmergencyPhone, span);
+            trouble++;
         }
 
-        function isNoValidEmail(email) {
-            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-            return !re.test(email);
+        return trouble === 0 ? false : true;
+    }
+
+    function createDataObject() {
+        return {
+            "user-name": userName.value,
+            "user-last-name": userLastName.value,
+            "user-address": userAddress.value,
+            "user-position": userPosition.value,
+            "user-zip-code": userZipCode.value,
+            "user-phone": userPhone.value,
+            "user-ssn": userSSN.value,
+            "user-email": userEmail.value,
+            "user-drive-lic": userDriveLicense.value,
+            "user-class": userClass.value,
+            "user-enrolment": userEnrolment.value,
+            "user-date": new Date(userDate.value).getTime() / 1000,
+            "user-medicine": userMedicine.value,
+            "user-emergency-name": userEmergencyName.value,
+            "user-emergency-phone": userEmergencyPhone.value,
+            "user-image": $('.image-editor').cropit('export'),
+        };
+    }
+
+    function showAjaxMess(data) {
+
+        var responseData = JSON.parse(data);
+
+        $('body').append("<div id='" + gueryMessBoxId + "' class='" + responseData['responseClass'] +
+            "'><p>" + responseData['responseText'] + "</p></div>");
+
+        removeClass(submitBtn, loadClass);
+        $('#' + gueryMessBoxId).slideDown();
+    }
+
+    $(document).on('click', labels, function () {
+        if (this.querySelector('.' + inputIncorClass)) {
+            this.querySelector('.' + inputIncorClass).classList.remove(inputIncorClass);
         }
+    });
 
-        function isNoValidZipCode(zipCode) {
-            var reg = /^\d{5}$/;
-            return !reg.test(zipCode);
+
+    //only symbols
+    $(document).on("change keyup input click", userNameInput + ', ' + userLastNameInput + ', ' + userEmergencyNameInput, function () {
+        if (this.value.match(/[^A-z ]/g)) {
+            this.value = this.value.replace(/[^A-z ]/g, '');
         }
+    });
 
-        function isNoValidPhone(phone) {
-            var reg = /^\d{4}-\d{3}-\d{4}$/;
-            return !reg.test(phone);
+    $(document).on("change keyup input click", userPhoneInput + ', ' + userZipCodeInput + ', ' + userEmergencyPhoneInput + ',' + userSSNInput, function () {
+        if (this.value.match(/[^0-9\- ]/g)) {
+            this.value = this.value.replace(/[^0-9\- ]/g, '');
         }
+    });
 
-        function isNoValidEmergencyPhone(emergPhone) {
-            var reg = /^\d{4}-\d{3}-\d{4}$/;
-            return !reg.test(emergPhone);
-        }
-
-        function isNoValidSSN(ssn) {
-            var reg = /^\d{3}-\d{2}-\d{4}$/;
-            return !reg.test(ssn);
-        }
+    $(document).on('click', '#' + gueryMessBoxId, function () {
+        $(this).slideUp(400, function () {
+            this.classList.contains('success') ? window.location = window.location.href : this.remove();
+        });
+    });
 
 
-        function isNotValidForm() {
+    $(addStuff).submit(function () {
 
-            var trouble = 0;
+        if (isNotValidForm()) return false;
 
-            if (userName.value.length < 3) {
-                addClass(userName, inputIncorClass);
-                var span = document.createElement('span');
-                span.className = "error-span";
-                span.innerHTML = "Must be at least 3 characters long, and must only contain letters.";
-                insertAfter(userName, span);
-                trouble++;
-            }
+        //submitBtn.classList.add(loadClass);
+        // return false;
 
-            if (userLastName.value.length < 3) {
-                addClass(userLastName, inputIncorClass);
-                var span = document.createElement('span');
-                span.className = "error-span";
-                span.innerHTML = "Must be at least 3 characters long, and must only contain letters.";
-                insertAfter(userLastName, span);
-                trouble++;
-            }
-            if (isNoValidZipCode(userZipCode.value)) {
-                addClass(userZipCode, inputIncorClass);
-                var span = document.createElement('span');
-                span.className = "error-span";
-                span.innerHTML = "Must be 5 characters long, and must only contain numbers.";
-                insertAfter(userZipCode, span);
-                trouble++;
-            }
-            if (isNoValidSSN(userSSN.value)) {
-                addClass(userSSN, inputIncorClass);
-                var span = document.createElement('span');
-                span.className = "error-span";
-                span.innerHTML = "Must be 9 characters long, and must only contain numbers.";
-                insertAfter(userSSN, span);
-                trouble++;
-            }
-
-            if (isNoValidEmail(userEmail.value)) {
-                addClass(userEmail, inputIncorClass);
-                var span = document.createElement('span');
-                span.className = "error-span";
-                span.innerHTML = "Must be a valid e-mail address (user@gmail.com)";
-                insertAfter(userEmail, span);
-                trouble++;
-            }
-            if (isNoValidPhone(userPhone.value)) {
-                addClass(userPhone, inputIncorClass);
-                var span = document.createElement('span');
-                span.className = "error-span";
-                span.innerHTML = "Must be a valid phone number (999-999-9999)";
-                insertAfter(userPhone, span);
-                trouble++;
-            }
-            if (userEmergencyName.value.length < 3) {
-                addClass(userEmergencyName, inputIncorClass);
-                var span = document.createElement('span');
-                span.className = "error-span";
-                span.innerHTML = "Must be at least 3 characters long, and must only contain letters.";
-                insertAfter(userEmergencyName, span);
-                trouble++;
-            }
-            if (isNoValidEmergencyPhone(userEmergencyPhone.value)) {
-                addClass(userEmergencyPhone, inputIncorClass);
-                var span = document.createElement('span');
-                span.className = "error-span";
-                span.innerHTML = "Must be a valid phone number (999-999-9999)";
-                insertAfter(userEmergencyPhone, span);
-                trouble++;
-            }
-
-            return trouble === 0 ? false : true;
-        }
-
-        function createDataObject() {
-            return {
-                "user-name": userName.value,
-                "user-last-name": userLastNameInput.value,
-
-                "user-zip-code": userZipCode.value,
-                "user-emergency-name": userEmergencyName.value,
-                "user-emergency-phone": userEmergencyPhone.value,
-                "user-email": userEmail.value,
-            };
-        }
-
-        function showAjaxMess(data) {
-
-            var responseData = JSON.parse(data);
-
-            $('body').append("<div id='" + gueryMessBoxId + "' class='" + responseData['responseClass'] +
-                "'><p>" + responseData['responseText'] + "</p></div>");
-
-            removeClass(submitBtn, loadClass);
-            $('#' + gueryMessBoxId).slideDown();
-        }
-
-        $(document).on('click', labels, function () {
-            if (this.querySelector('.' + inputIncorClass)) {
-                this.querySelector('.' + inputIncorClass).classList.remove(inputIncorClass);
+        $.ajax({
+            url: document.location.origin + "/ajax",
+            type: "POST",
+            data: {
+                "add-stuff": createDataObject()
+            },
+            success: function (data) {
+                showAjaxMess(data);
             }
         });
+        //console.log(createDataObject);
+        // return false;
+    });
 
+    // 	});
+    // })(window.jQuery)
 
-//only symbols
-        $(document).on("change keyup input click", userNameInput + ', ' + userLastNameInput + ', ' + userEmergencyNameInput, function () {
-            if (this.value.match(/[^A-z ]/g)) {
-                this.value = this.value.replace(/[^A-z ]/g, '');
-            }
-        });
-
-        $(document).on("change keyup input click", userPhoneInput + ', ' + userZipCodeInput + ', ' + userEmergencyPhoneInput + ',' + userSSNInput, function () {
-            if (this.value.match(/[^0-9\- ]/g)) {
-                this.value = this.value.replace(/[^0-9\- ]/g, '');
-            }
-        });
-
-        $(document).on('click', '#' + gueryMessBoxId, function () {
-            $(this).slideUp(400, function () {
-                this.classList.contains('success') ? window.location = window.location.href : this.remove();
-            });
-        });
-
-
-        $(addStuff).submit(function () {
-
-            if (isNotValidForm()) return false;
-
-            submitBtn.classList.add(loadClass);
-            return false;
-
-            $.ajax({
-                url: ajaxFile,
-                type: "POST",
-                data: {
-                    "formOperation": createDataObject()
-                },
-                success: function (data, html) {
-                    showAjaxMess(data);
-                }
-            });
-
-            return false;
-        });
-
-        // 	});
-        // })(window.jQuery)
 
 </script>
 

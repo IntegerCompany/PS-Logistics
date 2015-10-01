@@ -99,9 +99,15 @@ section.mainpage_top_img{
 		vertical-align: middle;
 	}
 	section.mainpage_top_img h1 {
-		position: relative;
+		position: absolute;
 		text-align: center;
-		margin-top: -150px;
+		left: 0;
+		right: 0;
+		top: 66px;
+		text-align: center;
+
+		/*position: relative;
+		margin-top: -150px;*/
 
 		line-height: 100px;
 		color: #fbc02d;

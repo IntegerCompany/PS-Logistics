@@ -58,7 +58,8 @@
 <!-- top section img -->
 <section class="mainpage_top_img clearfix">
 	<h1 class="animated">
-		PS Logistics LLC
+		PS Logistics LLC <br/>
+		<span>IN TIME EVERY TIME</span>
 	</h1>
 </section>
 
