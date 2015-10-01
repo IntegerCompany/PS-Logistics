@@ -32,7 +32,7 @@
 					<div class="row form-group">
 						<div class="col-md-6">
 		          			<label>Position</label>
-					    	<select class="form-control" >
+					    	<select class="form-control" name="user-position">
 							    <option value="">1</option>
 							    <option value="">2</option>
 							    <option value="">3</option>
@@ -42,7 +42,7 @@
 						</div>
 						<div class="col-md-6">
 		          			<label>Address</label>
-          					<textarea class="form-control" placeholder="Your address" rows="1"></textarea>
+          					<textarea name="user-address" class="form-control" placeholder="Your address" rows="1" ></textarea>
 						</div>
 					</div>
 
@@ -71,11 +71,11 @@
 					<div class="row form-group">
 						<div class="col-md-6">
 		          			<label>Driver Licence</label>
-          					<input class="form-control required" placeholder="Your Driver Licence " type="text" maxlength="8">
+          					<input name="user-drive-lic" class="form-control required" placeholder="Your Driver Licence " type="text" maxlength="8">
 						</div>
 						<div class="col-md-6">
 		          			<label>Class</label>
-		          			<select class="form-control" >
+		          			<select class="form-control" name="user-class">
 							    <option value="">A</option>
 							    <option value="">B</option>
 							    <option value="">C</option>
@@ -91,7 +91,7 @@
           			<div class="row form-group">
 						<div class="col-md-6">
 		          			<label>Enrolment</label>
-	          				<select class="form-control" >
+	          				<select class="form-control" name="user-enrolment">
 							    <option value="">1</option>
 							    <option value="">2</option>
 							    <option value="">3</option>
@@ -101,14 +101,14 @@
 						</div>
 						<div class="col-md-6">
 		          			<label>Exparation Date</label>
-   							<input type="date" class="form-control required" >
+   							<input type="date" class="form-control required" name="user-date" >
 						</div>
           			</div>
 
 					<div class="row form-group">
 						<div class="col-md-6">
 		          			<label>Medicine insurance number</label>
-   							<input type="text" class="form-control required" placeholder="Medicine insurance number" >
+   							<input type="text" name="user-medicine" class="form-control required" placeholder="Medicine insurance number" >
 						</div>
 						<div class="col-md-6">
 		          			<label>Emergency Contact</label>
@@ -124,12 +124,8 @@
 						<div class="col-md-6">
 		          			<label>Add photo</label>
 							<div class="image-editor">
-								<input type="file" class="cropit-image-input">
-
+								<input type="file" name="user-image" class="cropit-image-input">
 								<div class="cropit-image-preview"></div>
-								<div class="image-size-label">
-									resize
-								</div>
 								<input type="range" class="cropit-image-zoom-input">
 							</div>
 						</div>
@@ -263,22 +259,38 @@
 
 					userNameInput = '[name="user-name"]',
 					userLastNameInput = '[name="user-last-name"]',
+					userPositionInput = '[name="user-position"]',
+					userAddressInput = '[name="user-address"]';
 					userZipCodeInput = '[name="user-zip-code"]',
 					userPhoneInput = '[name="user-phone"]',
 					userSSNInput = '[name = "user-ssn"]'
 					userEmailInput = '[name="user-email"]',
+					userDriveLicenseInput ='[name= "user-drive-lic"]';
+					userClassInput = '[name="user-class"]',
+					userEnrolmentInput = '[name="user-enrolment"]',
+					userDateInput = '[name="user-date"]',
+					userMedicineInput = '[name="user-medicine"]',
 					userEmergencyNameInput = '[name="user-emergency-name"]',
 					userEmergencyPhoneInput = '[name="user-emergency-phone"]',			
+					userImageInput = '[name="user-image"]',
 					
-
+					
 			 		userName = addStuff.querySelector(userNameInput),
-			 		userLastName = addStuff.querySelector(userLastNameInput),	
+			 		userLastName = addStuff.querySelector(userLastNameInput),
+			 		userPosition = addStuff.querySelector(userPositionInput),
+			 		userAddress = addStuff.querySelector(userAddressInput),
+			 		userZipCode = addStuff.querySelector(userZipCodeInput),
+			 		userPhone = addStuff.querySelector(userPhoneInput),
+			 		userSSN = addStuff.querySelector(userSSNInput),	 
 			 		userEmail = addStuff.querySelector(userEmailInput),
-			 		userZipCode = addStuff.querySelector(userZipCodeInput);
-			 		userPhone = addStuff.querySelector(userPhoneInput);
-			 		userSSN = addStuff.querySelector(userSSNInput);
+			 		userDriveLicense = addStuff.querySelector(userDriveLicenseInput),
+			 		userClass = addStuff.querySelector(userClassInput),
+			 		userEnrolment  = addStuff.querySelector(userEnrolmentInput),
+			 		userDate = addStuff.querySelector(userDateInput),
+			 		userMedicine = addStuff.querySelector(userMedicineInput),
 			 		userEmergencyName = addStuff.querySelector(userEmergencyNameInput),
 			 		userEmergencyPhone = addStuff.querySelector(userEmergencyPhoneInput),
+			 		userImage = addStuff.querySelector(userImageInput),
 			 		
 			 		labels = addStuff.querySelectorAll('label'),
 
@@ -311,11 +323,11 @@
 				    return !reg.test(zipCode);
 				}
 					function isNoValidPhone(phone) {
-				    var reg =  /^\d{4}-\d{3}-\d{4}$/;
+				    var reg =  /^\d{3}-\d{3}-\d{4}$/;
 				    return !reg.test(phone);
 				}
 				function isNoValidEmergencyPhone(emergPhone) {
-				    var reg =  /^\d{4}-\d{3}-\d{4}$/;
+				    var reg =  /^\d{3}-\d{3}-\d{4}$/;
 				    return !reg.test(emergPhone);
 				}
 				function isNoValidSSN(ssn) {
@@ -323,7 +335,6 @@
 				    return !reg.test(ssn);
 				}
 					
-
 
 				function isNotValidForm() {
 
@@ -402,12 +413,21 @@
 				function createDataObject() {
 					return {
 						"user-name": 	userName.value,
-						"user-last-name": 	userLastNameInput.value,
-						
+						"user-last-name": 	userLastName.value,
+						"user-address" : userAddress.value,
+						"user-position" : userPosition.value,
 						"user-zip-code": userZipCode.value,
+						"user-phone" : userPhone.value,
+						"user-ssn" : userSSN.value,
+						"user-email" : userEmail.value,
+						"user-drive-lic" : userDriveLicense.value,
+						"user-class": userClass.value,
+						"user-enrolment" : userEnrolment.value,
+						"user-date": new Date(userDate.value).getTime() / 1000,
+						"user-medicine" :userMedicine.value,
 						"user-emergency-name" :	userEmergencyName.value,
-						"user-emergency-phone" :	userEmergencyPhone.value,
-						"user-email": userEmail.value,
+						"user-emergency-phone" : userEmergencyPhone.value,
+						"user-image" : $('.image-editor').cropit('export'),
 					};
 				}
 
@@ -453,21 +473,22 @@
 
 					if( isNotValidForm() ) return false;
 
-					submitBtn.classList.add(loadClass);
-					return false;
+					//submitBtn.classList.add(loadClass);
+					// return false;
 
-					$.ajax({  
-		                url: ajaxFile,
-						type: "POST",
-						data : { 
-							"formOperation" : createDataObject()
-						},
-						success: function(data, html){
-							showAjaxMess(data);
-		                }
-		            });
-
-		            return false;
+					// $.ajax({  
+		   //              url: ajaxFile,
+					// 	type: "POST",
+					// 	data : { 
+					// 		"formOperation" : createDataObject()
+					// 	},
+					// 	success: function(data, html){
+					// 		showAjaxMess(data);
+		   //              }
+		   //          });
+					alert(createDataObject);
+					//console.log(createDataObject);
+		           // return false;
 		        });
 
 		// 	});
