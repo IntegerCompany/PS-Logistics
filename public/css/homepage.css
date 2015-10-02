@@ -10,7 +10,7 @@
 	}
 		section.mainpage_top_img h1 span{
 			font-size: 25px !important;
-			line-height: 25px !important;																																																																																																					5px !important;
+			line-height: 25px !important;
 		}
 }
 
@@ -99,15 +99,9 @@ section.mainpage_top_img{
 		vertical-align: middle;
 	}
 	section.mainpage_top_img h1 {
-		position: absolute;
+		position: relative;
 		text-align: center;
-		left: 0;
-		right: 0;
-		top: 66px;
-		text-align: center;
-
-		/*position: relative;
-		margin-top: -150px;*/
+		margin-top: 100px;
 
 		line-height: 100px;
 		color: #fbc02d;

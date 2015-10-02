@@ -16,7 +16,7 @@ class Controller_Ajax extends Controller {
                         }
                         break;
                     case 'add-stuff':
-                        Session::instance()->set('');
+                        echo json_encode($v);
                         break;
                 }
             };

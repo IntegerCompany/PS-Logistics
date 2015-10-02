@@ -161,38 +161,67 @@
     </div>
 </div>
 
-<div class="col-md-2" id="navigation">
-    <ul class="row">
+<div id="navigation">
+    <a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
+    <ul>
         <!-- add class .active to LI when this page active -->
         <li>
-            <a href="javascript:;">map</a>
+            <a href="javascript:;">
+                <i class="icon-pin67"></i>
+                <i class="icon-locator"></i>
+                map
+            </a>
         </li>
         <li>
-            <a href="javascript:;">shipping</a>
+            <a href="/shipping">
+                <i class="icon-pin67"></i>
+                <i class="icon-locator"></i>
+                shipping
+            </a>
         </li>
         <li class="active">
-            <a href="javascript:;">stuff</a>
+            <a href="/stuff">
+                <i class="icon-pin67"></i>
+                <i class="icon-locator"></i>
+                stuff
+            </a>
         </li>
         <li>
-            <a href="javascript:;">trucks</a>
+            <a href="/truck">
+                <i class="icon-pin67"></i>
+                <i class="icon-locator"></i>
+                truck
+            </a>
         </li>
         <li>
-            <a href="javascript:;">trailers</a>
+            <a href="/trailer">
+                <i class="icon-pin67"></i>
+                <i class="icon-locator"></i>
+                trailer
+            </a>
         </li>
         <li>
-            <a href="javascript:;">brokers</a>
+            <a href="/broker">
+                <i class="icon-pin67"></i>
+                <i class="icon-locator"></i>
+                broker
+            </a>
         </li>
         <li>
-            <a href="javascript:;">phone search</a>
+            <a href="javascript:;">
+                <i class="icon-pin67"></i>
+                <i class="icon-locator"></i>
+                phone
+            </a>
         </li>
     </ul>
     <div class="controls">
-        <a href="javascript:;" class="logout col-md-6 col-xs-12">logout</a>
+        <a href="/logout" class="logout col-md-6 col-xs-12">logout</a>
         <a href="javascript:;" class="change_pass col-md-6 col-xs-12">change pass</a>
     </div>
 </div>
 
-<div class="col-md-10" id="content">
+<div id="content">
     <div class="row">
         <div class="container-fluid">
             <div class="admin_top">
@@ -270,19 +299,20 @@
     $(document).on('ready', function () {
         $('.image-editor').cropit({});
     });
+
     var addStuff = document.querySelector('form#add-form'),
         submitBtn = addStuff.querySelector('.submit-btn'),
 
         userNameInput = '[name="user-name"]',
         userLastNameInput = '[name="user-last-name"]',
         userPositionInput = '[name="user-position"]',
-        userAddressInput = '[name="user-address"]';
-    userZipCodeInput = '[name="user-zip-code"]',
+        userAddressInput = '[name="user-address"]',
+        userZipCodeInput = '[name="user-zip-code"]',
         userPhoneInput = '[name="user-phone"]',
-        userSSNInput = '[name = "user-ssn"]'
-    userEmailInput = '[name="user-email"]',
-        userDriveLicenseInput = '[name= "user-drive-lic"]';
-    userClassInput = '[name="user-class"]',
+        userSSNInput = '[name = "user-ssn"]',
+        userEmailInput = '[name="user-email"]',
+        userDriveLicenseInput = '[name= "user-drive-lic"]',
+        userClassInput = '[name="user-class"]',
         userEnrolmentInput = '[name="user-enrolment"]',
         userDateInput = '[name="user-date"]',
         userMedicineInput = '[name="user-medicine"]',
@@ -427,7 +457,7 @@
     }
 
     function createDataObject() {
-        return {
+        var arr = {
             "user-name": userName.value,
             "user-last-name": userLastName.value,
             "user-address": userAddress.value,
@@ -445,8 +475,10 @@
             "user-emergency-phone": userEmergencyPhone.value,
             "user-image": $('.image-editor').cropit('export'),
         };
+        console.log(arr);
+        return arr;
     }
-
+    createDataObject();
     function showAjaxMess(data) {
 
         var responseData = JSON.parse(data);
@@ -499,10 +531,13 @@
                 "add-stuff": createDataObject()
             },
             success: function (data) {
-                showAjaxMess(data);
+                alert(1);
+                alert(data);
             }
         });
-        //console.log(createDataObject);
+
+        alert(createDataObject());
+        //console.log(createDataObject());
         // return false;
     });
 
