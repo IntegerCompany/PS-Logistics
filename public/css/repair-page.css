@@ -1,0 +1,30 @@
+/*new-popup-form*/
+#myModalLabel{
+    text-align: center;
+}
+.modal-header, .modal-body, .modal-footer{
+    border:none;
+}
+.radio-new-form-right{
+    padding-bottom: 20px;
+    float: right;
+    text-align: right;
+}
+.radio-new-form-left{
+    padding-bottom: 20px;
+    float: left;
+}
+/*new-popup-form*/
+
+/* done-popup-form */
+.done-form-title{
+    text-align: center;
+    margin-top: 0;
+}
+/* done-popup-form */
+
+/*content*/
+.checkbox-repair, .table-info-repair{
+    padding: 0;
+}
+
