@@ -30,10 +30,28 @@
 	width: 60%;
 }
 
-#frmFile {border-top:#F0F0F0 2px solid;background:#FAF8F8;padding:10px;}
-.demoInputBox{padding:10px; border:#F0F0F0 1px solid; border-radius:4px;background-color:#FFF;}
-#file_error{color: #FF0000;}
-#btnSubmit{background-color:#2FC332;border:0;padding:10px 40px; margin:15px 0px; color:#FFF;border:#F0F0F0 1px solid; border-radius:4px;}
+#frmFile {
+	border-top:#F0F0F0 2px solid;
+	background:#FAF8F8;
+	padding-left:10px;
+	
+}
+#myFile{
+
+	margin-top: 10px;
+	padding-left:10px;
+
+}
+.file_error{
+	padding-left: 10px;
+	color: #FF0000;
+}
+.file-name{
+	color:#0000FF;
+	display: block;
+	padding-left: 10px;
+}
+
 
 /*content*/
 

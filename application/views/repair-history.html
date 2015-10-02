@@ -246,7 +246,10 @@
 						<tr>
 						 	<td>ARCADA</td>
 							<td>Hello </td>
-							<td><input type="file" name="img" accept="image/*" multiple></td>
+							<td>
+								<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile">
+								<span id="file_error" class="file_error"></span>
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -263,7 +266,10 @@
 						   <tr>
 						 		<td>ARCADA</td>
 								<td>Hello </td>
-								<td><input type="file" name="img" accept="image/*" multiple></td>
+								<td>
+									<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile">
+									<span id="file_error" class="file_error"></span>
+								</td>
 						 	</tr>
 						</tbody>
 					</table>
@@ -279,9 +285,10 @@
 						<tbody>
 						   <tr>
 						 		<td>ARCADA</td>
-								<td>Hello </td>
+								<td>Hello HelloHelloHelloHelloHelloHelloHelloHelloHello </td>
 								<td>
-									<input type="file" name="img" accept="image/*" multiple id="myFile" class="demoInputBox"><span id="file_error"></span>
+									<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile">
+									<span id="file_error" class="file_error"></span>
 								</td>
 						 	</tr>
 						</tbody>
@@ -308,18 +315,15 @@
                     $this.toggleClass("active");
                 })
         });
-			$('#myFile').bind('change', function() {
-				var l = this.files.length;
+			$('.myFile').bind('change', function() {
+				var l = this.files.length,
+					mas=[];
 				console.log(l);
-			for( var i =0;  i<l; i++){
+			for( var i =0;  i<=7; i++){
 				if(this.files[i].size < 5242880) {
-						$(this).after('<span>'+this.files[i].name+'</span>');
-					$(".demoInputBox").css("border-color","#FF0000");
-					$("#file_error").html("File size is greater than 2MB");
-					
+					$(this).after('<span class="file-name">'+this.files[i].name+'</span>');		
 				}
-			 		
-			  	$(".demoInputBox").css("border-color","#0FF000");
+			  	$(this).parent().find(".file_error").html("File size is greater than 2MB");
 					
 			  	}
 			});
