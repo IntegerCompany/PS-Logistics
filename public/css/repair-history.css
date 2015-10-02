@@ -50,8 +50,18 @@
 	color:#0000FF;
 	display: block;
 	padding-left: 10px;
+	padding-top: 5px;
 }
-
+.file-submit{
+	float: right;
+	margin-top: 20px;
+}
+.msg_error{
+	color: #FF0000;
+    display: block;
+    padding-left: 10px;
+    font-style: italic;
+}
 
 /*content*/
 
