@@ -27,4 +27,15 @@
 .checkbox-repair, .table-info-repair{
     padding: 0;
 }
-
+ .model_name{
+    }
+     .model_type,
+     .contact_name{
+        color: #aaaaaa;
+        /*font-size: 12px;*/
+    }
+     .icon-frontal19{
+        display: inline-block;
+        margin-top: 8px;
+        margin-right: 8px;
+    }

@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="<?php echo URL::base(); ?>public/css/homepage.css">
 </head>
 <body>
-
+<?php //print_r(Model::factory('Users')->check_user(array('login' => 'admin','password'=>"12345" )))?>
 <!-- login modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
