@@ -23,7 +23,8 @@ class Controller_Admin extends Controller {
 	public function action_stuff()
 	{
 		if(Session::instance()->get('user')){
-			$this->response->body(View::factory('/admin/stuff'));
+			$data['allStuff'] =  Model::factory('Stuff')->get_stuff();
+			$this->response->body(View::factory('/admin/stuff',$data));
 		} else {
 			HTTP::redirect(URL::base_url());
 		}
