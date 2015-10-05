@@ -5,45 +5,44 @@ class Controller_Admin extends Controller {
 
 	public function action_shipping()
 	{
-		if(Session::instance()->get('user')){
+		// if(Session::instance()->get('user')){
 			$this->response->body(View::factory('/admin/shipping'));
-		} else {
-			HTTP::redirect(URL::base_url());
-		}
+		// } else {
+			// HTTP::redirect(URL::base_url());
+		// }
 
 	}
 	public function action_broker()
 	{
-		if(Session::instance()->get('user')){
+		// if(Session::instance()->get('user')){
 			$this->response->body(View::factory('/admin/broker'));
-		} else {
-			HTTP::redirect(URL::base_url());
-		}
+		// } else {
+			// HTTP::redirect(URL::base_url());
+		// }
 	}
 	public function action_stuff()
 	{
-		if(Session::instance()->get('user')){
-			$data['allStuff'] =  Model::factory('Stuff')->get_stuff();
-			$this->response->body(View::factory('/admin/stuff',$data));
-		} else {
-			HTTP::redirect(URL::base_url());
-		}
+		// if(Session::instance()->get('user')){
+			 $this->response->body(View::factory('/admin/stuff'));
+		// } else {
+			// HTTP::redirect(URL::base_url());
+		// }
 	}
 	public function action_trailer()
 	{
-		if(Session::instance()->get('user')){
+		// if(Session::instance()->get('user')){
 			$this->response->body(View::factory('/admin/trailer'));
-		} else {
-			HTTP::redirect(URL::base_url());
-		}
+		// } else {
+			// HTTP::redirect(URL::base_url());
+		// }
 	}
 	public function action_truck()
 	{
-		if(Session::instance()->get('user')){
-			$this->response->body(View::factory('/admin/truck'));
-		} else {
-			HTTP::redirect(URL::base_url());
-		}
+		// if(Session::instance()->get('user')){
+			 $this->response->body(View::factory('/admin/truck'));
+		// } else {
+			// HTTP::redirect(URL::base_url());
+		// }
 	}
 	public function action_logout()
 	{

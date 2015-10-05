@@ -27,28 +27,27 @@
                 </div>
                 <div class="col-md-6">
                     <label from="last_name">Last Name</label>
-                    <input name=last_name" class="form-control" data-valid="text" placeholder="Last Name"
-                           type="text" autocomplete="off">
+                    <input name="last_name" class="form-control" data-valid="text" placeholder="Last Name"          type="text" autocomplete="off">
                 </div>
                 <div class="col-md-6">
                     <label from="dob">DOB</label>
-                    <input name=dob" class="form-control" data-valid="text" placeholder="DOB" type="text" autocomplete="off">
+                    <input name="dob" class="form-control" data-valid="text" placeholder="DOB" type="text" autocomplete="off">
                 </div>
                 <div class="col-md-6">
                     <label from="ssn">SSN#</label>
-                    <input name=ssn" class="form-control" placeholder="SSN" data-valid="text"
+                    <input name="ssn" class="form-control" placeholder="SSN" data-valid="text"
                            type="text" autocomplete="off">
                 </div>
                 <h4 class="col-md-12 text-center">Contacts data</h4>
 
                 <div class="col-md-6">
                     <label from="city">City</label>
-                    <input name=city" class="form-control" placeholder="City"
+                    <input name="city" class="form-control" placeholder="City"
                            type="text" autocomplete="off" data-valid="text">
                 </div>
                 <div class="col-md-6">
                     <label from="state">State</label>
-                    <input name=state" class="form-control" placeholder="State"
+                    <input name="state" class="form-control" placeholder="State"
                            type="text" autocomplete="off" data-valid="text">
                 </div>
                 <div class="col-md-6">
@@ -291,7 +290,127 @@
                     <i class="icon-print5"></i>
                 </li>
             </ol>
-           
+            
+            <!--  -->
+            <table class="global_table table table-bordered">
+              <tr>
+                <th rowspan="4" class="col-md-3">
+                <div>
+                    <img src="../../public/img/example.jpg" class="img-circle avatar-img " alt="Cinque Terre">
+                    <hgroup style="display: inline-block;">
+                        <h4>
+                            <b>Helena Tankish</b>
+                        </h4>
+                        <h5>Driver</h5>
+                    </hgroup>
+                </div>
+                <span>Address: <span>Lviv, Doroshenka St. 12</span></span>
+                </th>
+                <th colspan="5">
+                        <a href="" class="pull-right">
+                            <i class="icon-settings"></i>
+                        </a>
+                    <div class="pull-right" style="margin-right: 10px;">
+                        <i class="icon-phone54"></i>
+                        2435-5324-42
+                    </div>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="3" rowspan="3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="title">
+                                Driver License #
+                            </span>
+                            <p>
+                                <i class="icon-certification"></i>
+                                <span>4FL4DFG567</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="title">
+                                exp. date
+                            </span>
+                            <p>
+                                12.12.12
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="title">
+                                Enrolment
+                            </span>
+                            <div>
+                                <i class="icon-cart19"></i>
+                                <span>Fuel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="title">
+                                Class
+                            </span>
+                            <p>
+                                <i class="icon-certification"></i>
+                                <span>
+                                    A / B / C / D
+                                </span>
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            &nbsp;
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <i class="icon-cart19"></i>
+                                <span>Fuel</span>
+                            </div>
+                            <div>
+                                <i class="icon-cart19"></i>
+                                <span>Fuel</span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" rowspan="3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="title">
+                                Medicine insurance #
+                            </span>
+                            <p>
+                                <i class="icon-medical96"></i>
+                                <span>4FL4DFG567</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="title">
+                                Emergency contact
+                            </span>
+                            <p>
+                                <i class="icon-calling3"></i>
+                                <span>3242-3232-2332</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            Joe Longcaster
+                        </div>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+              </tr>
+              <tr>
+              </tr>
+            </table>
+            <!--  -->
+
         </div>
     </div>
 </div>
