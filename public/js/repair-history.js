@@ -2,8 +2,12 @@
 	$(document).ready(function() {
 		$.ajaxSetup({
             type: "POST",
-            url: window.location.origin + "/ajax"
+            url: "test.php"
         });
+        $.ajax({
+					        data:{
+					        	'fileDataSent': 1,
+					        }});
         $("h4").click(function() {
             var $this = $(this);
                 $this
@@ -69,24 +73,29 @@
 				       		readImage(fileData[i], i);
 				       }
 				       setTimeout(function(){ 
-					    //   $.ajax({
-					    //     data:{
-					    //     	'fileDataSent': fileDataSent,
-					    //     },
-
-					    //     beforeSend : function(xhr, opts){
-					    //         $(".load").css("display"," block");//show loading gif
-					    //     },
-					    //     success: function(){
-					    //     	$(".load").css("display"," none");//remove loading gif
-					    //     },
-					    //     error: function(){
-					    //     	$(".load").css("display"," none");//remove loading gif
-					    //     }
-					        
-					    // });
+					      
 
 				       	console.log(fileDataSent) }, 0);
+
+				       $.ajax({
+					        data:{
+					        	'fileDataSent': fileDataSent,
+					        },
+
+					        beforeSend : function(){
+					            $(".load").css("display"," block");//show loading gif
+					        },
+					        success: function(){
+					        	$(".load").css("display"," none");//remove loading gif
+					        	alert("success");
+					        	$(".file-name").css("text-decoration" , "underline");
+					        	 $(".file-name").css("color", "#0000FF");
+					        },
+					        error: function(){
+					        	$(".load").css("display"," none");//remove loading gif
+					        }
+					        
+					    });
 			});
 
 
