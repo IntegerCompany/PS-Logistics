@@ -1,5 +1,9 @@
 (function($){
 	$(document).ready(function() {
+		$.ajaxSetup({
+            type: "POST",
+            url: window.location.origin + "/ajax"
+        });
         $("h4").click(function() {
             var $this = $(this);
                 $this
@@ -16,29 +20,37 @@
 				var l = this.files.length;
 					fileUpload = this.files
 					num = fileData.length;
-					
-			n+=1 ;
-			switch(n){
-				case 1 :
+					n+=1 ;
 					for( var i =0;  i< l; i++){
 						$(this).before('<span class="file-name">'+this.files[i].name+
-						 '<button data-id="'+num+'" class="remove-btn"></button>'+'</span>');
-
-
+					 '<button data-id="'+num+'" class="remove-btn"></button>'+'</span>');
 						fileData[num] = this.files[i];
 						num++;
 					}
-				break;
-				default:
-					for( var i =0;  i< l; i++){
-							$(this).after('<span class="file-name">'+this.files[i].name+'<button data-id="'+num+'" class="remove-btn"></button>'+'</span>');
-							fileData[num] = this.files[i];
-							num++;
-					}	
-				break;
-						};
-						console.log(fileData);
-			});
+				});
+
+			// n+=1 ;
+			// switch(n){
+			// 	case 1 :
+			// 		for( var i =0;  i< l; i++){
+			// 			$(this).before('<span class="file-name">'+this.files[i].name+
+			// 			 '<button data-id="'+num+'" class="remove-btn"></button>'+'</span>');
+
+
+			// 			fileData[num] = this.files[i];
+			// 			num++;
+			// 		}
+			// 	break;
+			// 	default:
+			// 		for( var i =0;  i< l; i++){
+			// 				$(this).after('<span class="file-name">'+this.files[i].name+'<button data-id="'+num+'" class="remove-btn"></button>'+'</span>');
+			// 				fileData[num] = this.files[i];
+			// 				num++;
+			// 		}	
+			// 	break;
+			// 			};
+			// 			console.log(fileData);
+			// });
 
 			$(document).on('click', ".remove-btn", function(){
 				$(this).parent().remove();
@@ -56,8 +68,29 @@
 				       for( var i =0; i< fileData.length; i++){
 				       		readImage(fileData[i], i);
 				       }
-				       setTimeout(function(){ console.log(fileDataSent) }, 0);
+				       setTimeout(function(){ 
+					    //   $.ajax({
+					    //     data:{
+					    //     	'fileDataSent': fileDataSent,
+					    //     },
+
+					    //     beforeSend : function(xhr, opts){
+					    //         $(".load").css("display"," block");//show loading gif
+					    //     },
+					    //     success: function(){
+					    //     	$(".load").css("display"," none");//remove loading gif
+					    //     },
+					    //     error: function(){
+					    //     	$(".load").css("display"," none");//remove loading gif
+					    //     }
+					        
+					    // });
+
+				       	console.log(fileDataSent) }, 0);
 			});
+
+
+
 			function readImage(input, i) {
 				var rez = "";
 			    if ( input ) {
@@ -70,16 +103,14 @@
 			        		'type': input.type,
 			        		'base64': rez
 			        	}
-			        	// fileDataSent['name'] = input.name;
-			        	// fileDataSent['type'] = input.type;
-			        	// fileDataSent['base64'] = rez;
-			            //console.log( fileDataSent[i],i);
-			           
+			        				           
 			        };     
 			       
 			        FR.readAsDataURL( input);
 			    }
 			}
+
+			
 })(window.jQuery)
 
 // <button type="button" class="btn btn-default remove-attach-button pull-left">

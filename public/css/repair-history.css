@@ -75,6 +75,9 @@
 	height: 15px;
     margin-left: 20px;
 }
+.load{
+	display: none;
+}
 /*content*/
 fileDataSent['base64'] = input;
 			        	fileDataSent['name'] = input.name;
