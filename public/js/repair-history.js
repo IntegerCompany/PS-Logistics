@@ -22,7 +22,7 @@
 				case 1 :
 					for( var i =0;  i< l; i++){
 						$(this).before('<span class="file-name">'+this.files[i].name+
-						 '<button data-id="'+num+'" class="remove-btn">x</button>'+'</span>');
+						 '<button data-id="'+num+'" class="remove-btn"></button>'+'</span>');
 
 
 						fileData[num] = this.files[i];
@@ -31,7 +31,7 @@
 				break;
 				default:
 					for( var i =0;  i< l; i++){
-							$(this).after('<span class="file-name">'+this.files[i].name+'<button data-id="'+num+'" class="remove-btn">x</button>'+'</span>');
+							$(this).after('<span class="file-name">'+this.files[i].name+'<button data-id="'+num+'" class="remove-btn"></button>'+'</span>');
 							fileData[num] = this.files[i];
 							num++;
 					}	

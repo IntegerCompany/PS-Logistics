@@ -65,12 +65,16 @@
 #repair-table .global_table th, .global_table td{
     vertical-align: top!important;
 }
-/*.remove-btn{
+.remove-btn{
 	padding-left: 10px;
-	background: none;
+	/*background: none;*/
 	border: none;
-	color: #FF0000;
-}*/
+	/*color: #FF0000;*/
+	background: url(../../public/img/delete.png) no-repeat;
+	background-size: contain;
+	height: 15px;
+    margin-left: 20px;
+}
 /*content*/
 fileDataSent['base64'] = input;
 			        	fileDataSent['name'] = input.name;
