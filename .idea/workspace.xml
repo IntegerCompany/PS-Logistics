@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1520ee1e-225a-4de0-a879-5b6f9b1ac38c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/file/test1_test_last1/P9056454.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/file/test1_test_last1/P9056455.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/file/test1_test_last1/P9056459.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/file/test1_test_last1/P9056460.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/maintenance.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/Controller/Admin.php" afterPath="$PROJECT_DIR$/application/classes/Controller/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/bootstrap.php" afterPath="$PROJECT_DIR$/application/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/broker.php" afterPath="$PROJECT_DIR$/application/views/admin/broker.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/repair-history.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/repair-history.css" afterPath="$PROJECT_DIR$/public/css/repair-history.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/repair-history.html" afterPath="$PROJECT_DIR$/application/views/repair-history.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/shipping.php" afterPath="$PROJECT_DIR$/application/views/admin/shipping.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/stuff.php" afterPath="$PROJECT_DIR$/application/views/admin/stuff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/trailer.php" afterPath="$PROJECT_DIR$/application/views/admin/trailer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/truck.php" afterPath="$PROJECT_DIR$/application/views/admin/truck.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PS-Logistics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +30,9 @@
       <file leaf-file-name="stuff.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/stuff.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.7454545">
+            <state vertical-scroll-proportion="0.0">
               <caret line="271" column="6" selection-start-line="271" selection-start-column="6" selection-end-line="271" selection-end-column="6" />
-              <folding>
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,23 +40,29 @@
       <file leaf-file-name="trailer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/trailer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.592592">
+            <state vertical-scroll-proportion="0.0">
               <caret line="213" column="6" selection-start-line="213" selection-start-column="6" selection-end-line="213" selection-end-column="6" />
-              <folding>
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="truck.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="truck.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/truck.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23986487">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="241" column="6" selection-start-line="241" selection-start-column="6" selection-end-line="241" selection-end-column="6" />
-              <folding>
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.6666667">
+              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,7 +70,7 @@
       <file leaf-file-name="Admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.4716983">
+            <state vertical-scroll-proportion="0.0">
               <caret line="50" column="63" selection-start-line="50" selection-start-column="63" selection-end-line="50" selection-end-column="63" />
               <folding />
             </state>
@@ -87,7 +80,7 @@
       <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="153" column="112" selection-start-line="153" selection-start-column="112" selection-end-line="153" selection-end-column="112" />
               <folding />
             </state>
@@ -97,7 +90,7 @@
       <file leaf-file-name="maintenance.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/maintenance.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.888889">
+            <state vertical-scroll-proportion="0.0">
               <caret line="36" column="95" selection-start-line="36" selection-start-column="95" selection-end-line="37" selection-end-column="49" />
               <folding />
             </state>
@@ -107,11 +100,9 @@
       <file leaf-file-name="shipping.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/shipping.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.9259257">
+            <state vertical-scroll-proportion="0.0">
               <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="187" selection-end-column="6" />
-              <folding>
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,30 +110,18 @@
       <file leaf-file-name="broker.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/broker.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3703704">
+            <state vertical-scroll-proportion="0.0">
               <caret line="168" column="6" selection-start-line="168" selection-start-column="6" selection-end-line="168" selection-end-column="6" />
-              <folding>
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="repair-history.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/repair-history.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.925926">
-              <caret line="297" column="55" selection-start-line="297" selection-start-column="55" selection-end-line="297" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_layout_doc.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin_layout_doc.html">
+      <file leaf-file-name="repair-history.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/repair-history.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.666667">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="33" />
+            <state vertical-scroll-proportion="-0.5921986">
+              <caret line="250" column="12" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -176,11 +155,11 @@
         <option value="$PROJECT_DIR$/application/classes/Controller/Admin.php" />
         <option value="$PROJECT_DIR$/application/bootstrap.php" />
         <option value="$PROJECT_DIR$/application/views/admin/maintenance.php" />
-        <option value="$PROJECT_DIR$/application/views/repair-history.html" />
         <option value="$PROJECT_DIR$/application/views/admin/broker.php" />
         <option value="$PROJECT_DIR$/application/views/admin/stuff.php" />
         <option value="$PROJECT_DIR$/application/views/admin/trailer.php" />
         <option value="$PROJECT_DIR$/application/views/admin/truck.php" />
+        <option value="$PROJECT_DIR$/application/views/repair-history.html" />
       </list>
     </option>
   </component>
@@ -224,6 +203,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -374,7 +354,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -660,13 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/json.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -685,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="26437" selection-start-line="16" selection-start-column="26437" selection-end-line="16" selection-end-column="26437" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,7 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="985" column="14" selection-start-line="985" selection-start-column="14" selection-end-line="985" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,7 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -733,7 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +757,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin_layout_doc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.666667">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
@@ -797,7 +765,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.4716983">
+        <state vertical-scroll-proportion="0.0">
           <caret line="50" column="63" selection-start-line="50" selection-start-column="63" selection-end-line="50" selection-end-column="63" />
           <folding />
         </state>
@@ -805,43 +773,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="153" column="112" selection-start-line="153" selection-start-column="112" selection-end-line="153" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/repair-history.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.925926">
-          <caret line="297" column="55" selection-start-line="297" selection-start-column="55" selection-end-line="297" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/broker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3703704">
+        <state vertical-scroll-proportion="0.0">
           <caret line="168" column="6" selection-start-line="168" selection-start-column="6" selection-end-line="168" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/shipping.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.9259257">
+        <state vertical-scroll-proportion="0.0">
           <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="187" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/maintenance.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.888889">
+        <state vertical-scroll-proportion="0.0">
           <caret line="36" column="95" selection-start-line="36" selection-start-column="95" selection-end-line="37" selection-end-column="49" />
           <folding />
         </state>
@@ -849,31 +805,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/stuff.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7454545">
+        <state vertical-scroll-proportion="0.0">
           <caret line="271" column="6" selection-start-line="271" selection-start-column="6" selection-end-line="271" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/trailer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.592592">
+        <state vertical-scroll-proportion="0.0">
           <caret line="213" column="6" selection-start-line="213" selection-start-column="6" selection-end-line="213" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/truck.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23986487">
+        <state vertical-scroll-proportion="-0.0">
           <caret line="241" column="6" selection-start-line="241" selection-start-column="6" selection-end-line="241" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6666667">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/repair-history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5921986">
+          <caret line="250" column="12" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
