@@ -31,23 +31,24 @@ class Controller_Ajax extends Controller
                                 return false;
                             }
                         }
-                        $dirName = $v['first_name'].'_'.$v['last_name'].'_'.$v['phone'];
-                        $arrFile = explode('.',$v['photo']['name']);
-                        $newPhoto = write_file_from_byte($v['photo']['data'],$arrFile[0],$arrFile[1],$dirName);
-                        if($newPhoto){
-                            $v['photo'] = $newPhoto;
-                        } else {
-                            $v['photo'] = 'http://'.$_SERVER['SERVER_NAME'].'/public/img/no-avatar.jpg';
+                        $dirName = $v['first_name'].'_'.$v['last_name'];
+                        foreach($v as $k => &$val){
+                            if(strpos($k,'_file')){
+                                $arrFile = explode('.',$val['name']);
+                                $newPhoto = write_file_from_byte($val['base64'],$arrFile[0],$arrFile[1],$dirName);
+                                if($newPhoto){
+                                    $val = $newPhoto;
+                                } else {
+                                    $val = 'http://'.$_SERVER['SERVER_NAME'].'/public/img/no-avatar.jpg';
+                                }
+                            }
                         }
-                        $v = array_flip($v);
-                        foreach ($v as $value) {
-                            $array_key[] = $value;
-                        }
-                        $v = array_flip($v);
-                        foreach($array_key as $val){
-                            $values[] = $v[$val];
+                        foreach ($v as $key => $value) {
+                            $array_key[] = $key;
+                            $values[] = $v[$key];
                         }
                         Model::factory('Stuff')->add_stuff($array_key,$values);
+                        print_r([$array_key,$values]);
                         break;
                 }
             };
