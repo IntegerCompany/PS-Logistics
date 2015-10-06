@@ -22,8 +22,7 @@
 				case 1 :
 					for( var i =0;  i< l; i++){
 						$(this).before('<span class="file-name">'+this.files[i].name+
-						 '<button class="btn btn-default" data-id="'+num+'" class="remove-btn">'
-						 +'<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>'+'</button>'+'</span>');
+						 '<button data-id="'+num+'" class="remove-btn">x</button>'+'</span>');
 
 
 						fileData[num] = this.files[i];
