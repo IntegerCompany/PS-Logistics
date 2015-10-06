@@ -6,11 +6,12 @@
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/public/css/application.css">
 	<link rel="stylesheet" href="/public/css/admin_theme.css">
+	<link rel="stylesheet" href="/public/css/repair-history.css">
 </head>
 <body>
 
 <!-- login modal -->
-<div class="modal fade" id="truckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="trailerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -25,18 +26,18 @@
 								new
 							</div>
 							<div class="form-group">
-							  <label for="truck_id">truck #</label>
-							  <input type="text" class="form-control" id="truck_id">
+							  <label for="trailer_id">trailer #</label>
+							  <input type="text" class="form-control" id="trailer_id">
 							</div>
 							<div class="form-group">
-							  <label for="truck_license_plate">license plate</label>
-							  <input type="text" class="form-control" id="truck_license_plate">
+							  <label for="trailer_license_plate">license plate</label>
+							  <input type="text" class="form-control" id="trailer_license_plate">
 							</div>
 							<div class="form-group">
-								<label for="truck_license_plate_exp">exp. license plate</label>
+								<label for="trailer_license_plate_exp">exp. license plate</label>
 								<div class="row">
 									<div class="col-md-4">
-										<select class="form-control" id="truck_license_plate_exp">
+										<select class="form-control" id="trailer_license_plate_exp">
 									    <option value="">2015</option>
 									    <option value="">2016</option>
 									  </select>
@@ -70,23 +71,19 @@
 								</div>
 							</div>
 							<div class="form-group">
-							  <label for="truck_make">make</label>
-							  <input type="text" class="form-control" id="truck_make">
+							  <label for="trailer_make">make</label>
+							  <input type="text" class="form-control" id="trailer_make">
 							</div>
 							<!-- make more years... -->
 							<div class="form-group">
-							  <label for="truck_year">year</label>
-							  <select class="form-control" id="truck_year">
+							  <label for="trailer_year">year</label>
+							  <select class="form-control" id="trailer_year">
 							    <option value="">1990</option>
 							    <option value="">1991</option>
 							    <option value="">1992</option>
 							    <option value="">1993</option>
 							    <option value="">1994</option>
 							  </select>
-							</div>
-							<div class="form-group">
-							  <label for="truck_color">color</label>
-							  <input type="text" class="form-control" id="truck_color">
 							</div>
 							<div class="form-group">
 							  <label for="trailer_vin">VIN #</label>
@@ -138,30 +135,6 @@
 								</select>
 							</div>
 							<div class="form-group">
-							  <label for="trailer_trl">trl #</label>
-							  <select class="form-control">
-								  <option value="">1202</option>
-								  <option value="">Tommy</option>
-								  <option value="">Boris Britva</option>
-								</select>
-							</div>
-							<div class="form-group">
-							  <label for="trailer_driver">driver</label>
-							  <select class="form-control">
-								  <option value="">Jason Statham</option>
-								  <option value="">Tommy</option>
-								  <option value="">Boris Britva</option>
-								</select>
-							</div>
-							<div class="form-group">
-							  <label for="trailer_dispatcher">dispatcher</label>
-							  <select class="form-control">
-								  <option value="">Jason Statham</option>
-								  <option value="">Tommy</option>
-								  <option value="">Boris Britva</option>
-								</select>
-							</div>
-							<div class="form-group">
 								<button type="submit" class="_btn add_new">Submit</button>
 								<button type="submit" class="_btn delete">Discard</button>
 							</div>
@@ -175,7 +148,7 @@
 </div>
 
 <div id="navigation">
-	<a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
+	<img src="/public/img/logo.png" class="img-responsive nav_logo" alt="">
 	<ul>
 		<!-- add class .active to LI when this page active -->
 		<li>
@@ -185,58 +158,51 @@
 				map
 			</a>
 		</li>
-		<li class="active">
-			<a href="/shipping">
+		<li>
+			<a href="javascript:;">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
 				shipping
 			</a>
 		</li>
 		<li>
-			<a href="/stuff">
+			<a href="javascript:;">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
 				stuff
 			</a>
 		</li>
 		<li>
-			<a href="/truck">
+			<a href="javascript:;">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
-				truck
+				trucks
 			</a>
 		</li>
-		<li>
-			<a href="/trailer">
+		<li class="active">
+			<a href="javascript:;">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
-				trailer
-			</a>
+				trailers
+				</a>
 		</li>
 		<li>
-			<a href="/broker">
+			<a href="javascript:;">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
-				broker
+				brokers
 			</a>
 		</li>
 		<li>
 			<a href="javascript:;">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
-				phone
-			</a>
-		</li>
-		<li>
-			<a href="/maintenance">
-				<i class="icon-pin67"></i>
-				<i class="icon-locator"></i>
-				maintenance
+				phone search
 			</a>
 		</li>
 	</ul>
 	<div class="controls">
-		<a href="/logout" class="logout col-md-6 col-xs-12">logout</a>
+		<a href="javascript:;" class="logout col-md-6 col-xs-12">logout</a>
 		<a href="javascript:;" class="change_pass col-md-6 col-xs-12">change pass</a>
 	</div>
 </div>
@@ -248,12 +214,12 @@
 				<a class="visible-xs visible-sm toggle_menu" href="javascript:;">
 					toggle
 				</a>
-				<h2 class="admin_title">truck</h2>
-				<button type="button" class="_btn add_new" data-toggle="modal" data-target="#truckModal">
+				<h2 class="admin_title">REPAIR HISTORY</h2>
+				<button type="button" class="_btn add_new" data-toggle="modal" data-target="#trailerModal">
 				  new
 				</button>
 			</div>
-
+			
 			<ol class="breadcrumb">
 			  <li><a href="#">Home</a></li>
 			  <li><a href="#">Library</a></li>
@@ -262,48 +228,65 @@
 			  	<i class="icon-print5"></i>
 			  </li>
 			</ol>
-			
-			<table class="global_table table table-bordered">
-				<thead>
-					<tr>
-						<th colspan="2"># ID</th>
-						<th>License plate</th>
-						<th>Make</th>
-						<th>Year</th>
-						<th>Color</th>
-						<th>VIN</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td width="10">
-							<a href="javascript:;" class="_btn edit">
-								<i class="icon-params"></i>
-							</a>
-						</td>
-						<td>59</td>
-						<td>1202</td>
-						<td>Some</td>
-						<td>2000</td>
-						<td>pink</td>
-						<td>1234567890ABCDEFG</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="javascript:;" class="_btn edit">
-								<i class="icon-params"></i>
-							</a>
-						</td>
-						<td>60</td>
-						<td>1203</td>
-						<td>Some1</td>
-						<td>2001</td>
-						<td>red</td>
-						<td>1234567890ABCDEFGaaaa</td>
-					</tr>
-				</tbody>
-			</table>
 
+			<h1>TRUCK/TRAILER OWNER</h1>
+    
+    <!--acardion --> 
+	        <section class="history-content">
+	            <h4>Date: 12/12/1215</h4>
+	            <table class="global_table table table-bordered">
+					<thead>
+						<tr>
+							<th class="company-name">Company Name</th>
+						 	<th class="description">Description</th>
+						 	<th >Upload Files</th>
+						 </tr>
+					</thead>
+					<tbody>
+						<tr>
+						 	<td>ARCADA</td>
+							<td>Hello </td>
+							<td><input type="file" name="img" accept="image/*" multiple></td>
+						</tr>
+					</tbody>
+				</table>
+	            <h4>Date: 11/12/1215</h4>
+	            	<table class="global_table table table-bordered">
+						<thead>
+							<tr>
+								<th class="company-name">Company Name</th>
+						 		<th class="description">Description</th>
+						 		<th >Upload Files</th>
+						 	</tr>
+						</thead>
+						<tbody>
+						   <tr>
+						 		<td>ARCADA</td>
+								<td>Hello </td>
+								<td><input type="file" name="img" accept="image/*" multiple></td>
+						 	</tr>
+						</tbody>
+					</table>
+					<h4>Date: 13/12/1215</h4>
+	            	<table class="global_table table table-bordered">
+						<thead>
+							<tr>
+								<th class="company-name">Company Name</th>
+						 		<th class="description">Description</th>
+						 		<th >Upload Files</th>
+						 	</tr>
+						</thead>
+						<tbody>
+						   <tr>
+						 		<td>ARCADA</td>
+								<td>Hello </td>
+								<td>
+									<input type="file" name="img" accept="image/*" multiple id="myFile" class="demoInputBox"><span id="file_error"></span>
+								</td>
+						 	</tr>
+						</tbody>
+					</table>
+	        </section>
 		</div>
 	</div>
 </div>
@@ -312,6 +295,36 @@
 <script type="text/javascript" src="/public/js/jquery-2.1.4.min.js"></script>	
 <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>	
 <script type="text/javascript" src="/public/js/core.js"></script>
+<script>
+	(function($){
+			$(document).ready(function() {
+            $("h4").click(function() {
+                    var $this = $(this);
+                    $this
+                        .next("table")
+                        .slideToggle("fast")
+                        .siblings("table:visible")
+                        .slideUp("fast");
+                    $this.toggleClass("active");
+                })
+        });
+			$('#myFile').bind('change', function() {
+				var l = this.files.length;
+				console.log(l);
+			for( var i =0;  i<l; i++){
+				if(this.files[i].size < 5242880) {
+						$(this).after('<span>'+this.files[i].name+'</span>');
+					$(".demoInputBox").css("border-color","#FF0000");
+					$("#file_error").html("File size is greater than 2MB");
+					
+				}
+			 		
+			  	$(".demoInputBox").css("border-color","#0FF000");
+					
+			  	}
+			});
 
+	})(window.jQuery)
+</script>
 </body>
 </html>

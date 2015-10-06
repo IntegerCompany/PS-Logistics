@@ -49,7 +49,7 @@ $(document).ready(function () {
                         text = "Incorrect email";
                         return testinput(reg, text, el);
                     case 'date':
-                        if(el.val != ''){
+                        if (el.val != '') {
                             return new Date(el.val()).getTime() / 1000
                         } else {
                             return false
@@ -101,7 +101,7 @@ $(document).ready(function () {
                     resultObj[name] = val;
                     c.next('span').remove();
                 }
-                c.parents('div').css('margin-bottom','25px');
+                c.parents('div').css('margin-bottom', '25px');
             });
             return resultObj;
 
@@ -131,8 +131,8 @@ $(document).ready(function () {
                 var reader = new FileReader();
                 reader.onload = function () {
                     var strObj = JSON.stringify({
-                        "base64":reader.result,
-                        "type" : f[0].type,
+                        "base64": reader.result,
+                        "type": f[0].type,
                         "name": f[0].name
                     });
                     c.next('input[type=hidden]').val(strObj);
@@ -145,29 +145,37 @@ $(document).ready(function () {
         $('.add_new_stuff').on('click', function () {
 
             var cropit = $('.cropit-image-input')[0].files[0];
-            if(cropit){
+            if (cropit) {
                 $('.image-editor input[name]').val(JSON.stringify({
-                    "base64" : $('.image-editor').cropit('export'),
-                    "name" : cropit.name,
-                    "type" : cropit.type
+                    "base64": $('.image-editor').cropit('export'),
+                    "name": cropit.name,
+                    "type": cropit.type
                 }));
             }
             var result = validate($('#addStuff .valid-form'));
 
-            if(Object.keys(result).length >4){
+            if (Object.keys(result).length > 4) {
                 console.log(result);
 
                 $.ajax({
-                    data:{
+                    data: {
                         'add-stuff': result
                     },
-                    success: function(data){
+                    success: function (data) {
                         console.log(data);
                     }
                 });
             }
         });
-
+        $('.setting').on('click',function(){
+            $.ajax({
+                data:{
+                    'get_stuff_info': $(this).data('id')
+                },
+                async: false
+            });
+            $('#addStuff').modal('show');
+        });
     });
 
 });

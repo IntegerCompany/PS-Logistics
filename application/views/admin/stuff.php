@@ -205,7 +205,7 @@
 </div>
 
 <div id="navigation">
-    <img src="/public/img/logo.png" class="img-responsive nav_logo" alt="">
+    <a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
     <ul>
         <!-- add class .active to LI when this page active -->
         <li>
@@ -215,14 +215,14 @@
                 map
             </a>
         </li>
-        <li>
+        <li class="active">
             <a href="/shipping">
                 <i class="icon-pin67"></i>
                 <i class="icon-locator"></i>
                 shipping
             </a>
         </li>
-        <li class="active">
+        <li>
             <a href="/stuff">
                 <i class="icon-pin67"></i>
                 <i class="icon-locator"></i>
@@ -233,21 +233,21 @@
             <a href="/truck">
                 <i class="icon-pin67"></i>
                 <i class="icon-locator"></i>
-                trucks
+                truck
             </a>
         </li>
         <li>
             <a href="/trailer">
                 <i class="icon-pin67"></i>
                 <i class="icon-locator"></i>
-                trailers
+                trailer
             </a>
         </li>
         <li>
             <a href="/broker">
                 <i class="icon-pin67"></i>
                 <i class="icon-locator"></i>
-                brokers
+                broker
             </a>
         </li>
         <li>
@@ -257,9 +257,16 @@
                 phone
             </a>
         </li>
+        <li>
+            <a href="/maintenance">
+                <i class="icon-pin67"></i>
+                <i class="icon-locator"></i>
+                maintenance
+            </a>
+        </li>
     </ul>
     <div class="controls">
-        <a href="javascript:;" class="logout col-md-6 col-xs-12">logout</a>
+        <a href="/logout" class="logout col-md-6 col-xs-12">logout</a>
         <a href="javascript:;" class="change_pass col-md-6 col-xs-12">change pass</a>
     </div>
 </div>
@@ -302,7 +309,7 @@
                 <span>Address: <span><?=$val['state'].','.$val['city'].','.$val['zip_code'];?></span></span>
                 </th>
                 <th colspan="5">
-                        <a href="" class="pull-right">
+                        <a href="javascript:;" class="pull-right setting" data-id="<?=$val['id'];?>">
                             <i class="icon-settings"></i>
                         </a>
                     <div class="pull-right" style="margin-right: 10px;">

@@ -173,6 +173,13 @@
 				phone
 			</a>
 		</li>
+		<li>
+			<a href="/maintenance">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				maintenance
+			</a>
+		</li>
 	</ul>
 	<div class="controls">
 		<a href="/logout" class="logout col-md-6 col-xs-12">logout</a>
