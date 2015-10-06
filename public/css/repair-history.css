@@ -62,9 +62,19 @@
     padding-left: 10px;
     font-style: italic;
 }
-
+#repair-table .global_table th, .global_table td{
+    vertical-align: top!important;
+}
+/*.remove-btn{
+	padding-left: 10px;
+	background: none;
+	border: none;
+	color: #FF0000;
+}*/
 /*content*/
-
+fileDataSent['base64'] = input;
+			        	fileDataSent['name'] = input.name;
+			        	fileDataSent['type'] = input.type;
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
