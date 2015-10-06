@@ -115,6 +115,9 @@ body {
 .form-control{
   border-radius: 0;
 }
+textarea.form-control {
+  resize: none;
+}
 .breadcrumb{
   border-radius: 0;
   float: left;
@@ -146,7 +149,8 @@ body {
     color: #fff;
     cursor: pointer;
   }
-    .breadcrumb .print:before{
+    .breadcrumb .print:before,
+    .breadcrumb .select:before{
       content: ' ';
     }
     .breadcrumb .print:hover i{
@@ -159,7 +163,9 @@ body {
       -o-transition: color .3s ease-in-out;
       transition: color .3s ease-in-out;
     }
-
+  .breadcrumb .select{
+    float: right;
+  }
 /* animate css*/
 .animated {
   -webkit-animation-duration: 1.5s;
