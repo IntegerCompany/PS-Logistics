@@ -298,7 +298,7 @@
             <?php foreach($info as $val){?>
             <table class="global_table table table-bordered">
               <tr>
-                <th rowspan="4" class="col-md-3">
+                <th rowspan="4" class="col-md-3 img-section">
                 <div>
                     <img src="<?=$val['avatar_file'];?>" class="img-circle avatar-img " alt="Cinque Terre">
                     <hgroup style="display: inline-block;">
@@ -370,7 +370,7 @@
                 </td>
                 <td colspan="2" rowspan="3">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <span class="title">
                                 Medical card expiration #
                             </span>
@@ -379,9 +379,10 @@
                                 <span><?=$val['medical_expiration'];?></span>
                             </p>
                         </div>
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             &nbsp;
-                        </div>
+                            <br>
+                        </div> -->
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -394,7 +395,7 @@
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <?=$val['emergency_contact'];?>
+                            <?=$val['emergency_contact'];?> Joe Longcaster
                         </div>
                     </div>
                 </td>

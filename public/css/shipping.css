@@ -20,7 +20,7 @@
 	.shipping_table tbody i{
 		font-size: 20px;
 		display: inline-block;
-		margin-top: 8px;
+		/*margin-top: 8px;*/
 		margin-right: 8px;
 	}
 	.shipping_table .model_name{
@@ -51,3 +51,14 @@
 		background: #fbc02d;
 		text-align: center;
 	}
+	.shipping_table .price-style{
+		float: left;
+		margin-top:10px;
+	}
+	.shipping_table .number{
+		padding-left: 5px;
+	}
+		.shipping_table a:hover{
+			text-decoration: none;
+
+		}
