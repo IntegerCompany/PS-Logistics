@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>PS Logistics LLC</title>
 	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../public/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../../public/css/application.css">
 	<link rel="stylesheet" href="../../public/css/admin_theme.css">
 	<link rel="stylesheet" href="../../public/css/repair-page.css">
@@ -22,16 +23,12 @@
 	      			<div class="col-md-12">
 						<form class="form global_form">
 							<div class="radio-new-form-right">
-								<label>
-								    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-								      	TREILER 
-								</label>
+								<input type="radio" id="radio01" name="radio" />
+							    <label for="radio01"><span></span>TREILER </label>
 							</div>
 							<div class="radio-new-form-left">
-							    <label>
-							        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-								      	TRUK
-							    </label>
+							    <input type="radio" id="radio02" name="radio" />
+							    <label for="radio02"><span></span>TRUK</label>
 							</div>
 							<div class="form-group">
 								<select class="form-control">
@@ -69,14 +66,30 @@
       				<div class="col-md-12">
 						<form class="form global_form">
 							<h3 class="done-form-title">Select files</h3>
-							<div class="form-group">
-			    				<input type="file" name="img" accept="image/*" multiple id="myFile" class="demoInputBox">
+							<div class="form-group done-file">
+			    				<!-- <input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" "/>
+								<span id="file_error" class="file_error"></span>
+								<span  class="msg_error"></span> -->
+								<!-- <input type="submit" value="submit" class="file-submit _btn add_new" /> -->
+								<div class="add-file-section">
+									<label for="myFile" class="custom-file-upload">
+	    								<i class="fa fa-cloud-upload add-icon"></i>Upload Files
+									</label>
+									<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" " />
+									<span id="file_error" class="file_error"></span>
+									<span  class="msg_error"></span>
+								</div>
 				  			</div>
-							<div class="form-group">
-								<button type="submit" class="_btn add_new">Submit</button>
-								<button type="submit" class="_btn delete">Discard</button>
-							</div>
+							<div class="form-group"> 
+								<div class=" _btn add_new">
+									<input type="button" value="submit" class="file-submit file-sub-popup">
+									<img class="load" src="../../public/img/load.GIF" alt="load"> 
+								</div>
+								<button type="submit" class="_btn delete">Discard</button> 
+							</div> 
+							
 						</form>
+						
 	        		</div>
 	      		</div>
       		</div>
@@ -146,12 +159,11 @@
 <div id="content">
 	<div class="row">
 		<div class="container-fluid">
-
 			<div class="admin_top">
 				<a class="visible-xs visible-sm toggle_menu" href="javascript:;">
 					toggle
 				</a>
-				<h2 class="admin_title">REPAIR PAGE</h2>
+				<h2 class="admin_title">MAINTENANCE</h2>
 				<button type="button" class="_btn add_old" data-toggle="modal" data-target="#done-popup-form">
 				  done
 				</button>
@@ -160,10 +172,7 @@
 				  new
 				</button>
 			</div>
-			
-
 			<hr>
-
 			<ol class="breadcrumb">
 			  <li><a href="#">Home</a></li>
 			  <li><a href="#">Library</a></li>
@@ -176,22 +185,30 @@
 	</div>	
 	<div class="row">
 		<div class="container-fluid">
-			<div class="col-md-1 checkbox-repair">
-				<input type="checkbox">
-			</div>
-			<div class="col-md-11 table-info-repair">
+			<div class="col-md-12 table-info-repair">
 				<table id="repair-table " class="global_table table table-bordered">
 				<thead>
 					<tr>
+						<th>
+							<div class="mark">
+								<input id="maintenance-checkbox" type="checkbox" name="toppings" value="ham">
+								<label for="maintenance-checkbox"></label>
+							</div>
+						</th>
 						<th> Date</th>
-						<th rowspan="5">Description</th>
+						<th>Equipment</th>
+						<th colspan="2">Work order</th>
+						<th>Status</th>
+						<th>Documents</th>
 						
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
+						<td>#1</td>
+						<td>12/12/1215</td>
 						<td>
-						<div class="clearfix">
+							<div class="clearfix">
 								<div class="pull-left">
 									<i class="icon-frontal19"></i>
 								</div>
@@ -200,24 +217,45 @@
 									<br>
 									<span class="model_type">2003  K31359</span>
 								</div>
-							</div></td>
-						<td colspan="5">Hello!</td>
-						
+								</div>
+						</td>
+						<td colspan="2">Description Description Description </td>
+						<td>
+							<span class="fancyArrow"><i class="fa fa-tasks"></i></span>
+							<select class="form-control status-select">
+								<option value="">Start</option>
+					    		<option value="">Progress</option>
+								<option value="">Do</option>
+								<option value="">4</option>
+								<option value="">5</option>
+							</select>
+						</td>
+						<td>
+							<div class="add-file-section">
+								<label for="myFile" class="custom-file-upload">
+    							<i class="fa fa-cloud-upload add-icon"></i>Upload Files
+								</label>
+								<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" " />
+								<span id="file_error" class="file_error"></span>
+								<span  class="msg_error"></span>
+							</div>
+							
+							<button class="file-submit _btn add_new file-submit-table" >Submit
+								<img class="load" src="../../public/img/load.GIF" alt="load">
+							</button>						
+						</td>		
 					</tr>
 				</tbody>
 			</table>
 			</div>
 		</div>
 	</div>		
-
-			
-			
-
 </body>
 <script type="text/javascript" src="../../public/js/jquery-2.1.4.min.js"></script>	
 <script type="text/javascript" src="../../public/js/bootstrap.min.js"></script>	
 <!-- <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script> -->
 <script type="text/javascript" src="../../public/js/core.js"></script>
+<script type="text/javascript"  src="../../public/js/maintenance.js"></script>
 <script>
 	// $(function(){
 	//     $('body').slimScroll({
