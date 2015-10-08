@@ -70,21 +70,22 @@
                 <div class="col-md-6">
                     <label>Class</label>
                     <select class="form-control" name="class" placeholder="class" data-valid>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
                     </select>
                 </div>
                 <div class="col-md-6">
                     <label>Endors</label>
                     <select class="form-control" name="endors" placeholder="endors" data-valid>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        <option value="T">T</option>
+                        <option value="A">A</option>
+                        <option value="P">P</option>
+                        <option value="S">S</option>
+                        <option value="N">N</option>
+                        <option value="H">H</option>
+                        <option value="X">X</option>
+                        <option value="W">W</option>
                     </select>
                 </div>
                 <div class="col-md-6">
@@ -148,12 +149,10 @@
                 </div>
                 <div class="col-md-6">
                     <label>Position</label>
-                    <select class="form-control" name="e" placeholder="position" data-valid>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
+                    <select class="form-control" name="position" placeholder="position" data-valid>
+                        <?php foreach($position as $val){
+                           echo "<option value=".$val['id'].">".$val['name']."</option>";
+                         }?>
                     </select>
                 </div>
                 <div class="col-md-6 attach-input">
@@ -164,7 +163,7 @@
                     <button type="button" class="btn btn-default remove-attach-button pull-left">
                         <span class="glyphicon glyphicon-remove"></span>
                     </button>
-                    <input type="file" class="hidden attach-input-inner"  >
+                    <input type="file" class="hidden attach-input-inner">
                     <input type="hidden" name="application_file" data-valid="attach-file">
                 </div>
                 <div class="col-md-6 attach-input">
@@ -305,7 +304,7 @@
                         <h4>
                             <b><?=$val['first_name'].' '.$val['last_name'];?></b>
                         </h4>
-                        <h5><?=$val['position'];?></h5>
+                        <h5><?=$val['name_position'];?></h5>
                     </hgroup>
                 </div>
                 <span>Address: <span><?=$val['state'].','.$val['city'].','.$val['zip_code'];?></span></span>

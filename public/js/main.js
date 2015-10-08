@@ -222,6 +222,7 @@ $(document).ready(function () {
                     var c = $(this);
                     var name = c.prop('name');
                     c.val(data[0][name]);
+                    console.log(name);
                     if(name.indexOf('_file') + 1 && c.val()) {
                        c.prevAll('.remove-attach-button').addClass('btn-success');
                     }
