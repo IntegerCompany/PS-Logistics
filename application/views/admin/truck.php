@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>PS Logistics LLC</title>
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/public/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/public/css/application.css">
 	<link rel="stylesheet" href="/public/css/admin_theme.css">
 </head>
@@ -22,7 +23,7 @@
 						-->
 						<form class="form global_form">
 							<div class="caption">
-								new
+								new 
 							</div>
 							<div class="form-group">
 							  <label for="truck_id">truck #</label>
@@ -266,40 +267,51 @@
 			<table class="global_table table table-bordered">
 				<thead>
 					<tr>
-						<th colspan="2"># ID</th>
+						<th># ID</th>
 						<th>License plate</th>
 						<th>Make</th>
 						<th>Year</th>
 						<th>Color</th>
 						<th>VIN</th>
+						<th colspan="2">Settings</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td width="10">
-							<a href="javascript:;" class="_btn edit">
-								<i class="icon-params"></i>
-							</a>
-						</td>
 						<td>59</td>
 						<td>1202</td>
 						<td>Some</td>
 						<td>2000</td>
 						<td>pink</td>
 						<td>1234567890ABCDEFG</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="javascript:;" class="_btn edit">
-								<i class="icon-params"></i>
+						<td class="td-icon-width">
+							<a href="javascript:void(0);" class="edit-icon" title="edit">
+								<i class="fa fa-pencil"></i>
 							</a>
 						</td>
+						<td class="td-icon-width">
+							<a href="javascript:void(0);" class="edit-icon" title="history"  >
+								<i class="fa fa-history"></i>
+							</a>
+						</td>
+					</tr>
+					<tr>
 						<td>60</td>
 						<td>1203</td>
 						<td>Some1</td>
 						<td>2001</td>
 						<td>red</td>
 						<td>1234567890ABCDEFGaaaa</td>
+						<td class="td-icon-width">
+							<a href="javascript:void(0);" class="edit-icon" title="edit">
+								<i class="fa fa-pencil"></i>
+							</a>
+						</td>
+						<td class="td-icon-width">
+							<a href="javascript:void(0);" class="edit-icon" title="history" >
+								<i class="fa fa-history"></i>
+							</a>
+						</td>
 					</tr>
 				</tbody>
 			</table>

@@ -6,16 +6,10 @@ class Controller_Admin extends Controller {
 	public function action_shipping()
 	{
 		//if(Session::instance()->get('user')){
-			$this->response->body(View::factory('/admin/shipping'));
-	//	} else {
-	//		HTTP::redirect(URL::base_url());
-	//	}
-		// if(Session::instance()->get('user')){
-			$this->response->body(View::factory('/admin/shipping'));
-		// } else {
-			// HTTP::redirect(URL::base_url());
-		// }
-
+		$this->response->body(View::factory('/admin/shipping'));
+		//	} else {
+		//		HTTP::redirect(URL::base_url());
+		//	}
 	}
 	public function action_broker()
 	{

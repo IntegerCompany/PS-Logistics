@@ -3,6 +3,7 @@
 	<meta charset="UTF-8">
 	<title>PS Logistics LLC</title>
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/public/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/public/css/application.css">
 	<link rel="stylesheet" href="/public/css/admin_theme.css">
 	<!-- add shipping.css -->
@@ -246,9 +247,13 @@
 				<tbody>
 					<tr>
 						<td width="10" class="vcenter">	
-							<a href="">top</a>
-							1
-							<a href="">bot</a>
+							<a href="">
+								<i class="fa fa-chevron-up"></i>
+							</a>
+							<span class="number">1</span>		
+							<a href="">
+								<i class="fa fa-chevron-down"></i>
+							</a>
 						</td>
 						<td>
 							<i class="icon-pin67 pull-left"></i>
@@ -262,7 +267,9 @@
 									<a href="">12:00</a>
 								</span>
 							</span>
-							<a href="" class="clearfix pull-right" data-toggle="modal" data-target="#addCheckpointModal">edit</a>
+							<a href="" class="clearfix pull-right" data-toggle="modal" data-target="#addCheckpointModal">
+								<i class="fa fa-plus"></i>
+							</a>
 						</td>
 						<td>
 							<i class="icon-locator pull-left"></i>
@@ -276,15 +283,17 @@
 									<a href="">21:00</a>
 								</span>
 							</span>
-							<a href="" class="clearfix pull-right" data-toggle="modal" data-target="#addCheckpointModal">edit</a>
+							<a href="" class="clearfix pull-right" data-toggle="modal" data-target="#addCheckpointModal">
+								<i class="fa fa-plus"></i>
+							</a>
 						</td>
 						<td>
 							<p>
-								<i class="icon-frontal19"></i>
+								<i class="fa fa-briefcase"></i>
 								American Transport 
 							</p>
 							<p>
-								<i class="icon-frontal19"></i>
+								<i class="fa fa-user"></i>
 								Tommy
 								<br>
 								<span>Phone: 090999 2031231</span>
@@ -292,17 +301,22 @@
 						</td>
 						<td>
 							<p> 
-								<i class="icon-frontal19"></i>
+								<i class="fa fa-usd"></i>
 								<span>100</span> 
 								/ 
 								<span>1000</span>
 							</p>
 							<p class="clearfix">
 								<i class="icon-frontal19" style="float: left;"></i>
-								<span style="float: left;">
+							<!-- 	<span style="float: left;">
 									D: <span> 111</span>
 									<br>
 									L: <span> 2222</span>
+								</span> -->
+								<span class="price-style" >
+									<b>D:</b> <span> 111</span> / <b>L:</b> <span> 2222</span>
+									
+									
 								</span>
 							</p>
 						</td>
