@@ -1,9 +1,16 @@
 $(document).ready(function () {
 
     $(function () {
-        $('.datepicker').datepicker({format: 'mm/dd/yyyy'}).on('changeDate', function(){
-            $(this).datepicker('hide');
+        $.ajaxSetup({
+            type: "POST",
+            url: window.location.origin + "/ajax"
         });
+        var datepicker = $('.datepicker');
+        if(datepicker.length){
+        datepicker.datepicker({format: 'mm/dd/yyyy'}).on('changeDate', function(){
+                $(this).datepicker('hide');
+            });
+        }
         function load_animate() {
             if (!$('.div-loading').length) {
                 $("body").append("<div class='div-loading'></div>");
@@ -23,10 +30,7 @@ $(document).ready(function () {
             return true;
         }
 
-        $.ajaxSetup({
-            type: "POST",
-            url: window.location.origin + "/ajax"
-        });
+
         $('form').submit(function () {
             return false;
         });
@@ -233,6 +237,7 @@ $(document).ready(function () {
                 $('#addStuffLabel').text('Add new stuff');
                 el.find('.remove-attach-button').children('span').prop('class', 'glyphicon glyphicon-remove');
                 el.find('.cropit-image-preview').css('background-image', '');
+                el.find('.btn-success').removeClass('btn-success');
 
             }
 

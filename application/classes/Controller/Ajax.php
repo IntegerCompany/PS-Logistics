@@ -6,7 +6,7 @@ class Controller_Ajax extends Controller
     {
         $part = $_SERVER['DOCUMENT_ROOT'] . "/public/file/$name_dir";
         if (!is_dir($part)) {
-            mkdir($part, 0777, true);
+            mkdir($part,0777, true);
         }
         $dataImg = base64_decode(preg_replace('#^data:' . $data_format . ';base64,#i', '', $base64_string));
         $result = file_put_contents($part . '/' . $name_file, $dataImg);
@@ -47,9 +47,6 @@ class Controller_Ajax extends Controller
                         break;
                     case 'add-edit-stuff':
                         $v['data'] = $this->revalue_array($v['data']);
-//                        if(!isset($v['data']['avatar_file'])){
-//                            $v['data']['avatar_file'] = "http://".$_SERVER['SERVER_NAME']."/public/img/no-avatar.jpg";
-//                        }
                         if (!empty($v['id'])) {
                             Model::factory('Stuff')->edit_stuff($v['id'], $v['data']);
                             print_r($v);

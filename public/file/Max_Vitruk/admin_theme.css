@@ -1,0 +1,238 @@
+/* 
+	COLOR THEME
+	===========
+	orange    #fbc02d
+	lightgrey #aaaaaa
+	hardgrey  #555555
+	blue      #65b4ce
+	white     #ffffff
+
+*/
+
+/*responsive utilities*/
+body.opened #content{
+	-webkit-perspective: 0px;
+	-ms-perspective: 0px;
+	-moz-perspective: 0px;
+	-moz-transform: translate3d(230px, 0, 0);
+	-o-transform: translate3d(230px, 0, 0);
+	-ms-transform: translate3d(230px, 0, 0);
+	-webkit-transform: translate3d(230px, 0, 0);
+	transform: translate3d(230px, 0, 0);
+}
+body.opened #navigation{
+	display: block;
+}
+
+@media(max-width: 991px){
+	#content{
+		width: 100%;
+	}
+	#navigation{
+		display: none;
+		width: 230px;
+		position: fixed !important;
+	}
+	#navigation .controls{
+		height: auto !important;
+	}
+		#navigation .controls a{
+			padding: 15px !important;
+		}
+}
+
+/* admin navigation */
+.nav_logo{
+	margin: 35px auto;
+}
+#navigation{
+	height: 100%;
+	min-height: 100%;
+	position: fixed;
+	width: 230px;
+	
+	background: #fbc02d;
+
+	-webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+	#navigation ul{
+		padding: 15px 0 0 0;
+	}
+	#navigation li{
+		list-style: none;
+		
+		-webkit-transition: background .3s ease-in-out;
+		-o-transition: background .3s ease-in-out;
+		transition: background .3s ease-in-out;
+	}
+		#navigation li:hover{
+			background: #aaaaaa;
+		}
+		
+		#navigation li.active{
+			background: #555555;
+		}
+			#navigation li.active .icon-locator{
+				display: inline-block;
+			}
+			#navigation li.active .icon-pin67{
+				display: none;
+			}
+
+	#navigation .icon-pin67{}
+	#navigation .icon-locator{
+		display: none;
+	}
+
+	#navigation li a{
+		display: block;
+		padding: 8px 15px;
+
+		color: #fff;
+		font-size: 25px;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+		#navigation a:hover{
+			text-decoration: none;
+		}
+
+	#navigation .controls{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+	}
+		#navigation .controls a{
+			padding: 0;
+			
+			font-size: 12px;
+			font-weight: 900;
+			color: #fff;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+
+/* admin content */
+#content{
+	padding: 15px;
+	margin-left: 230px;
+
+	background: #fff;
+	height: 100%;
+
+	-webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/* top section */
+.admin_top{
+	padding: 10px 0;
+	float: left;
+	width: 100%;
+}
+	.admin_top .admin_title{
+		margin: 0;
+		float: left;
+
+		line-height: 30px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.admin_top ._btn{
+		float: right;
+	}
+
+/* button add / new / old / etc*/
+._btn{
+	display: inline-block;
+	padding: 0 22px;
+
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 18px;
+	border: none;
+}
+	._btn i{
+		font-size: 14px;
+	}
+	._btn:hover{
+		color: #fff;
+		text-decoration: none;
+	}
+	._btn.add_new{
+		background: #65b4ce;
+	}
+	._btn.add_old{
+		background: #aaaaaa;
+	}
+	._btn.edit{
+		background: #65b4ce;
+	}
+	._btn.delete{
+		background: #aaaaaa;
+	}
+
+/* stylize tables */
+.global_table{
+	width: 100%;
+	margin: 10px 0;
+}
+	.global_table caption{
+		text-align: center;
+		font-size: 24px;
+		color: #2e2e2e;
+	}
+	.global_table th{
+		background: #fbc02d;
+	}
+	.global_table tr{}
+
+	.global_table th,
+	.global_table td{
+		vertical-align: middle !important;
+	}
+		.global_table tr:first-child td{
+			border-top: none;
+		}
+	.global_table .img_responsive{
+
+	}
+
+.global_table.table-bordered,
+.global_table.table-bordered th,
+.global_table.table-bordered td{
+	border-color: #555555 !important;
+}
+	.global_table.table-bordered th {
+		border-bottom-width: 1px;
+	}
+	
+
+/* stylize forms*/
+.global_form{
+
+}
+	.global_form .caption{
+		text-align: center;
+		font-size: 24px;
+    color: #2e2e2e;
+	}
+	.global_form label{
+		text-transform: uppercase;
+	}
+	.global_form textarea,
+	.global_form select {
+		margin-bottom: 15px;
+	}

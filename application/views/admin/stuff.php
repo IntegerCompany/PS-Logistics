@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-6">
                     <label from="dob">DOB</label>
-                    <input name="dob" class="form-control" data-valid placeholder="DOB" type="text" autocomplete="off">
+                    <input name="dob" class="form-control datepicker" data-valid placeholder="DOB" type="text" autocomplete="off">
                 </div>
                 <div class="col-md-6">
                     <label from="ssn">SSN#</label>
@@ -110,7 +110,7 @@
                     <button type="button" class="btn btn-default remove-attach-button pull-left">
                         <span class="glyphicon glyphicon-remove"></span>
                     </button>
-                    <input type="file" class="hidden attach-input-inner" accept="image/*" >
+                    <input type="file" class="hidden attach-input-inner"  >
                     <input type="hidden" name="medical_file" data-valid="attach-file">
                 </div>
                 <div class="col-md-6 attach-input">
@@ -122,7 +122,7 @@
                     <button type="button" class="btn btn-default remove-attach-button pull-left">
                         <span class="glyphicon glyphicon-remove"></span>
                     </button>
-                    <input type="file" class="hidden attach-input-inner" accept="image/*" >
+                    <input type="file" class="hidden attach-input-inner"  >
                     <input type="hidden" name="mvr_file" data-valid="attach-file">
                 </div>
 
@@ -164,7 +164,7 @@
                     <button type="button" class="btn btn-default remove-attach-button pull-left">
                         <span class="glyphicon glyphicon-remove"></span>
                     </button>
-                    <input type="file" class="hidden attach-input-inner" accept="image/*" >
+                    <input type="file" class="hidden attach-input-inner"  >
                     <input type="hidden" name="application_file" data-valid="attach-file">
                 </div>
                 <div class="col-md-6 attach-input">
@@ -217,7 +217,7 @@
                 map
             </a>
         </li>
-        <li class="active">
+        <li>
             <a href="/shipping">
                 <i class="icon-pin67"></i>
                 <i class="icon-locator"></i>
