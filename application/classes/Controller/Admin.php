@@ -5,19 +5,18 @@ class Controller_Admin extends Controller {
 
 	public function action_shipping()
 	{
-<<<<<<< HEAD
 		//if(Session::instance()->get('user')){
 			$this->response->body(View::factory('/admin/shipping'));
 	//	} else {
 	//		HTTP::redirect(URL::base_url());
 	//	}
-=======
+
 		// if(Session::instance()->get('user')){
 			$this->response->body(View::factory('/admin/shipping'));
 		// } else {
 			// HTTP::redirect(URL::base_url());
 		// }
->>>>>>> remotes/origin/master
+
 
 	}
 	public function action_broker()
