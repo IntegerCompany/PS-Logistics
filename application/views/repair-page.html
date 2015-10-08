@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PS Logistics LLC</title>
+	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../public/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../public/css/application.css">
+	<link rel="stylesheet" href="../../public/css/admin_theme.css">
+	<link rel="stylesheet" href="../../public/css/repair-page.css">
+</head>
+<body>
+<!-- new-popup-form -->
+<div class="modal fade" id="new-popup-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	    	<div class="modal-header">
+	        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+	        	<h3 id="myModalLabel">New</h3>
+	      	</div>
+	        <div class="modal-body">
+	      		<div class="container-fluid">
+	      			<div class="col-md-12">
+						<form class="form global_form">
+							<div class="radio-new-form-right">
+								<input type="radio" id="radio01" name="radio" />
+							    <label for="radio01"><span></span>TREILER </label>
+							</div>
+							<div class="radio-new-form-left">
+							    <input type="radio" id="radio02" name="radio" />
+							    <label for="radio02"><span></span>TRUK</label>
+							</div>
+							<div class="form-group">
+								<select class="form-control">
+									<option value="">Name-1</option>
+									<option value="">Name-2</option>
+								    <option value="">Name-3</option>
+								</select>
+							</div>
+							<div class="form-group">
+							    <label>DESCRIPTION</label>
+							    <textarea class="form-control" rows="3" placeholder="Description..."></textarea>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="_btn add_new">Submit</button>
+								<button type="submit" class="_btn delete">Discard</button>
+							</div>
+						</form>
+		        	</div>
+		        </div>
+	        </div>
+        </div>
+    </div>
+</div>
+
+<!-- done-popup-form -->
+<div class="modal fade" id="done-popup-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    	<div class="modal-content">
+    		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+        		<h3 id="myModalLabel">Done</h3>
+      		</div>
+        	<div class="modal-body">
+      			<div class="container-fluid">
+      				<div class="col-md-12">
+						<form class="form global_form">
+							<h3 class="done-form-title">Select files</h3>
+							<div class="form-group done-file">
+			    				<!-- <input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" "/>
+								<span id="file_error" class="file_error"></span>
+								<span  class="msg_error"></span> -->
+								<!-- <input type="submit" value="submit" class="file-submit _btn add_new" /> -->
+								<div class="add-file-section">
+									<label for="myFile" class="custom-file-upload">
+	    								<i class="fa fa-cloud-upload add-icon"></i>Upload Files
+									</label>
+									<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" " />
+									<span id="file_error" class="file_error"></span>
+									<span  class="msg_error"></span>
+								</div>
+				  			</div>
+							<div class="form-group"> 
+								<div class=" _btn add_new">
+									<input type="button" value="submit" class="file-submit file-sub-popup">
+									<img class="load" src="../../public/img/load.GIF" alt="load"> 
+								</div>
+								<button type="submit" class="_btn delete">Discard</button> 
+							</div> 
+							
+						</form>
+						
+	        		</div>
+	      		</div>
+      		</div>
+    	</div>
+    </div>
+</div>
+
+<div id="navigation">
+	<img src="../../public/img/logo.png" class="img-responsive nav_logo" alt="">
+	<ul>
+		<!-- add class .active to LI when this page active -->
+		<li class="active">
+			<a href="javascript:;">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				map
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				shipping
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				stuff
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				trucks
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				trailers
+				</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				brokers
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				phone 
+			</a>
+		</li>
+	</ul>
+	<div class="controls">
+		<a href="javascript:;" class="logout col-md-6 col-xs-12">logout</a>
+		<a href="javascript:;" class="change_pass col-md-6 col-xs-12">change pass</a>
+	</div>
+</div>
+<div id="content">
+	<div class="row">
+		<div class="container-fluid">
+			<div class="admin_top">
+				<a class="visible-xs visible-sm toggle_menu" href="javascript:;">
+					toggle
+				</a>
+				<h2 class="admin_title">MAINTENANCE</h2>
+				<button type="button" class="_btn add_old" data-toggle="modal" data-target="#done-popup-form">
+				  done
+				</button>
+
+				<button type="button" class="_btn add_new" data-toggle="modal" data-target="#new-popup-form">
+				  new
+				</button>
+			</div>
+			<hr>
+			<ol class="breadcrumb">
+			  <li><a href="#">Home</a></li>
+			  <li><a href="#">Library</a></li>
+			  <li class="active">Data</li>
+			  <li class="print">
+			  	<i class="icon-print5"></i>
+			  </li>
+			</ol>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="container-fluid">
+			<div class="col-md-12 table-info-repair">
+				<table id="repair-table " class="global_table table table-bordered">
+				<thead>
+					<tr>
+						<th>
+							<div class="mark">
+								<input id="maintenance-checkbox" type="checkbox" name="toppings" value="ham">
+								<label for="maintenance-checkbox"></label>
+							</div>
+						</th>
+						<th> Date</th>
+						<th>Equipment</th>
+						<th colspan="2">Work order</th>
+						<th>Status</th>
+						<th>Documents</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>#1</td>
+						<td>12/12/1215</td>
+						<td>
+							<div class="clearfix">
+								<div class="pull-left">
+									<i class="icon-frontal19"></i>
+								</div>
+								<div class="pull-left">
+									<span class="model_name">FREIGHTLINER</span>  
+									<br>
+									<span class="model_type">2003  K31359</span>
+								</div>
+								</div>
+						</td>
+						<td colspan="2">Description Description Description </td>
+						<td>
+							<span class="fancyArrow"><i class="fa fa-tasks"></i></span>
+							<select class="form-control status-select">
+								<option value="">Start</option>
+					    		<option value="">Progress</option>
+								<option value="">Do</option>
+								<option value="">4</option>
+								<option value="">5</option>
+							</select>
+						</td>
+						<td>
+							<div class="add-file-section">
+								<label for="myFile" class="custom-file-upload">
+    							<i class="fa fa-cloud-upload add-icon"></i>Upload Files
+								</label>
+								<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" " />
+								<span id="file_error" class="file_error"></span>
+								<span  class="msg_error"></span>
+							</div>
+							
+							<button class="file-submit _btn add_new file-submit-table" >Submit
+								<img class="load" src="../../public/img/load.GIF" alt="load">
+							</button>						
+						</td>		
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>		
+</body>
+<script type="text/javascript" src="../../public/js/jquery-2.1.4.min.js"></script>	
+<script type="text/javascript" src="../../public/js/bootstrap.min.js"></script>	
+<!-- <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script> -->
+<script type="text/javascript" src="../../public/js/core.js"></script>
+<script type="text/javascript"  src="../../public/js/maintenance.js"></script>
+<script>
+	// $(function(){
+	//     $('body').slimScroll({
+	//         height: '100%',
+	//         alwaysVisible: false
+	//     });
+	// });
+</script>
+</body>
+</html>
