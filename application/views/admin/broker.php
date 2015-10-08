@@ -112,7 +112,7 @@
 				map
 			</a>
 		</li>
-		<li class="active">
+		<li >
 			<a href="/shipping">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
@@ -140,7 +140,7 @@
 				trailer
 			</a>
 		</li>
-		<li>
+		<li class="active">
 			<a href="/broker">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>

@@ -1,11 +1,35 @@
 $(document).ready(function () {
 
     $(function () {
+        $('.datepicker').datepicker({format: 'mm/dd/yyyy'}).on('changeDate', function(){
+            $(this).datepicker('hide');
+        });
+        function load_animate() {
+            if (!$('.div-loading').length) {
+                $("body").append("<div class='div-loading'></div>");
+                var height = $(document).height();
+                $('.div-loading').css('height', height + "px");
+            } else {
+                $('.div-loading').remove();
+            }
+        }
+
+        function IsJsonString(str) {
+            try {
+                JSON.parse(str);
+            } catch (e) {
+                return false;
+            }
+            return true;
+        }
+
         $.ajaxSetup({
             type: "POST",
             url: window.location.origin + "/ajax"
         });
-
+        $('form').submit(function () {
+            return false;
+        });
         $('#loginin').on('click', function () {
             /*
              -- must be validation!!!! --
@@ -16,8 +40,6 @@ $(document).ready(function () {
                     n = c.prop('id'),
                     v = c.val();
                 arr[n] = v;
-
-
             });
             if (Object.keys(arr).length == 2) {
                 $.ajax({
@@ -28,12 +50,9 @@ $(document).ready(function () {
                         if (data) {
                             location.replace('/shipping');
                         }
-
                     }
                 });
             }
-
-
         });
         function validate(form) {
             var resultObj = {};
@@ -67,7 +86,7 @@ $(document).ready(function () {
                         text = "No space";
                         return testinput(reg, text, el);
                     case 'attach-file':
-                        return (el.val()) ? (JSON.parse(el.val())) : false;
+                        return (IsJsonString(el.val())) ? (JSON.parse(el.val())) : false;
                     default:
                         return el.val();
                 }
@@ -112,16 +131,22 @@ $(document).ready(function () {
             var c = $(this);
             $('.cropit-image-input').click();
         });
-        //$('.cropit-image-input').on('change', document, function(){
-        //    $(this).val($('.image-editor').cropit('export'));
-        //});
         $('.attach-button').on('click', function () {
             $(this).nextAll('input').first().click();
         });
         $('.remove-attach-button').on('click', function () {
-            var c = $(this);
-            c.nextAll('input[name]').val();
-            c.prev().removeClass('btn-success');
+            var c = $(this),
+                input = c.nextAll('input[name]'),
+                val = input.val();
+
+            if (c.parents('.modal').hasClass('mode-edit')) {
+                if (val) {
+                    downloadFile(val);
+                }
+            } else {
+                input.val('');
+                c.prev().removeClass('btn-success');
+            }
         });
         $('.attach-input-inner').on('change', document, function () {
             var c = $(this),
@@ -136,45 +161,98 @@ $(document).ready(function () {
                         "name": f[0].name
                     });
                     c.next('input[type=hidden]').val(strObj);
+                    c.prev('.remove-attach-button').addClass('btn-warning');
                 };
                 reader.readAsDataURL(f[0]);
             }
 
         });
 
+        $('a[class*="add_new"]').on('click', function () {
+            var el = $('#addStuff');
+            el.removeClass('mode-edit');
+            triger_modal(el);
+            el.modal('show');
+        });
+
         $('.add_new_stuff').on('click', function () {
 
-            var cropit = $('.cropit-image-input')[0].files[0];
+            var cropit = $('.cropit-image-input')[0].files[0],
+                c = $(this);
             if (cropit) {
                 $('.image-editor input[name]').val(JSON.stringify({
                     "base64": $('.image-editor').cropit('export'),
                     "name": cropit.name,
-                    "type": cropit.type
+                    "type": "image/png"
                 }));
             }
             var result = validate($('#addStuff .valid-form'));
-
             if (Object.keys(result).length > 4) {
                 console.log(result);
-
+                var id = undefined;
+                if (c.parents('.modal').hasClass('mode-edit')) {
+                    id = c.data('stuffId');
+                }
                 $.ajax({
+                    beforeSend: load_animate(),
                     data: {
-                        'add-stuff': result
+                        'add-edit-stuff': {
+                            "data": result,
+                            "id": id
+                        }
                     },
                     success: function (data) {
                         console.log(data);
+                        location.reload();
                     }
                 });
+
             }
         });
-        $('.setting').on('click',function(){
+
+        function triger_modal(el, data) {
+            el.find('form')[0].reset();
+
+            if (el.hasClass('mode-edit')) {
+                el.find('input[name]').each(function () {
+                    var c = $(this);
+                    var name = c.prop('name');
+                    c.val(data[0][name]);
+                    if(name.indexOf('_file') + 1 && c.val()) {
+                       c.prevAll('.remove-attach-button').addClass('btn-success');
+                    }
+
+                });
+                el.find('#addStuffLabel').text('Edit Stuff');
+                el.find('.remove-attach-button').children('span').prop('class', 'glyphicon glyphicon-download-alt');
+                el.find('.add_new_stuff').data('stuff-id', data[0].id);
+                if (data[0].avatar_file) {
+                    el.find('.cropit-image-preview').css('background-image', 'url(' + data[0].avatar_file + ')');
+                }
+            } else {
+                $('#addStuffLabel').text('Add new stuff');
+                el.find('.remove-attach-button').children('span').prop('class', 'glyphicon glyphicon-remove');
+                el.find('.cropit-image-preview').css('background-image', '');
+
+            }
+
+        }
+
+        $('.setting').on('click', function () {
+
             $.ajax({
-                data:{
+                data: {
                     'get_stuff_info': $(this).data('id')
                 },
-                async: false
+                async: false,
+                success: function (data) {
+                    var el = $('#addStuff');
+                    el.addClass('mode-edit');
+                    triger_modal(el, JSON.parse(data));
+                    el.modal('show');
+
+                }
             });
-            $('#addStuff').modal('show');
         });
     });
 

@@ -157,7 +157,7 @@
 				map
 			</a>
 		</li>
-		<li class="active">
+		<li >
 			<a href="/shipping">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
@@ -178,7 +178,7 @@
 				truck
 			</a>
 		</li>
-		<li>
+		<li class="active">
 			<a href="/trailer">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>

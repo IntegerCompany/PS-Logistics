@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/public/css/application.css">
     <link rel="stylesheet" href="/public/css/admin_theme.css">
     <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/datepicker.css">
     <link rel="stylesheet" href="/public/css/modal.css">
 </head>
 <body>
@@ -15,9 +16,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                <h3 id="addStuffLabel">Add new stuff</h3>
+                <h3 id="addStuffLabel" class="text-center">Add new stuff</h3>
             </div>
             <div class="modal-body row body-modal valid-form">
+                <form>
                 <h4 class="col-md-12 text-center">Personals data</h4>
 
                 <div class="col-md-6">
@@ -87,7 +89,7 @@
                 </div>
                 <div class="col-md-6">
                     <label>Date experation</label>
-                    <input type="date" class="form-control" name="date_experation" data-valid>
+                    <input type="text"  class="form-control datepicker" name="date_experation" data-valid>
                 </div>
                 <div class="col-md-6">
                     <label>Emergency Contact</label>
@@ -101,7 +103,7 @@
                 </div>
                 <div class="col-md-6 attach-input">
                     <label>Medical card expiration</label>
-                    <input type="date" name="medical_expiration" class="form-control pull-left" data-valid>
+                    <input type="text" name="medical_expiration" class="form-control pull-left datepicker" data-valid>
                     <button type="button" class="btn btn-default attach-button pull-left">
                         <span class="glyphicon glyphicon-paperclip"></span>
                     </button>
@@ -113,7 +115,7 @@
                 </div>
                 <div class="col-md-6 attach-input">
                     <label>MVR</label>
-                    <input type="date" name="mvr" class="form-control pull-left" data-valid>
+                    <input type="text" name="mvr" class="form-control pull-left datepicker" data-valid>
                     <button type="button" class="btn btn-default attach-button pull-left">
                         <span class="glyphicon glyphicon-paperclip"></span>
                     </button>
@@ -138,11 +140,11 @@
                 </div>
                 <div class="col-md-6">
                     <label>Date of Hire</label>
-                    <input type="date" class="form-control" name="date_hire" data-valid>
+                    <input type="text" class="form-control datepicker" name="date_hire" data-valid>
                 </div>
                 <div class="col-md-6">
                     <label>Date of Termination</label>
-                    <input type="date" class="form-control" name="date_termination" data-valid>
+                    <input type="text" class="form-control datepicker" name="date_termination" data-valid>
                 </div>
                 <div class="col-md-6">
                     <label>Position</label>
@@ -173,7 +175,7 @@
                     <button type="button" class="btn btn-default remove-attach-button pull-left">
                         <span class="glyphicon glyphicon-remove"></span>
                     </button>
-                    <input type="file" class="hidden attach-input-inner" accept="image/*" >
+                    <input type="file" class="hidden attach-input-inner" >
                     <input type="hidden" name="agreement_file" data-valid="attach-file">
                 </div>
                 <div class="col-md-12 text-center" >
@@ -194,10 +196,10 @@
                 </div>
 
                 <div class="col-md-12 form-btns text-center">
-                    <button type="submit" class="_btn add_new add_new_stuff">Send It!</button>
+                    <button  class="_btn add_new add_new_stuff">Send It!</button>
                     <button data-dismiss="modal" aria-hidden="true" class="_btn delete">Discard</button>
                 </div>
-
+                </form>
 
             </div>
         </div>
@@ -222,7 +224,7 @@
                 shipping
             </a>
         </li>
-        <li>
+        <li class="active">
             <a href="/stuff">
                 <i class="icon-pin67"></i>
                 <i class="icon-locator"></i>
@@ -280,7 +282,7 @@
                 </a>
 
                 <h2 class="admin_title">Stuff</h2>
-                <a href="#addStuff" class="_btn add_new" role="button" data-toggle="modal">add new</a>
+                <a href="javascript:;" class="_btn add_new" role="button">add new</a>
 
             </div>
             <ol class="breadcrumb">
@@ -415,6 +417,8 @@
 <script type="text/javascript" src="/public/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="/public/js/jquery.cropit.js"></script>
 <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/public/js/download.js"></script>
 <script type="text/javascript" src="/public/js/main.js"></script>
 <script type="text/javascript" src="/public/js/core.js"></script>
 
