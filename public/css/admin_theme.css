@@ -207,6 +207,17 @@ body.opened #navigation{
 	._btn.delete{
 		background: #aaaaaa;
 	}
+	.td-icon-width{
+		width: 32px;
+	}
+	.edit-icon{
+		font-size: 26px;
+		color:#65b4ce;
+		text-align: center;
+	}
+		.edit-icon:hover, .edit-icon:focus{
+			color:inherit;
+		}
 
 /* stylize tables */
 .global_table{
