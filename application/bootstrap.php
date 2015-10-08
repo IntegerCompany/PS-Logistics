@@ -151,7 +151,7 @@ Route::set('ajax', 'ajax')
 		'controller' => 'ajax',
 		'action'     => 'request',
 	));
-Route::set('admin', '<action>(/<id>)', array('action' => 'shipping|truck|trailer|stuff|broker|logout|maintenance'))
+Route::set('admin', '<action>(/<id>)', array('action' => 'shipping|truck|trailer|stuff|broker|logout|maintenance|brokerspage'))
 	->defaults(array(
 		'controller' => 'admin',
 	));
