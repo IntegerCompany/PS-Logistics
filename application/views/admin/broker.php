@@ -112,7 +112,7 @@
 				map
 			</a>
 		</li>
-		<li>
+		<li class="active">
 			<a href="/shipping">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
@@ -138,9 +138,9 @@
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
 				trailer
-				</a>
+			</a>
 		</li>
-		<li class="active">
+		<li>
 			<a href="/broker">
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
@@ -152,6 +152,13 @@
 				<i class="icon-pin67"></i>
 				<i class="icon-locator"></i>
 				phone
+			</a>
+		</li>
+		<li>
+			<a href="/maintenance">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				maintenance
 			</a>
 		</li>
 	</ul>

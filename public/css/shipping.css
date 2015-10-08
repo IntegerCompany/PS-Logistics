@@ -1,7 +1,13 @@
 .shipping_table{}
+	.shipping_table caption{
+		text-align: right;
+	}
 	.shipping_table td{
 		vertical-align: top !important;
 	}
+		.shipping_table td.vcenter{
+			vertical-align: middle !important;
+		}
 	.shipping_table > div{
 		margin-bottom: 10px;
 	}
@@ -22,10 +28,26 @@
 	.shipping_table .model_type,
 	.shipping_table .contact_name{
 		color: #aaaaaa;
-		/*font-size: 12px;*/
 	}
 	.shipping_table .icon-frontal19{
 		display: inline-block;
 		margin-top: 8px;
 		margin-right: 8px;
+	}
+	.shipping_table td p {
+		margin: 0;
+	}
+	.shipping_table .invoice{
+    height: 28px;
+    margin: -8px -8px 8px;
+    
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+		background: #555555;
+	}
+	.shipping_table .status{
+		padding: 4px;
+		background: #fbc02d;
+		text-align: center;
 	}

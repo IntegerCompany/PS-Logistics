@@ -9,6 +9,117 @@
 	<link rel="stylesheet" href="/public/css/shipping.css">
 </head>
 <body>
+
+<!-- login modal add checkpoint -->
+<div class="modal fade" id="addCheckpointModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<div class="container-fluid">
+      		<div class="col-md-12">
+						<!-- 
+							new form, make same for edit
+							ps. delete this comment after done
+						-->
+						<form class="form global_form">
+							<div class="caption">
+								Add checkpoint
+							</div>
+							<div class="form-group">
+							  <label for="add_checkpoint_place">place</label>
+							  <input type="text" class="form-control" id="add_checkpoint_place">
+							</div>
+							<div class="form-group">
+							  <label for="add_checkpoint_time">time</label>
+							  <div class="row">
+									<div class="col-md-8">
+										<select class="form-control" id="add_checkpoint_time">
+									    <option value="">date</option>
+									    <option value="">date1</option>
+									  </select>
+									</div>
+									<div class="col-md-4">
+										<select class="form-control">
+										  <option value="">Time</option>
+										  <option value="">Time</option>
+										  <option value="">Time</option>
+										  <option value="">Time</option>
+										</select>		
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="_btn add_new">Submit</button>
+								<button type="submit" class="_btn delete">Discard</button>
+							</div>
+						</form>
+	        </div>
+	      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- login modal add checkpoint -->
+<div class="modal fade" id="addCommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<div class="container-fluid">
+      		<div class="col-md-12">
+						<!-- 
+							new form, make same for edit
+							ps. delete this comment after done
+						-->
+						<form class="form global_form">
+							<div class="caption">
+								Special instructions
+							</div>
+							<br>
+						  <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+							<div class="form-group">
+								<button type="submit" class="_btn add_new">Submit</button>
+								<button type="submit" class="_btn delete">Discard</button>
+							</div>
+						</form>
+	        </div>
+	      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- login modal add checkpoint -->
+<div class="modal fade" id="addFileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<div class="container-fluid">
+      		<div class="col-md-12">
+						<!-- 
+							new form, make same for edit
+							ps. delete this comment after done
+						-->
+						<form class="form global_form">
+							<div class="caption">
+								Add File
+							</div>
+							<div class="form-group">
+								<label for="file_upload">Select image to upload:</label>
+						    <input type="file" name="file_upload" id="file_upload" class="form-control" multiple>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="_btn add_new">Submit</button>
+								<button type="submit" class="_btn delete">Discard</button>
+							</div>
+						</form>
+	        </div>
+	      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="navigation">
 	<a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
 	<ul>
@@ -62,6 +173,13 @@
 				phone
 			</a>
 		</li>
+		<li>
+			<a href="/maintenance">
+				<i class="icon-pin67"></i>
+				<i class="icon-locator"></i>
+				maintenance
+			</a>
+		</li>
 	</ul>
 	<div class="controls">
 		<a href="/logout" class="logout col-md-6 col-xs-12">logout</a>
@@ -86,97 +204,136 @@
 			  <li><a href="#">Home</a></li>
 			  <li><a href="#">Library</a></li>
 			  <li class="active">Data</li>
+			  <li class="select">
+			  	<select name="" id="">
+			  		<option value="">week 1</option>
+			  		<option value="">week 2</option>
+			  		<option value="">week 3</option>
+			  	</select>
+			  </li>
 			  <li class="print">
 			  	<i class="icon-print5"></i>
 			  </li>
 			</ol>
 			
 			<table class="global_table table shipping_table table-bordered">
+				<caption>
+					total: 
+					<span>
+						123123123 
+					</span>
+					$
+				</caption>
 				<thead>
 					<tr>
-						<th>
-							#59 
-							<img src="/public/img/test_ava.jpg" class="img-responsive img-circle" alt="">
-							Jason Statham
-						</th>
+						<th colspan="4" class="text-center">#46 * Oleh Lebid * 216-7736168 * * 2014 * 353389 * trl# 215367 * 801365</th>
+						<th> 1250 $</th>
 						<th colspan="2">
-							Invoice #V00123 
-						</th>
-						<th colspan="2">
-							<span>
-								Free
+							<span class="pull-right">
+								<a href="" data-toggle="modal" data-target="#addCommentModal">
+									<i class="icon-comment43"></i>
+								</a>
+								<a href="" data-toggle="modal" data-target="#addFileModal">
+									<i class="icon-folder63"></i>
+								</a>
+								<a href="">
+									<i class="icon-settings"></i>
+								</a>
 							</span>
-							<a href="javascript:;" class="_btn edit pull-right">
-								<i class="icon-params"></i>
-							</a>
 						</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>
-							<div class="clearfix">
-								<div class="pull-left">
-									<i class="icon-frontal19"></i>
-								</div>
-								<div class="pull-left">
-									<span class="model_name">FREIGHTLINER</span>  
-									<br>
-									<span class="model_type">2003  K31359</span>
-								</div>
-							</div>
-							<div>
-							<i class="icon-caravan1"></i>
-								R53103
-							</div>
+						<td width="10" class="vcenter">	
+							<a href="">top</a>
+							1
+							<a href="">bot</a>
 						</td>
 						<td>
-							<div class="clearfix">
-								<div class="pull-left">
-									<i class="icon-locator"></i>	
-								</div>
-								<div class="pull-left">
-									Los Angeles, CA <br>
-									Sep 21 12:00
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="clearfix">
-								<div class="pull-left">
-									<i class="icon-dollar9"></i>	
-								</div>
-								<div class="pull-left">
-									American Transport <br>
-									<span class="contact_name">
-										Tommy
-									</span>
-								</div>
-							</div>
-							<div>
-								<i class="icon-dollar9"></i>	
-								344-433-434
-							</div>
-						</td>
-						<td>
-							<div class="clearfix">
-								<div class="pull-left">
-									<i class="icon-cart19"></i>
-									glass
-									<br>
-									<i class="icon-weight41"></i>
-									12 T
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="clearfix">
-								<i class="icon-loading1"></i>
-									124 / 250 $
+							<i class="icon-pin67 pull-left"></i>
+							<span class="clearfix pull-left">
+								<span>
+									boston, MA
+								</span>
 								<br>
-									<i class="icon-loading1"></i>
-									120 $
-							</div>
+								<span>
+									<a href="">Sep 21</a> / 
+									<a href="">12:00</a>
+								</span>
+							</span>
+							<a href="" class="clearfix pull-right" data-toggle="modal" data-target="#addCheckpointModal">edit</a>
+						</td>
+						<td>
+							<i class="icon-locator pull-left"></i>
+							<span class="clearfix pull-left">
+								<span>
+									New York
+								</span>
+								<br>
+								<span>
+									<a href="">Sep 29</a> / 
+									<a href="">21:00</a>
+								</span>
+							</span>
+							<a href="" class="clearfix pull-right" data-toggle="modal" data-target="#addCheckpointModal">edit</a>
+						</td>
+						<td>
+							<p>
+								<i class="icon-frontal19"></i>
+								American Transport 
+							</p>
+							<p>
+								<i class="icon-frontal19"></i>
+								Tommy
+								<br>
+								<span>Phone: 090999 2031231</span>
+							</p>
+						</td>
+						<td>
+							<p> 
+								<i class="icon-frontal19"></i>
+								<span>100</span> 
+								/ 
+								<span>1000</span>
+							</p>
+							<p class="clearfix">
+								<i class="icon-frontal19" style="float: left;"></i>
+								<span style="float: left;">
+									D: <span> 111</span>
+									<br>
+									L: <span> 2222</span>
+								</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<i class="icon-cart19"></i>
+								<span>glass</span>
+							</p>
+							<p>
+								<i class="icon-weight41"></i>
+								<span>12 T</span>
+							</p>
+						</td>
+						<td>
+							<p class="invoice">
+								Invoice
+							</p>
+							<p class="status">
+								status
+								<!-- 
+						  		Booked
+						  		Dispatched
+						  		Shipper
+									Loaded
+									Receiver
+									Delivered
+									Not use
+									Canceled
+									Deleted
+								-->
+							</p>
 						</td>
 					</tr>
 				</tbody>

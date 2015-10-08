@@ -1,0 +1,23 @@
+.body-modal > div{
+	margin-bottom: 15px;
+}
+.attach-input > input, .attach-input > p{
+	width: 70%;
+}
+.attach-input > button{
+	width: 15%;
+}
+
+.attach-input > label{
+	width: 100%;
+}
+.checkbox-block{
+	margin-top: 15px;
+}
+.checkbox-block > label{
+	font-weight: normal;
+}
+.center{
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -125,10 +125,10 @@ Kohana::modules(array(
 	// 'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	 'database'   => MODPATH.'database'   // Database access
+	 'database'   => MODPATH.'database',   // Database access
 	// 'image'      => MODPATH.'image',      // Image manipulation
 	// 'minion'     => MODPATH.'minion',     // CLI Tasks
-	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+	 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	));
@@ -151,7 +151,7 @@ Route::set('ajax', 'ajax')
 		'controller' => 'ajax',
 		'action'     => 'request',
 	));
-Route::set('admin', '<action>(/<id>)', array('action' => 'shipping|truck|trailer|stuff|broker|logout'))
+Route::set('admin', '<action>(/<id>)', array('action' => 'shipping|truck|trailer|stuff|broker|logout|maintenance'))
 	->defaults(array(
 		'controller' => 'admin',
 	));
