@@ -33,45 +33,45 @@
 						<!-- <input type="text" class="form-control" name="broker_adress" placeholder="Address"> -->
 					</div>
 					<div class="col-md-6 form-group">
-        	            <label for="brokers_name">Name Brokers Company</label>
-            	        <input name="brokers_name" class="form-control" data-valid="required-text" placeholder="Name Brokers Company" type="text"
+        	            <label for="name">Name Brokers Company</label>
+            	        <input name="name" class="form-control" data-valid="required-text" placeholder="Name Brokers Company" type="text"
                            required autocomplete="off">
                 	</div>
                 	<div class="col-md-6 form-group">
-                    	<label from="brokers_mc">MC</label>
-                    	<input name="brokers_mc" class="form-control" data-valid placeholder="MC" type="text" autocomplete="off">
+                    	<label from="mc">MC</label>
+                    	<input name="mc" class="form-control" data-valid placeholder="MC" type="text" autocomplete="off">
                 	</div>
 					<div class="col-md-12 form-group">
-						<label for="broker_adress">adress</label>
-						<input type="text" class="form-control" name="broker_adress" placeholder="Address">
+						<label for="adress">adress</label>
+						<input type="text" class="form-control" name="adress" placeholder="Address">
 					</div>
 					<div class="col-md-6 form-group">
-			   		    <label for="broker_city">city</label>
-						<input type="text" class="form-control" name="broker_city" placeholder="City">
+			   		    <label for="city">city</label>
+						<input type="text" class="form-control" name="city" placeholder="City">
 					</div>
 					<div class="col-md-6 form-group">
-			  		    <label for="broker_state">state</label>
-						<input name="broker_state" class="form-control" placeholder="State" type="text" autocomplete="off" data-valid>
+			  		    <label for="state">state</label>
+						<input name="state" class="form-control" placeholder="State" type="text" autocomplete="off" data-valid>
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="broker_zip">zip</label>
-				  	    <input type="text" class="form-control" name="broker_zip" placeholder="Zip code">
+						<label for="zip">zip</label>
+				  	    <input type="text" class="form-control" name="zip" placeholder="Zip code">
 					</div>
 					<div class="col-md-6 form-group">
-                    	<label from="brokers-phone">Main Phone</label>
-                    	<input name="brokers-phone" class="form-control" placeholder="Phone" type="text" autocomplete="off" data-valid>
+                    	<label from="phone">Main Phone</label>
+                    	<input name="phone" class="form-control" placeholder="Phone" type="text" autocomplete="off" data-valid>
                 	</div>
 					<div class="col-md-6 form-group">
-			 		    <label for="broker_payment_type">payment type</label>
-						<select class="form-control" name="broker_payment_type">
+			 		    <label for="payment_type">payment type</label>
+						<select class="form-control" name="payment_type">
 						  	<option>Factoring</option>
 						    <option>QP</option>
 						    <option>Direct</option>
 						</select>
 					</div>
 					<div class="col-md-6 form-group">
-					    <label for="broker_payment_form">payment form</label>
-						<select class="form-control" name="broker_payment_form">
+					    <label for="payment_form">payment form</label>
+						<select class="form-control" name="payment_form">
 						    <option>ACH</option>
 						    <option>Check /M</option>
 						    <option>Comcheck</option>
@@ -80,12 +80,12 @@
 					    </select>
 					</div>
 					<div class="col-md-6 form-group">
-					    <label for="broker_interest">interest</label>
-						<input type="text" class="form-control" name="broker_interest" placeholder="Interest...">
+					    <label for="interest">interest</label>
+						<input type="text" class="form-control" name="interest" placeholder="Interest...">
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="broker_notes">notes</label>
-						<textarea class="form-control" rows="1" namer="broker_notes" placeholder="Notes..."></textarea>
+						<label for="notes">notes</label>
+						<textarea class="form-control" rows="1" namer="notes" placeholder="Notes..."></textarea>
 					</div>
 					<div class="col-md-12 form-group">
 						<button type="submit" class="_btn add_new">Submit</button>
