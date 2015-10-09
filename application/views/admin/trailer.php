@@ -7,145 +7,106 @@
 	<link rel="stylesheet" href="/public/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/public/css/application.css">
 	<link rel="stylesheet" href="/public/css/admin_theme.css">
+	<link rel="stylesheet" href="/public/css/style.css">
+	<link rel="stylesheet" href="/public/css/datepicker.css">
+	<link rel="stylesheet" href="/public/css/modal.css">
 </head>
 <body>
 
 <!-- login modal -->
-<div class="modal fade" id="trailerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-      	<div class="container-fluid">
-      		<div class="col-md-12">
-						<!-- 
-							new form, make same for edit
-							ps. delete this comment after done
-						-->
-						<form class="form global_form">
-							<div class="caption">
-								new
-							</div>
-							<div class="form-group">
-							  <label for="trailer_id">trailer #</label>
-							  <input type="text" class="form-control" id="trailer_id">
-							</div>
-							<div class="form-group">
-							  <label for="trailer_license_plate">license plate</label>
-							  <input type="text" class="form-control" id="trailer_license_plate">
-							</div>
-							<div class="form-group">
-								<label for="trailer_license_plate_exp">exp. license plate</label>
-								<div class="row">
-									<div class="col-md-4">
-										<select class="form-control" id="trailer_license_plate_exp">
-									    <option value="">2015</option>
-									    <option value="">2016</option>
-									  </select>
-									</div>
-									<div class="col-md-4">
-										<select class="form-control">
-										  <option value="">January</option>
-										  <option value="">February</option>
-										  <option value="">March</option>
-										  <option value="">April</option>
-										  <option value="">May</option>
-										  <option value="">June</option>
-										  <option value="">July</option>
-										  <option value="">August</option>
-										  <option value="">September</option>
-										  <option value="">October</option>
-										  <option value="">November</option>
-										  <option value="">December</option>
-										</select>		
-									</div>
-									<!-- set more days -->
-									<div class="col-md-4">
-										<select class="form-control">
-										  <option value="">1</option>
-										  <option value="">2</option>
-										  <option value="">3</option>
-										  <option value="">4</option>
-										  <option value="">5</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-							  <label for="trailer_make">make</label>
-							  <input type="text" class="form-control" id="trailer_make">
-							</div>
-							<!-- make more years... -->
-							<div class="form-group">
-							  <label for="trailer_year">year</label>
-							  <select class="form-control" id="trailer_year">
-							    <option value="">1990</option>
-							    <option value="">1991</option>
-							    <option value="">1992</option>
-							    <option value="">1993</option>
-							    <option value="">1994</option>
-							  </select>
-							</div>
-							<div class="form-group">
-							  <label for="trailer_vin">VIN #</label>
-							  <input type="text" class="form-control" id="trailer_vin">
-							</div>
-							<div class="form-group">
-								<label for="trailer_annual_inspection_exp">exp. annual inspection</label>
-								<div class="row">
-									<div class="col-md-4">
-										<select class="form-control" id="trailer_annual_inspection_exp">
-									    <option value="">2015</option>
-									    <option value="">2016</option>
-									  </select>
-									</div>
-									<div class="col-md-4">
-										<select class="form-control">
-										  <option value="">January</option>
-										  <option value="">February</option>
-										  <option value="">March</option>
-										  <option value="">April</option>
-										  <option value="">May</option>
-										  <option value="">June</option>
-										  <option value="">July</option>
-										  <option value="">August</option>
-										  <option value="">September</option>
-										  <option value="">October</option>
-										  <option value="">November</option>
-										  <option value="">December</option>
-										</select>		
-									</div>
-									<!-- set more days -->
-									<div class="col-md-4">
-										<select class="form-control">
-										  <option value="">1</option>
-										  <option value="">2</option>
-										  <option value="">3</option>
-										  <option value="">4</option>
-										  <option value="">5</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-							  <label for="trailer_owner">owner</label>
-							  <select class="form-control">
-								  <option value="">Jason Statham</option>
-								  <option value="">Tommy</option>
-								  <option value="">Boris Britva</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="_btn add_new">Submit</button>
-								<button type="submit" class="_btn delete">Discard</button>
-							</div>
-						</form>
+<div id="addTrailer" class="modal fade" tabindex="-1" role="dialog"  aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+				<h3 id="addTruckLabel" class="text-center">Add new truck</h3>
+			</div>
+			<div class="modal-body row body-modal valid-form">
+				<form>
+					<div class="col-md-12">
+						<label for="vin">VIN#</label>
+						<input name="vin" class="form-control" data-valid placeholder="VIN" type="text"
+							   autocomplete="off">
+					</div>
+					<div class="col-md-6">
+						<label for="trailer">Truck#</label>
+						<input name="trailer" class="form-control" data-valid placeholder="track" type="text"
+							   autocomplete="off">
+					</div>
+					<div class="col-md-6">
+						<label>Make</label>
+						<select class="form-control" name="make" placeholder="class" data-valid>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<label from="year">Year</label>
+						<input name="year" class="form-control datepicker-year" data-valid placeholder="year"
+							   type="text" autocomplete="off">
+					</div>
 
-	        </div>
-	      </div>
-      </div>
-    </div>
-  </div>
+					<div class="col-md-6 attach-input">
+						<label>License plate</label>
+						<input type="text" name="licence_plate" class="form-control pull-left"
+							   placeholder="License plate" data-valid>
+						<button type="button" class="btn btn-default attach-button pull-left">
+							<span class="glyphicon glyphicon-paperclip"></span>
+						</button>
+						<button type="button" class="btn btn-default remove-attach-button pull-left">
+							<span class="glyphicon glyphicon-remove"></span>
+						</button>
+						<input type="file" class="hidden attach-input-inner">
+						<input type="hidden" name="license_file" data-valid="attach-file">
+					</div>
+					<div class="col-md-6">
+						<label from="exp_date">Exp. date</label>
+						<input name="exp_date" class="form-control datepicker" data-valid placeholder="Exp. date"
+							   type="text" autocomplete="off">
+					</div>
+					<div class="col-md-6">
+						<label from="annaul_exp_date">Annual inspection Exp. Date</label>
+						<input name="annaul_exp_date" class="form-control datepicker" data-valid
+							   placeholder="Annual inspection Exp. Date" type="text" autocomplete="off">
+					</div>
+					<div class="col-md-6">
+						<label>Owner</label>
+						<select class="form-control" name="owner" data-valid>
+							<?php foreach ($stuff as $val) {
+								echo "<option value='" . $val['id'] . "'>" . $val['first_name'] . ' ' . $val['last_name'] . "</option>";
+							} ?>
+						</select>
+					</div>
+
+					<div class="col-md-6">
+						<label>Status</label>
+						<select class="form-control" name="status" data-valid>
+
+							<option value="T">T</option>
+							<option value="A">A</option>
+							<option value="P">P</option>
+							<option value="S">S</option>
+							<option value="N">N</option>
+							<option value="H">H</option>
+							<option value="X">X</option>
+							<option value="W">W</option>
+						</select>
+					</div>
+
+
+					<div class="col-md-12 form-btns text-center">
+						<button class="_btn add_new add_new_trailer">Send It!</button>
+						<button data-dismiss="modal" aria-hidden="true" class="_btn delete">Discard</button>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
 </div>
+
 
 <div id="navigation">
 	<a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
@@ -222,7 +183,7 @@
 					toggle
 				</a>
 				<h2 class="admin_title">trailer</h2>
-				<button type="button" class="_btn add_new" data-toggle="modal" data-target="#trailerModal">
+				<button type="button" class="_btn add_new add_trailer" >
 				  new
 				</button>
 			</div>
@@ -247,13 +208,14 @@
 					</tr>
 				</thead>
 				<tbody>
+				<?php foreach($info as $val){?>
 					<tr>
-						<td>1202</td>
-						<td>Some</td>
-						<td>2000</td>
-						<td>1234567890ABCDEFG</td>
+						<td><?=$val['license_plate']?></td>
+						<td><?=$val['make']?></td>
+						<td><?=$val['year']?></td>
+						<td><?=$val['vin']?></td>
 						<td class="td-icon-width">
-							<a href="javascript:void(0);" class="edit-icon" title="edit">
+							<a href="javascript:void(0);" class="edit-icon setting-trailer" title="edit" data-id="<?=$val['id']?>">
 								<i class="fa fa-pencil"></i>
 							</a>
 						</td>
@@ -263,6 +225,7 @@
 							</a>
 						</td>
 					</tr>
+				<?php }?>
 				</tbody>
 			</table>
 
@@ -274,6 +237,9 @@
 <script type="text/javascript" src="/public/js/jquery-2.1.4.min.js"></script>	
 <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>	
 <script type="text/javascript" src="/public/js/core.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/public/js/download.js"></script>
+<script type="text/javascript" src="/public/js/main.js"></script>
 
 </body>
 </html>

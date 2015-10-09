@@ -16,7 +16,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                <h3 id="addStuffLabel" class="text-center">Add new stuff</h3>
+                <h3  class="text-center modal-header-text">Add new</h3>
             </div>
             <div class="modal-body row body-modal valid-form">
                 <form>
@@ -281,7 +281,7 @@
                 </a>
 
                 <h2 class="admin_title">Stuff</h2>
-                <a href="javascript:;" class="_btn add_new" role="button">add new</a>
+                <a href="javascript:;" class="_btn add_new add_stuff" role="button">add new</a>
 
             </div>
             <ol class="breadcrumb">
@@ -310,7 +310,7 @@
                 <span>Address: <span><?=$val['state'].','.$val['city'].','.$val['zip_code'];?></span></span>
                 </th>
                 <th colspan="5">
-                        <a href="javascript:;" class="pull-right setting" data-id="<?=$val['id'];?>">
+                        <a href="javascript:;" class="pull-right setting-stuff" data-id="<?=$val['id'];?>">
                             <i class="icon-settings"></i>
                         </a>
                     <div class="pull-right" style="margin-right: 10px;">

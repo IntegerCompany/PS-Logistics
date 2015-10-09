@@ -5,9 +5,19 @@ $(document).ready(function () {
             type: "POST",
             url: window.location.origin + "/ajax"
         });
-        var datepicker = $('.datepicker');
+        var datepicker = $('.datepicker'),
+            year = $('.datepicker-year');
         if(datepicker.length){
         datepicker.datepicker({format: 'mm/dd/yyyy'}).on('changeDate', function(){
+                $(this).datepicker('hide');
+            });
+        }
+        if(year.length){
+            year.datepicker( {
+                format: " yyyy", // Notice the Extra space at the beginning
+                viewMode: "years",
+                minViewMode: "years"
+            }).on('changeDate', function(){
                 $(this).datepicker('hide');
             });
         }
@@ -130,11 +140,13 @@ $(document).ready(function () {
 
 
         }
-
-        $('.image-editor').cropit({}).on('click', ".attach-cropit-photo", function () {
-            var c = $(this);
-            $('.cropit-image-input').click();
-        });
+        var imageEditor = $('.image-editor');
+        if(imageEditor.length) {
+            imageEditor.cropit({}).on('click', ".attach-cropit-photo", function () {
+                var c = $(this);
+                $('.cropit-image-input').click();
+            });
+        }
         $('.attach-button').on('click', function () {
             $(this).nextAll('input').first().click();
         });
@@ -172,8 +184,20 @@ $(document).ready(function () {
 
         });
 
-        $('a[class*="add_new"]').on('click', function () {
+        $('.add_stuff').on('click', function () {
             var el = $('#addStuff');
+            el.removeClass('mode-edit');
+            triger_modal(el);
+            el.modal('show');
+        });
+        $('.add_truck').on('click', function () {
+            var el = $('#addTruck');
+            el.removeClass('mode-edit');
+            triger_modal(el);
+            el.modal('show');
+        });
+        $('.add_trailer').on('click', function () {
+            var el = $('#addTrailer');
             el.removeClass('mode-edit');
             triger_modal(el);
             el.modal('show');
@@ -195,12 +219,66 @@ $(document).ready(function () {
                 console.log(result);
                 var id = undefined;
                 if (c.parents('.modal').hasClass('mode-edit')) {
-                    id = c.data('stuffId');
+                    console.log(c.data());
+                    id = c.data('id');
                 }
+
                 $.ajax({
                     beforeSend: load_animate(),
                     data: {
                         'add-edit-stuff': {
+                            "data": result,
+                            "id": id
+                        }
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        location.reload();
+                    }
+                });
+
+            }
+        });
+        $('.add_new_truck').on('click', function () {
+
+            var c = $(this);
+            var result = validate($('#addTruck .valid-form'));
+            if (Object.keys(result).length > 4) {
+                console.log(result);
+                var id = undefined;
+                if (c.parents('.modal').hasClass('mode-edit')) {
+                    id = c.data('id');
+                }
+                $.ajax({
+                    beforeSend: load_animate(),
+                    data: {
+                        'add-edit-truck': {
+                            "data": result,
+                            "id": id
+                        }
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        location.reload();
+                    }
+                });
+
+            }
+        });
+        $('.add_new_trailer').on('click', function () {
+
+            var c = $(this);
+            var result = validate($('#addTrailer .valid-form'));
+            if (Object.keys(result).length > 4) {
+                console.log(result);
+                var id = undefined;
+                if (c.parents('.modal').hasClass('mode-edit')) {
+                    id = c.data('id');
+                }
+                $.ajax({
+                    beforeSend: load_animate(),
+                    data: {
+                        'add-edit-trailer': {
                             "data": result,
                             "id": id
                         }
@@ -228,9 +306,9 @@ $(document).ready(function () {
                     }
 
                 });
-                el.find('#addStuffLabel').text('Edit Stuff');
+                //el.find('#addStuffLabel').text('Edit Stuff');
                 el.find('.remove-attach-button').children('span').prop('class', 'glyphicon glyphicon-download-alt');
-                el.find('.add_new_stuff').data('stuff-id', data[0].id);
+                el.find('.add_new').data('id', data[0].id);
                 if (data[0].avatar_file) {
                     el.find('.cropit-image-preview').css('background-image', 'url(' + data[0].avatar_file + ')');
                 }
@@ -243,9 +321,7 @@ $(document).ready(function () {
             }
 
         }
-
-        $('.setting').on('click', function () {
-
+        $('.setting-stuff').on('click', function () {
             $.ajax({
                 data: {
                     'get_stuff_info': $(this).data('id')
@@ -253,6 +329,36 @@ $(document).ready(function () {
                 async: false,
                 success: function (data) {
                     var el = $('#addStuff');
+                    el.addClass('mode-edit');
+                    triger_modal(el, JSON.parse(data));
+                    el.modal('show');
+
+                }
+            });
+        });
+        $('.setting-truck').on('click', function () {
+            $.ajax({
+                data: {
+                    'get_truck_info': $(this).data('id')
+                },
+                async: false,
+                success: function (data) {
+                    var el = $('#addTruck');
+                    el.addClass('mode-edit');
+                    triger_modal(el, JSON.parse(data));
+                    el.modal('show');
+
+                }
+            });
+        });
+        $('.setting-trailer').on('click', function () {
+            $.ajax({
+                data: {
+                    'get_trailer_info': $(this).data('id')
+                },
+                async: false,
+                success: function (data) {
+                    var el = $('#addTrailer');
                     el.addClass('mode-edit');
                     triger_modal(el, JSON.parse(data));
                     el.modal('show');

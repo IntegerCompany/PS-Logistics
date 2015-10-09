@@ -4,9 +4,9 @@ class Model_Stuff extends Model
 {
     protected $_tableStuff = 'stuff';
 
-    public function add_stuff($key, $value)
+    public function add_stuff($array)
     {
-        DB::insert($this->_tableStuff, $key)->values($value)->execute();
+        $this->insert_to_table($this->_tableStuff,$array);
     }
 
     public function get_stuff()

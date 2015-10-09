@@ -32,7 +32,9 @@ class Controller_Admin extends Controller {
 	public function action_trailer()
 	{
 		// if(Session::instance()->get('user')){
-			$this->response->body(View::factory('/admin/trailer'));
+		$data['info'] = Model::factory('Trailer')->get_trailer();
+		$data['stuff'] = Model::factory('Stuff')->get_stuff();
+			$this->response->body(View::factory('/admin/trailer',$data));
 		// } else {
 			// HTTP::redirect(URL::base_url());
 		// }
@@ -40,7 +42,9 @@ class Controller_Admin extends Controller {
 	public function action_truck()
 	{
 		// if(Session::instance()->get('user')){
-			 $this->response->body(View::factory('/admin/truck'));
+		$data['stuff'] = Model::factory('Stuff')->get_stuff();
+		$data['info'] = Model::factory('Truck')->get_truck();
+			 $this->response->body(View::factory('/admin/truck',$data));
 		// } else {
 			// HTTP::redirect(URL::base_url());
 		// }
