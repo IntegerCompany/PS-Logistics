@@ -57,6 +57,14 @@ class Controller_Admin extends Controller {
 		// HTTP::redirect(URL::base_url());
 		// }
 	}
+	public function action_brokerspage()
+	{
+		// if(Session::instance()->get('user')){
+		$this->response->body(View::factory('/admin/brokerspage'));
+		// } else {
+		// HTTP::redirect(URL::base_url());
+		// }
+	}
 	public function action_logout()
 	{
 		Session::instance()->delete('user');

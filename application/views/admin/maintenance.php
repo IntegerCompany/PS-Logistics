@@ -4,9 +4,10 @@
 	<meta charset="UTF-8">
 	<title>PS Logistics LLC</title>
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../public/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/public/css/application.css">
 	<link rel="stylesheet" href="/public/css/admin_theme.css">
-
+	<link rel="stylesheet" href="../../public/css/repair-page.css">
 
 	<link rel="stylesheet" href="/public/css/repair-history.css">
 </head>
@@ -90,159 +91,185 @@
 			</div>
 
 			<ol class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Library</a></li>
-				<li class="active">Data</li>
-				<li class="/print">
-					<i class="icon-print5"></i>
-				</li>
+			  <li><a href="#">Home</a></li>
+			  <li><a href="#">Library</a></li>
+			  <li class="active">Data</li>
+			  <li class="print">
+			  	 <i class="icon-print5"></i>
+			  </li>
 			</ol>
 
 			<h1>TRUCK/TRAILER OWNER</h1>
 
 			<!--acardion -->
 			<section class="history-content">
+				<h4>Date: 10/12/1215</h4>
+				<table id="repair-table " class="global_table table table-bordered">
+					<thead>
+						<tr>
+							<th>Number</th>
+							<th> Date</th>
+							<th>Equipment</th>
+							<th colspan="2">Work order</th>
+							<th>Status</th>
+							<th>Documents</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>#1</td>
+							<td>12/12/1215</td>
+							<td>
+								<div class="clearfix">
+									<div class="pull-left">
+										<i class="icon-frontal19"></i>
+									</div>
+									<div class="pull-left">
+										<span class="model_name">FREIGHTLINER</span>  
+										<br>
+										<span class="model_type">2003  K31359</span>
+									</div>
+									</div>
+							</td>
+							<td colspan="2">Description Description Description </td>
+							<td>
+								<span class="fancyArrow"><i class="fa fa-tasks"></i></span>
+								<select class="form-control status-select">
+									<option value="">Start</option>
+						    		<option value="">Progress</option>
+									<option value="">Do</option>
+									<option value="">4</option>
+									<option value="">5</option>
+								</select>
+							</td>
+							<td>
+								<div class="add-file-section">
+									<label for="myFile" class="custom-file-upload">
+	    							<i class="fa fa-cloud-upload add-icon"></i>Upload Files
+									</label>
+									<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" " />
+									<span id="file_error" class="file_error"></span>
+									<span  class="msg_error"></span>
+								</div>
+								
+								<button class="file-submit _btn add_new file-submit-table" >Submit
+									<img class="load" src="../../public/img/load.GIF" alt="load">
+								</button>						
+							</td>		
+						</tr>
+					</tbody>
+				</table>
 				<h4>Date: 11/12/1215</h4>
 				<table id="repair-table " class="global_table table table-bordered">
 					<thead>
-					<tr>
-						<th>Number</th>
-						<th> Date</th>
-						<th>Equipment</th>
-						<th>Work order</th>
-						<th>Status</th>
-						<th>Documents</th>
-					</tr>
+						<tr>
+							<th>Number</th>
+							<th> Date</th>
+							<th>Equipment</th>
+							<th colspan="2">Work order</th>
+							<th>Status</th>
+							<th>Documents</th>
+						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<td>#1</td>
-						<td>Date</td>
-						<td>
-							<div class="clearfix">
-								<div class="/pull-left">
-									<i class="icon-frontal19"></i>
+						<tr>
+							<td>#1</td>
+							<td>12/12/1215</td>
+							<td>
+								<div class="clearfix">
+									<div class="pull-left">
+										<i class="icon-frontal19"></i>
+									</div>
+									<div class="pull-left">
+										<span class="model_name">FREIGHTLINER</span>  
+										<br>
+										<span class="model_type">2003  K31359</span>
+									</div>
+									</div>
+							</td>
+							<td colspan="2">Description Description Description </td>
+							<td>
+								<span class="fancyArrow"><i class="fa fa-tasks"></i></span>
+								<select class="form-control status-select">
+									<option value="">Start</option>
+						    		<option value="">Progress</option>
+									<option value="">Do</option>
+									<option value="">4</option>
+									<option value="">5</option>
+								</select>
+							</td>
+							<td>
+								<div class="add-file-section">
+									<label for="myFile" class="custom-file-upload">
+	    							<i class="fa fa-cloud-upload add-icon"></i>Upload Files
+									</label>
+									<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" " />
+									<span id="file_error" class="file_error"></span>
+									<span  class="msg_error"></span>
 								</div>
-								<div class="/pull-left">
-									<span class="model_name">FREIGHTLINER</span>
-									<br>
-									<span class="model_type">2003  K31359</span>
-								</div>
-							</div>
-						</td>
-						<td>Description</td>
-						<td>
-							<select class="form-control">
-								<option value="">1</option>
-								<option value="">2</option>
-								<option value="">3</option>
-								<option value="">4</option>
-								<option value="">5</option>
-							</select>
-						</td>
-						<td>
-							<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" max-uploads = 6>
-							<span class="file_error"></span>
-							<span  class="msg_error"></span>
-							<input type="submit" value="submit" class="file-submit _btn add_new" />
-						</td>
-					</tr>
-					</tbody>
-				</table>
-				<h4>Date: 13/12/1215</h4>
-				<table id="repair-table " class="global_table table table-bordered">
-					<thead>
-					<tr>
-						<th>Number</th>
-						<th> Date</th>
-						<th>Equipment</th>
-						<th>Work order</th>
-						<th>Status</th>
-						<th>Documents</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<td>#1</td>
-						<td>Date</td>
-						<td>
-							<div class="clearfix">
-								<div class="/pull-left">
-									<i class="icon-frontal19"></i>
-								</div>
-								<div class="/pull-left">
-									<span class="model_name">FREIGHTLINER</span>
-									<br>
-									<span class="model_type">2003  K31359</span>
-								</div>
-							</div>
-						</td>
-						<td>Description</td>
-						<td>
-							<select class="form-control">
-								<option value="">1</option>
-								<option value="">2</option>
-								<option value="">3</option>
-								<option value="">4</option>
-								<option value="">5</option>
-							</select>
-						</td>
-						<td>
-							<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" max-uploads = 6>
-							<span class="file_error"></span>
-							<span  class="msg_error"></span>
-							<input type="submit" value="submit" class="file-submit _btn add_new" />
-						</td>
-					</tr>
+								
+								<button class="file-submit _btn add_new file-submit-table" >Submit
+									<img class="load" src="../../public/img/load.GIF" alt="load">
+								</button>						
+							</td>		
+						</tr>
 					</tbody>
 				</table>
 
-				<h4>Date: 13/12/1215</h4>
-				<table id="repair-table" class="global_table table table-bordered">
+				<h4>Date: 12/12/1215</h4>
+				<table id="repair-table " class="global_table table table-bordered">
 					<thead>
-					<tr>
-						<th>Number</th>
-						<th> Date</th>
-						<th>Equipment</th>
-						<th>Work order</th>
-						<th>Status</th>
-						<th>Documents</th>
-					</tr>
+						<tr>
+							<th>Number</th>
+							<th> Date</th>
+							<th>Equipment</th>
+							<th colspan="2">Work order</th>
+							<th>Status</th>
+							<th>Documents</th>
+						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<td>#1</td>
-						<td>Date</td>
-						<td>
-							<div class="clearfix">
-								<div class="/pull-left">
-									<i class="icon-frontal19"></i>
+						<tr>
+							<td>#1</td>
+							<td>12/12/1215</td>
+							<td>
+								<div class="clearfix">
+									<div class="pull-left">
+										<i class="icon-frontal19"></i>
+									</div>
+									<div class="pull-left">
+										<span class="model_name">FREIGHTLINER</span>  
+										<br>
+										<span class="model_type">2003  K31359</span>
+									</div>
+									</div>
+							</td>
+							<td colspan="2">Description Description Description </td>
+							<td>
+								<span class="fancyArrow"><i class="fa fa-tasks"></i></span>
+								<select class="form-control status-select">
+									<option value="">Start</option>
+						    		<option value="">Progress</option>
+									<option value="">Do</option>
+									<option value="">4</option>
+									<option value="">5</option>
+								</select>
+							</td>
+							<td>
+								<div class="add-file-section">
+									<label for="myFile" class="custom-file-upload">
+	    							<i class="fa fa-cloud-upload add-icon"></i>Upload Files
+									</label>
+									<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" " />
+									<span id="file_error" class="file_error"></span>
+									<span  class="msg_error"></span>
 								</div>
-								<div class="/pull-left">
-									<span class="model_name">FREIGHTLINER</span>
-									<br>
-									<span class="model_type">2003  K31359</span>
-								</div>
-							</div>
-						</td>
-						<td>Description</td>
-						<td>
-							<select class="form-control">
-								<option value="">1</option>
-								<option value="">2</option>
-								<option value="">3</option>
-								<option value="">4</option>
-								<option value="">5</option>
-							</select>
-						</td>
-						<td>
-							<input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" max-uploads = 6>
-							<span class="file_error"></span>
-							<span  class="msg_error"></span>
-							<button class="file-submit _btn add_new" >	Submit
-								<img class="load" src="/public/img/loader.GIF" alt="load"></button>
-						</td>
-					</tr>
+								
+								<button class="file-submit _btn add_new file-submit-table" >Submit
+									<img class="load" src="../../public/img/load.GIF" alt="load">
+								</button>						
+							</td>		
+						</tr>
 					</tbody>
 				</table>
 			</section>

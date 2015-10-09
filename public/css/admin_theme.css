@@ -271,3 +271,20 @@ body.opened #navigation{
 	.global_form select {
 		margin-bottom: 15px;
 	}
+
+/*brokers page*/
+	.modal-header{
+		border: none;
+	}
+	.brokers-rate{
+		padding-left: 25px;
+		
+	}
+	.brokers-rate i{
+		color: #65b4ce;
+		font-size: 20px;
+	}
+		.brokers-rate i:first-child{
+			padding-left: 5px;
+		}
+/*brokers page*/
