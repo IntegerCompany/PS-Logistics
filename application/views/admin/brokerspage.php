@@ -219,7 +219,7 @@
 						</td>
 						<td class="td-icon-width">
 							<a href="javascript:void(0);" class="edit-icon" title="edit">
-								<i class="fa fa-user"></i>
+								<i class="fa fa-trash-o"></i>
 							</a>
 						</td>
 					</tr>
