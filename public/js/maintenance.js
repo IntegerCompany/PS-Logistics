@@ -69,26 +69,26 @@
 				        for( var i =0; i< fileData.length; i++){
 				       		readImage(fileData[i], i);
 				       	}
-				       setTimeout(function(){ 
-					       $.ajax({
-						        data:{
-						        	'fileDataSent': fileDataSent,
-						        },
+				     //   setTimeout(function(){ 
+					    //    $.ajax({
+						   //      data:{
+						   //      	'fileDataSent': fileDataSent,
+						   //      },
 
-						        beforeSend : function(){
-						            $(".load").css("display"," block");//show loading gif
-						        },
-						        success: function(){
-						        	$(".load").css("display"," none");//remove loading gif
-						        	alert("success");
-						        	$(".file-name").css("text-decoration" , "underline");
-						        	 $(".file-name").css("color", "#0000FF");
-						        },
-						        error: function(){
-						        	$(".load").css("display"," none");//remove loading gif
-						        }
+						   //      beforeSend : function(){
+						   //          $(".load").css("display"," block");//show loading gif
+						   //      },
+						   //      success: function(){
+						   //      	$(".load").css("display"," none");//remove loading gif
+						   //      	alert("success");
+						   //      	$(".file-name").css("text-decoration" , "underline");
+						   //      	 $(".file-name").css("color", "#0000FF");
+						   //      },
+						   //      error: function(){
+						   //      	$(".load").css("display"," none");//remove loading gif
+						   //      }
 						        
-					    });
+					    // });
 
 				       	console.log(fileDataSent) }, 0);
 			});
