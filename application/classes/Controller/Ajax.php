@@ -49,7 +49,7 @@ class Controller_Ajax extends Controller
                         }
                         break;
                     case 'add-edit-stuff':
-                        $dirName = $v['data']['first_name'] . '_' . $v['data']['last_name'];
+                        $dirName = 'stuff/'.$v['data']['first_name'] . '_' . $v['data']['last_name'];
                         $v['data'] = $this->revalue_array($v['data'],$dirName);
                         if (!empty($v['id'])) {
                             Model::factory('Stuff')->edit_stuff($v['id'], $v['data']);
@@ -61,7 +61,7 @@ class Controller_Ajax extends Controller
                         print_r($v);
                         break;
                     case 'add-edit-truck':
-                        $dirName = $v['data']['vin'];
+                        $dirName = 'truck/'.$v['data']['vin'];
                         $v['data'] = $this->revalue_array($v['data'],$dirName);
                         if (!empty($v['id'])) {
                             Model::factory('Truck')->edit_truck($v['id'], $v['data']);
@@ -73,7 +73,7 @@ class Controller_Ajax extends Controller
 //                        print_r($v['data']);
                         break;
                     case 'add-edit-trailer':
-                        $dirName = $v['data']['vin'];
+                        $dirName = 'trailer/'.$v['data']['vin'];
                         $v['data'] = $this->revalue_array($v['data'],$dirName);
                         if (!empty($v['id'])) {
                             Model::factory('Trailer')->edit_trailer($v['id'], $v['data']);
@@ -81,6 +81,28 @@ class Controller_Ajax extends Controller
                         } else {
                             print_r($v['data']);
                             Model::factory('Trailer')->add_trailer($v['data']);
+                        }
+//                        print_r($v);
+                        break;
+                    case 'add-edit-maintenance':
+                        $v['data']['time'] = time();
+                        if (!empty($v['id'])) {
+                            Model::factory('Maintenance')->edit_maintenance($v['id'], $v['data']);
+                            print_r($v);
+                        } else {
+                            print_r($v['data']);
+                            Model::factory('Maintenance')->add_maintenance($v['data']);
+                        }
+//                        print_r($v);
+                        break;
+                    case 'add-edit-maintenance':
+                        $v['data']['time'] = time();
+                        if (!empty($v['id'])) {
+                            Model::factory('Maintenance')->edit_maintenance($v['id'], $v['data']);
+                            print_r($v);
+                        } else {
+                            print_r($v['data']);
+                            Model::factory('Maintenance')->add_maintenance($v['data']);
                         }
 //                        print_r($v);
                         break;
@@ -92,6 +114,9 @@ class Controller_Ajax extends Controller
                         break;
                     case "get_trailer_info":
                         echo json_encode(Model::factory('Trailer')->get_trailer_info($v));
+                        break;
+                    case "get_maintenance_info":
+                        echo json_encode(Model::factory('Maintenance')->get_maintenance_info($v));
                         break;
                 }
             };

@@ -19,7 +19,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-				<h3 id="addTruckLabel" class="text-center">Add new truck</h3>
+				<h3 class="text-center modal-header-text">Add new</h3>
 			</div>
 			<div class="modal-body row body-modal valid-form">
 				<form>
@@ -50,7 +50,7 @@
 
 					<div class="col-md-6 attach-input">
 						<label>License plate</label>
-						<input type="text" name="licence_plate" class="form-control pull-left"
+						<input type="text" name="license_plate" class="form-control pull-left"
 							   placeholder="License plate" data-valid>
 						<button type="button" class="btn btn-default attach-button pull-left">
 							<span class="glyphicon glyphicon-paperclip"></span>
@@ -189,14 +189,13 @@
 			</div>
 
 			<ol class="breadcrumb">
-			  <li><a href="#">Home</a></li>
-			  <li><a href="#">Library</a></li>
-			  <li class="active">Data</li>
+			  <li><a href="/">Home</a></li>
+			  <li class="active">Trailer</li>
 			  <li class="print">
 			  	<i class="icon-print5"></i>
 			  </li>
 			</ol>
-			
+			<?php if(!empty($info)){?>
 			<table class="global_table table table-bordered">
 				<thead>
 					<tr>
@@ -228,7 +227,7 @@
 				<?php }?>
 				</tbody>
 			</table>
-
+			<?php } ?>
 		</div>
 	</div>
 </div>

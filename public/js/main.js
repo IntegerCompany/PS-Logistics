@@ -202,6 +202,12 @@ $(document).ready(function () {
             triger_modal(el);
             el.modal('show');
         });
+        $('.add_maintenance').on('click',function(){
+            var el = $('#addMaintenance');
+            el.removeClass('mode-edit');
+            triger_modal(el);
+            el.modal('show');
+        });
 
         $('.add_new_stuff').on('click', function () {
 
@@ -265,6 +271,33 @@ $(document).ready(function () {
 
             }
         });
+        $('.add_new_maintenance').on('click', function () {
+
+            var c = $(this);
+            var result = validate($('#addMaintenance .valid-form'));
+            if (Object.keys(result).length == 2) {
+                console.log(result);
+
+                var id = undefined;
+                if (c.parents('.modal').hasClass('mode-edit')) {
+                    id = c.data('id');
+                }
+                $.ajax({
+                    beforeSend: load_animate(),
+                    data: {
+                        'add-edit-maintenance': {
+                            "data": result,
+                            "id": id
+                        }
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        location.reload();
+                    }
+                });
+
+            }
+        });
         $('.add_new_trailer').on('click', function () {
 
             var c = $(this);
@@ -296,7 +329,7 @@ $(document).ready(function () {
             el.find('form')[0].reset();
 
             if (el.hasClass('mode-edit')) {
-                el.find('input[name]').each(function () {
+                el.find('input[name]').add('select[name]').each(function () {
                     var c = $(this);
                     var name = c.prop('name');
                     c.val(data[0][name]);
@@ -306,14 +339,14 @@ $(document).ready(function () {
                     }
 
                 });
-                //el.find('#addStuffLabel').text('Edit Stuff');
+                el.find('.modal-header-text').text('Edit');
                 el.find('.remove-attach-button').children('span').prop('class', 'glyphicon glyphicon-download-alt');
                 el.find('.add_new').data('id', data[0].id);
                 if (data[0].avatar_file) {
                     el.find('.cropit-image-preview').css('background-image', 'url(' + data[0].avatar_file + ')');
                 }
             } else {
-                $('#addStuffLabel').text('Add new stuff');
+                $('.modal-header-text').text('Add new');
                 el.find('.remove-attach-button').children('span').prop('class', 'glyphicon glyphicon-remove');
                 el.find('.cropit-image-preview').css('background-image', '');
                 el.find('.btn-success').removeClass('btn-success');
@@ -365,6 +398,18 @@ $(document).ready(function () {
 
                 }
             });
+        });
+
+
+        $('input[name=radio-object]').on('change',function(){
+            var list = $('.object-list'),
+                c = $(this),
+                v = c.val();
+            list.children().hide();
+            list.children('[data-option='+v+']').show();
+
+
+
         });
     });
 

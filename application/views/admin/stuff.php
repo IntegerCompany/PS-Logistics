@@ -285,9 +285,8 @@
 
             </div>
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
+                <li><a href="/">Home</a></li>
+                <li class="active">Stuff</li>
                 <li class="print">
                     <i class="icon-print5"></i>
                 </li>
@@ -394,7 +393,7 @@
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <?=$val['emergency_contact'];?> Joe Longcaster
+                            <?=$val['emergency_contact'];?>
                         </div>
                     </div>
                 </td>

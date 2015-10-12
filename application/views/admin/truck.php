@@ -19,7 +19,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                <h3 id="addTruckLabel" class="text-center">Add new truck</h3>
+                <h3 class="text-center modal-header-text">Add new</h3>
             </div>
             <div class="modal-body row body-modal valid-form">
                 <form>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-md-6 attach-input">
                         <label>License plate</label>
-                        <input type="text" name="licence_plate" class="form-control pull-left"
+                        <input type="text" name="license_plate" class="form-control pull-left"
                                placeholder="License plate" data-valid>
                         <button type="button" class="btn btn-default attach-button pull-left">
                             <span class="glyphicon glyphicon-paperclip"></span>
@@ -123,14 +123,9 @@
                     <div class="col-md-6">
                         <label>Trailer</label>
                         <select class="form-control" name="trailer" data-valid>
-                            <option value="T">T</option>
-                            <option value="A">A</option>
-                            <option value="P">P</option>
-                            <option value="S">S</option>
-                            <option value="N">N</option>
-                            <option value="H">H</option>
-                            <option value="X">X</option>
-                            <option value="W">W</option>
+                            <?php foreach ($trailer as $val) {
+                                echo "<option value='" . $val['id'] . "'>" . $val['trailer'] ."</option>";
+                            } ?>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -242,49 +237,50 @@
             </div>
 
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
+                <li><a href="/">Home</a></li>
+                <li class="active">Truck</li>
                 <li class="print">
                     <i class="icon-print5"></i>
                 </li>
             </ol>
-
-            <table class="global_table table table-bordered">
-                <thead>
-                <tr>
-                    <th># ID</th>
-                    <th>License plate</th>
-                    <th>Make</th>
-                    <th>Year</th>
-                    <th>Color</th>
-                    <th>VIN</th>
-                    <th colspan="2">Settings</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($info as $val) { ?>
+            <?php if (!empty($info)) { ?>
+                <table class="global_table table table-bordered">
+                    <thead>
                     <tr>
-                        <td><?= $val['id'] ?></td>
-                        <td><?= $val['license_plate'] ?></td>
-                        <td><?= $val['make'] ?></td>
-                        <td><?= $val['year'] ?></td>
-                        <td><?= $val['color'] ?></td>
-                        <td><?= $val['vin'] ?></td>
-                        <td class="td-icon-width">
-                            <a href="javascript:void(0);" class="edit-icon setting-truck" title="edit" data-id="<?=$val['id']?>" >
-                                <i class="fa fa-pencil"></i>
-                            </a>
-                        </td>
-                        <td class="td-icon-width">
-                            <a href="javascript:void(0);" class="edit-icon" title="history">
-                                <i class="fa fa-history"></i>
-                            </a>
-                        </td>
+                        <th># ID</th>
+                        <th>License plate</th>
+                        <th>Make</th>
+                        <th>Year</th>
+                        <th>Color</th>
+                        <th>VIN</th>
+                        <th colspan="2">Settings</th>
                     </tr>
-                <?php } ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($info as $val) { ?>
+                        <tr>
+                            <td><?= $val['id'] ?></td>
+                            <td><?= $val['license_plate'] ?></td>
+                            <td><?= $val['make'] ?></td>
+                            <td><?= $val['year'] ?></td>
+                            <td><?= $val['color'] ?></td>
+                            <td><?= $val['vin'] ?></td>
+                            <td class="td-icon-width">
+                                <a href="javascript:void(0);" class="edit-icon setting-truck" title="edit"
+                                   data-id="<?= $val['id'] ?>">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                            </td>
+                            <td class="td-icon-width">
+                                <a href="javascript:void(0);" class="edit-icon" title="history">
+                                    <i class="fa fa-history"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
+            <?php } ?>
 
         </div>
     </div>

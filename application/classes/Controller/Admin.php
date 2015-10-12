@@ -44,7 +44,8 @@ class Controller_Admin extends Controller {
 		// if(Session::instance()->get('user')){
 		$data['stuff'] = Model::factory('Stuff')->get_stuff();
 		$data['info'] = Model::factory('Truck')->get_truck();
-			 $this->response->body(View::factory('/admin/truck',$data));
+		$data['trailer'] = Model::factory('Trailer')->get_trailer();
+		$this->response->body(View::factory('/admin/truck',$data));
 		// } else {
 			// HTTP::redirect(URL::base_url());
 		// }
@@ -52,7 +53,9 @@ class Controller_Admin extends Controller {
 	public function action_maintenance()
 	{
 		// if(Session::instance()->get('user')){
-		$this->response->body(View::factory('/admin/maintenance'));
+		$data['truck'] = Model::factory('Truck')->get_truck();
+		$data['trailer'] = Model::factory('Trailer')->get_trailer();
+		$this->response->body(View::factory('/admin/maintenance',$data));
 		// } else {
 		// HTTP::redirect(URL::base_url());
 		// }
