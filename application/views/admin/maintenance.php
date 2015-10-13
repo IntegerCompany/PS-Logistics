@@ -24,15 +24,15 @@
                 <div class="container-fluid">
                     <div class="col-md-12 valid-form">
                         <form class="form global_form ">
-                            <div class="radio-new-form-right">
+                            <div class="col-md-6 radio-new-form-right">
                                 <input type="radio" id="radio01" value="trailer" name="radio-object"/>
                                 <label for="radio01"><span></span>TRAILER </label>
                             </div>
-                            <div class="radio-new-form-left">
+                            <div class="col-md-6 radio-new-form-left">
                                 <input type="radio" id="radio02" value="truck" name="radio-object"/>
                                 <label for="radio02"><span></span>TRUCK</label>
                             </div>
-                            <div class="form-group">
+                            <div class="col-md-12 form-group form-select">
                                 <select class="form-control object-list" data-valid name="vin">
                                     <option selected></option>
                                     <?php foreach ($truck as $val) {
@@ -207,11 +207,11 @@
                     <thead>
                     <tr>
                         <th>
-<!--                            <div class="mark">-->
-<!--                                <input id="maintenance-checkbox" type="checkbox" name="toppings" value="ham">-->
-<!--                                <label for="maintenance-checkbox"></label>-->
-<!--                            </div>-->
+                       		<div class="mark-all"> </div>
                             <input id='checkbox-mainteance-all' type="checkbox">
+                            <label for="checkbox-mainteance-all"></label>
+                          
+                            <!-- <input id='checkbox-mainteance-all' type="checkbox"> -->
                         </th>
                         <th> Date</th>
                         <th>Equipment</th>
@@ -225,7 +225,11 @@
                     <?php foreach ($info as $val) { ?>
                         <tr>
                             <td>
-                                <input class="checkbox-maintenance" data-id="<?= $val['id']; ?>" type="checkbox">
+								<div class=" mark">
+								   <input class="checkbox-maintenance" data-id="<?= $val['id']; ?>" type="checkbox">
+								   <label></label>
+								</div>
+								                                
                             </td>
                             <td><?= $val['time']; ?></td>
                             <td>
