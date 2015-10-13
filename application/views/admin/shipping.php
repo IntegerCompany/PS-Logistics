@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="/public/css/admin_theme.css">
 	<!-- add shipping.css -->
 	<link rel="stylesheet" href="/public/css/shipping.css">
+	<link rel="stylesheet" type="text/css" media="print" href="/public/css/print.css" /> <!-- add to main layout for print-->
 </head>
 <body>
 
@@ -214,7 +215,7 @@
 					$
 				</caption>
 				<thead>
-					<tr>
+					<tr class="table-head">
 						<th colspan="4" class="text-center">#46 * Oleh Lebid * 216-7736168 * * 2014 * 353389 * trl# 215367 * 801365</th>
 						<th> 1250 $</th>
 						<th colspan="2">
