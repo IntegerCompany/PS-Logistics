@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="/public/css/admin_theme.css">
 	<!-- add shipping.css -->
 	<link rel="stylesheet" href="/public/css/shipping.css">
+	<link rel="stylesheet" type="text/css" media="print" href="/public/css/print.css" /> <!-- add to main layout for print-->
 </head>
 <body>
 

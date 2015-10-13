@@ -1,0 +1,16 @@
+{ -webkit-print-color-adjust: exact; }
+body{
+	background: #fff;
+	font-size: 12pt;
+	font-family: "Georgia", sans-serif;
+}
+#navigation{
+	display: none;
+}
+#conteiner{
+	margin-left: 10%;
+	color: black;
+}
+.admin-top button{
+	display: none;
+} 
