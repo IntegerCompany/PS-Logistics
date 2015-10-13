@@ -225,7 +225,6 @@
                     <?php foreach ($info as $val) { ?>
                         <tr>
                             <td>
-                                <?= $val['id']; ?>
                                 <input class="checkbox-maintenance" data-id="<?= $val['id']; ?>" type="checkbox">
                             </td>
                             <td><?= $val['time']; ?></td>
@@ -241,7 +240,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td colspan="2">Description Description Description</td>
+                            <td colspan="2"><?= $val['description']; ?></td>
                             <!--						<td>-->
                             <!--							<span class="fancyArrow"><i class="fa fa-tasks"></i></span>-->
                             <!--							<select class="form-control status-select">-->

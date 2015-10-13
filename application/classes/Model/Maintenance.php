@@ -17,7 +17,7 @@ class Model_Maintenance extends Model
 
     public function get_maintenance()
     {
-        $query = DB::query(Database::SELECT, "SELECT maintenance.id,description, FROM_UNIXTIME(time, '%m/%d/%Y') as time, maintenance.vin, IFNULL(trailer.year,truck.year) as year, IFNULL(trailer.car_number,truck.car_number) as car_number FROM maintenance LEFT JOIN trailer ON trailer.vin = maintenance.vin LEFT JOIN truck ON truck.vin = maintenance.vin WHERE maintenance.status = 0 ORDER BY maintenance.id");
+        $query = DB::query(Database::SELECT, "SELECT maintenance.id,description, FROM_UNIXTIME(time, '%m/%d/%Y') as time, maintenance.vin, IFNULL(trailer.year,truck.year) as year, IFNULL(trailer.car_number,truck.car_number) as car_number FROM maintenance LEFT JOIN trailer ON trailer.vin = maintenance.vin LEFT JOIN truck ON truck.vin = maintenance.vin WHERE maintenance.status = 0 ORDER BY time DESC ");
         return $query->execute()->as_array();
     }
     public function done_maintenance($arr_id)

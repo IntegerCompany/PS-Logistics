@@ -448,7 +448,7 @@ $(document).ready(function () {
                             });
                             console.log(obj);
                             if(c.nextAll('.file-name').length < 8) {
-                                c.after("<span class='file-name' >" + file.name + "<button class='remove-btn'><i class='fa fa-trash-o'></i></button> </span>");
+                                c.after("<span class='file-name' >" + file.name + "<button class='remove-btn remove-file'><i class='fa fa-trash-o'></i></button> </span>");
                                 c.next('span').data('info',obj);
                             } else {
                                 load_animate();
