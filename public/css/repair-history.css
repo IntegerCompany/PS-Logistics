@@ -30,57 +30,12 @@
 	width: 60%;
 }
 
-#frmFile {
-	border-top:#F0F0F0 2px solid;
-	background:#FAF8F8;
-	padding-left:10px;
-	
-}
-#myFile{
 
-	margin-top: 10px;
-	padding-left:10px;
-
-}
-.file_error{
-	padding-left: 10px;
-	color: #FF0000;
-}
-.file-name{
-	color:#aaaaaa;
-	display: block;
-	padding-left: 10px;
-	padding-top: 5px;
-}
-.file-submit{
-	float: right;
-}
-.msg_error{
-	color: #FF0000;
-    display: block;
-    padding-left: 10px;
-    font-style: italic;
-}
-#repair-table .global_table th, .global_table td{
-    vertical-align: top!important;
-}
-.remove-btn{
-	padding-left: 10px;
-	/*background: none;*/
-	border: none;
-	/*color: #FF0000;*/
-	background: url(../../public/img/delete.png) no-repeat;
-	background-size: contain;
-	height: 15px;
-    margin-left: 20px;
-}
 .load{
 	display: none;
 }
 /*content*/
-fileDataSent['base64'] = input;
-			        	fileDataSent['name'] = input.name;
-			        	fileDataSent['type'] = input.type;
+
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {

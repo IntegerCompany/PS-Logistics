@@ -110,13 +110,7 @@
     <a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
     <ul>
         <!-- add class .active to LI when this page active -->
-        <li>
-            <a href="javascript:;">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                map
-            </a>
-        </li>
+
         <li>
             <a href="/shipping">
                 <i class="icon-pin67"></i>
@@ -152,13 +146,7 @@
                 broker
             </a>
         </li>
-        <li>
-            <a href="javascript:;">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                phone
-            </a>
-        </li>
+
         <li class="active">
             <a href="/maintenance">
                 <i class="icon-pin67"></i>
@@ -283,20 +271,11 @@
 </body>
 <script type="text/javascript" src="/public/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
-<!-- <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script> -->
 <script type="text/javascript" src="/public/js/core.js"></script>
-<!--<script type="text/javascript"  src="/public/js/maintenance.js"></script>-->
 <script type="text/javascript" src="/public/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="/public/js/download.js"></script>
 <script type="text/javascript" src="/public/js/main.js"></script>
-<!--<script>-->
-<!--	// $(function(){-->
-<!--	//     $('body').slimScroll({-->
-<!--	//         height: '100%',-->
-<!--	//         alwaysVisible: false-->
-<!--	//     });-->
-<!--	// });-->
-<!--//</script>-->
+
 </body>
 </html>
 

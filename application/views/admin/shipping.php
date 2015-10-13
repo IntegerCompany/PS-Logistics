@@ -125,13 +125,7 @@
 	<a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
 	<ul>
 		<!-- add class .active to LI when this page active -->
-		<li>
-			<a href="javascript:;">
-				<i class="icon-pin67"></i>
-				<i class="icon-locator"></i>
-				map
-			</a>
-		</li>
+
 		<li class="active">
 			<a href="/shipping">
 				<i class="icon-pin67"></i>
@@ -167,13 +161,7 @@
 				broker
 			</a>
 		</li>
-		<li>
-			<a href="javascript:;">
-				<i class="icon-pin67"></i>
-				<i class="icon-locator"></i>
-				phone
-			</a>
-		</li>
+
 		<li>
 			<a href="/maintenance">
 				<i class="icon-pin67"></i>

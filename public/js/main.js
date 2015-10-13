@@ -191,6 +191,12 @@ $(document).ready(function () {
             triger_modal(el);
             el.modal('show');
         });
+        $('.add_company').on('click', function () {
+            var el = $('#addCompany');
+            el.removeClass('mode-edit');
+            triger_modal(el);
+            el.modal('show');
+        });
         $('.add_truck').on('click', function () {
             var el = $('#addTruck');
             el.removeClass('mode-edit');

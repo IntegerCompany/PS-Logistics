@@ -9,20 +9,15 @@
     <link rel="stylesheet" href="/public/css/admin_theme.css">
     <link rel="stylesheet" href="/public/css/repair-page.css">
     <link rel="stylesheet" href="/public/css/repair-history.css">
+    <link rel="stylesheet" href="/public/css/modal.css">
 </head>
 <body>
 <div id="navigation">
     <a href="/"><img src="/public/img/logo.png" class="img-responsive nav_logo" alt=""></a>
     <ul>
-<!--         add class .active to LI when this page active -->
+        <!--         add class .active to LI when this page active -->
+
         <li>
-            <a href="javascript:;">
-                <i class="icon-pin67"></i>
-                <i class="icon-locator"></i>
-                map
-            </a>
-        </li>
-        <li >
             <a href="/shipping">
                 <i class="icon-pin67"></i>
                 <i class="icon-locator"></i>
@@ -57,13 +52,7 @@
                 broker
             </a>
         </li>
-<!--        <li>-->
-<!--            <a href="javascript:;">-->
-<!--                <i class="icon-pin67"></i>-->
-<!--                <i class="icon-locator"></i>-->
-<!--                phone-->
-<!--            </a>-->
-<!--        </li>-->
+
         <li>
             <a href="/maintenance">
                 <i class="icon-pin67"></i>
@@ -84,50 +73,56 @@
                 <a class="visible-xs visible-sm toggle_menu" href="javascript:;">
                     toggle
                 </a>
+
                 <h2 class="admin_title">REPAIR HISTORY</h2>
             </div>
             <ol class="breadcrumb">
-              <li><a href="/">Home</a></li>
-              <li class="active">History</li>
-              <li class="active"><?=$vin;?></li>
-              <li class="print">
-                   <i class="icon-print5"></i>
-              </li>
+                <li><a href="/">Home</a></li>
+                <li class="active">History</li>
+                <li class="active"><?= $vin; ?></li>
+                <li class="print">
+                    <i class="icon-print5"></i>
+                </li>
             </ol>
             <h1>TRUCK/TRAILER OWNER</h1>
-<!--            acardion -->
+            <!--            acardion -->
             <section class="history-content">
-                <?php foreach($data as $key => $val){?>
-                <h4>Date: <?=$key;?></h4>
-                <table id="repair-table " class="global_table table table-bordered">
-                    <thead>
+                <?php foreach ($data as $key => $val) { ?>
+                    <h4>Date: <?= $key; ?></h4>
+                    <table id="repair-table " class="global_table table table-bordered">
+                        <thead>
                         <tr>
                             <th colspan="2">Work order</th>
                             <th>Documents</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach($val as $val2){?>
-                        <tr>
-                            <td colspan="2"><?=$val2['description'];?></td>
-                            <td>
-                                <div class="add-file-section">
-                                    <label for="myFile" class="custom-file-upload">
-                                    <i class="fa fa-cloud-upload add-icon"></i>Upload Files
-                                    </label>
-                                    <input type="file" name="img" accept="image/*" multiple id="myFile" class="myFile" title=" " />
-                                    <span id="file_error" class="file_error"></span>
-                                    <span  class="msg_error"></span>
-                                </div>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($val as $key2 => $val2) { ?>
+                            <tr>
+                                <td colspan="2"><?= $val2['description']; ?></td>
+                                <td>
+                                    <div class="add-file-section">
+                                        <label for="myFile" class="custom-file-upload">
+                                            <i class="fa fa-cloud-upload add-icon"></i>Upload Files
+                                        </label>
+                                        <input type="file" name="img" multiple class="myFile"/>
+                                        <!--								<span id="file_error" class="file_error"></span>-->
+                                        <?php foreach ($val2['file'] as $valFile) {
+                                            $name = explode('/', $valFile);
+                                            echo "<span class='file-name loaded' >" . $name[count($name) - 1] . "<button class='remove-btn load-file' data-link='" . $valFile. "'><i class='fa fa-download'></i></button> </span>";
+                                        } ?>
+                                        <span class="msg_error">You can only upload maximum 8 files</span>
+                                    </div>
 
-                                <button class="file-submit _btn add_new file-submit-table" >Submit
-                                    <img class="load" src="/public/img/load.GIF" alt="load">
-                                </button>
-                            </td>
-                        </tr>
-                    <?php }?>
-                    </tbody>
-                </table>
+                                    <button class="file-submit _btn add_new file-submit-table" name="maintenance_file"
+                                            data-id="<?= $key2; ?>">Submit
+                                        <!--								<img class="load" src="/public/img/load.GIF" alt="load">-->
+                                    </button>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
                 <?php } ?>
 
             </section>
@@ -140,49 +135,9 @@
 <script type="text/javascript" src="/public/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/public/js/core.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/public/js/download.js"></script>
+<script type="text/javascript" src="/public/js/main.js"></script>
 <script type="text/javascript" src="/public/js/repair-history.js"></script>
-<!--<script>-->
-<!---->
-<!--    (function($){-->
-<!--            $(document).ready(function() {-->
-<!--            $("h4").click(function() {-->
-<!--                    var $this = $(this);-->
-<!--                    $this-->
-<!--                        .next("table")-->
-<!--                        .slideToggle("fast")-->
-<!--                        .siblings("table:visible")-->
-<!--                        .slideUp("fast");-->
-<!--                    $this.toggleClass("active");-->
-<!--                })-->
-<!--        });-->
-<!--            var fileUpload;-->
-<!---->
-<!--            $('.myFile').bind('change', function() {-->
-<!---->
-<!--                var l = this.files.length;-->
-<!--                    fileUpload = this.files;-->
-<!--                                -->
-<!--            for( var i =0;  i< l; i++){-->
-<!--                if(fileUpload[i].size < 52428800) {-->
-<!--                    console.log(fileUpload[i].size );-->
-<!--                    $(this).after('<span class="file-name">'+this.files[i].name+'</span>');		-->
-<!--                }-->
-<!--                      else-->
-<!--                      $(this).parent().find(".file_error").html("File size is greater than 2MB");-->
-<!--                    -->
-<!--                  }-->
-<!--                 });    -->
-<!---->
-<!--            $(".file-submit").click(function(){-->
-<!--                if (parseInt(fileUpload.length)>8){-->
-<!--                          $(this).parent().find(".msg_error").html("You can only upload maximum 8 files.");-->
-<!--                      }-->
-<!--                         else-->
-<!--                           console.log(fileUpload);-->
-<!---->
-<!--            });-->
-<!---->
-<!--    })(window.jQuery)-->
-<!--</script>-->
 </body>
 </html>
