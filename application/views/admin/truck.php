@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/public/css/modal.css">
 </head>
 <body>
-
 <!-- login modal -->
 <div id="addTruck" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addStuffLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -30,7 +29,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="track">Truck#</label>
-                        <input name="track" class="form-control" data-valid placeholder="track" type="text"
+                        <input name="car_number" class="form-control" data-valid placeholder="track" type="text"
                                autocomplete="off">
                     </div>
                     <div class="col-md-6">
@@ -124,7 +123,7 @@
                         <label>Trailer</label>
                         <select class="form-control" name="trailer" data-valid>
                             <?php foreach ($trailer as $val) {
-                                echo "<option value='" . $val['id'] . "'>" . $val['trailer'] ."</option>";
+                                echo "<option value='" . $val['id'] . "'>" . $val['car_number'] ."</option>";
                             } ?>
                         </select>
                     </div>
@@ -272,7 +271,7 @@
                                 </a>
                             </td>
                             <td class="td-icon-width">
-                                <a href="javascript:void(0);" class="edit-icon" title="history">
+                                <a href="/history/<?= $val['vin'] ?>" class="edit-icon" title="history">
                                     <i class="fa fa-history"></i>
                                 </a>
                             </td>

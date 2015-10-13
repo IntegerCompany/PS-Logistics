@@ -106,6 +106,22 @@ class Controller_Ajax extends Controller
                         }
 //                        print_r($v);
                         break;
+                    case 'add_maintenance_file':
+                        $dirName = 'maintenance/'.date("m.d.Y");
+                        foreach($v['maintenance_file'] as &$val) {
+                            $val = $this->write_file_from_byte($val['base64'], $val['name'], $dirName, $val['type']);
+                        }
+                        Model::factory('Maintenancefile')->add_maintenance_file($v);
+                            print_r($v);
+
+//                        print_r($v);
+                        break;
+                    case "done_maintenance":
+                        Model::factory('Maintenance')->done_maintenance($v);
+                        break;
+                    case "delete_file":
+                        Model::factory('Maintenancefile')->delete_file($v);
+                        break;
                     case "get_stuff_info":
                         echo json_encode(Model::factory('Stuff')->get_stuff_info($v));
                         break;

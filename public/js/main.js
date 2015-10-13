@@ -7,17 +7,17 @@ $(document).ready(function () {
         });
         var datepicker = $('.datepicker'),
             year = $('.datepicker-year');
-        if(datepicker.length){
-        datepicker.datepicker({format: 'mm/dd/yyyy'}).on('changeDate', function(){
+        if (datepicker.length) {
+            datepicker.datepicker({format: 'mm/dd/yyyy'}).on('changeDate', function () {
                 $(this).datepicker('hide');
             });
         }
-        if(year.length){
-            year.datepicker( {
+        if (year.length) {
+            year.datepicker({
                 format: " yyyy", // Notice the Extra space at the beginning
                 viewMode: "years",
                 minViewMode: "years"
-            }).on('changeDate', function(){
+            }).on('changeDate', function () {
                 $(this).datepicker('hide');
             });
         }
@@ -140,8 +140,9 @@ $(document).ready(function () {
 
 
         }
+
         var imageEditor = $('.image-editor');
-        if(imageEditor.length) {
+        if (imageEditor.length) {
             imageEditor.cropit({}).on('click', ".attach-cropit-photo", function () {
                 var c = $(this);
                 $('.cropit-image-input').click();
@@ -202,7 +203,7 @@ $(document).ready(function () {
             triger_modal(el);
             el.modal('show');
         });
-        $('.add_maintenance').on('click',function(){
+        $('.add_maintenance').on('click', function () {
             var el = $('#addMaintenance');
             el.removeClass('mode-edit');
             triger_modal(el);
@@ -334,8 +335,8 @@ $(document).ready(function () {
                     var name = c.prop('name');
                     c.val(data[0][name]);
                     console.log(name);
-                    if(name.indexOf('_file') + 1 && c.val()) {
-                       c.prevAll('.remove-attach-button').addClass('btn-success');
+                    if (name.indexOf('_file') + 1 && c.val()) {
+                        c.prevAll('.remove-attach-button').addClass('btn-success');
                     }
 
                 });
@@ -354,6 +355,7 @@ $(document).ready(function () {
             }
 
         }
+
         $('.setting-stuff').on('click', function () {
             $.ajax({
                 data: {
@@ -401,16 +403,161 @@ $(document).ready(function () {
         });
 
 
-        $('input[name=radio-object]').on('change',function(){
+        $('input[name=radio-object]').on('change', function () {
             var list = $('.object-list'),
                 c = $(this),
                 v = c.val();
             list.children().hide();
-            list.children('[data-option='+v+']').show();
-
+            list.children('[data-option=' + v + ']').show();
 
 
         });
+        function file_error(){
+            var m = $(".msg_error");
+            m.css('display','block');
+            setTimeout(function(){
+                m.hide();
+            },2000);
+        }
+        $('.myFile').bind('change', function () {
+            var c = $(this),
+                f = this.files,
+                l = f.length,
+                fl = c.nextAll('.file-name').length,
+                reader = [];
+
+            if (l > 8 || fl > 8) {
+                file_error();
+                return false;
+            }
+            else if(l > 0){
+                function read_multi_files(files) {
+                    var reader = new FileReader();
+                    load_animate();
+                    function readFile(index) {
+                        if( index >= files.length ){
+                            load_animate();
+                            return false;
+                        }
+                        var file = files[index];
+                        reader.onload = function(e) {
+                            var obj = JSON.stringify({
+                                "base64": e.target.result,
+                                "type": file.type,
+                                "name": file.name
+                            });
+                            console.log(obj);
+                            if(c.nextAll('.file-name').length < 8) {
+                                c.after("<span class='file-name' >" + file.name + "<button class='remove-btn'><i class='fa fa-trash-o'></i></button> </span>");
+                                c.next('span').data('info',obj);
+                            } else {
+                                load_animate();
+                                file_error();
+                                return false;
+                            }
+                            readFile(index+1)
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                    readFile(0);
+                }
+                read_multi_files(f);
+
+            }
+        });
+        $(document).on('click','.remove-file', function () {
+            var c = $(this),
+                id = c.data('id');
+            if(id){
+                $.ajax({
+                    data: {
+                        "delete_file": id
+                    }
+                });
+            }
+            c.parent().remove();
+
+        });
+        $(document).on('click','.load-file', function () {
+            var c = $(this),
+                link = c.data('link');
+            if(link){
+                downloadFile(link);
+            }
+        });
+        function create_arr_file(el){
+            var arr = [];
+            el.find('.file-name').each(function(){
+                var data = $(this).data('info');
+                if(data){
+                    arr.push((JSON.parse(data)));
+                }
+            });
+            return arr;
+        }
+        $('.file-submit-table').on('click',function(){
+            var c = $(this),
+                n = c.prop('name'),
+                id = c.data('id');
+
+
+            $.ajax({
+                beforeSend: load_animate(),
+                data: {
+                    "add_maintenance_file":{
+                        "id": [id],
+                        "maintenance_file": create_arr_file(c.prev('.add-file-section'))
+                    }
+                },
+                success: function(data){
+                    console.log(data);
+                    load_animate();
+                    location.reload();
+                }
+            });
+
+
+        });
+        $('#checkbox-mainteance-all').on('click',function(){
+            var checkboxs = $('.checkbox-maintenance');
+            if($(this).prop('checked')){
+                checkboxs.prop('checked',true);
+            } else {
+                checkboxs.prop('checked',false);
+            }
+        });
+        $('.btn-done-maintenance').on('click',function(){
+            var doneId = [],
+                c = $(this),
+                arrFile = create_arr_file(c.parents('.form')),
+                data = {};
+
+            $('.checkbox-maintenance').each(function(){
+                c = $(this);
+                if(c.prop('checked')){
+                    doneId.push(c.data('id'));
+                }
+            });
+            data.done_maintenance = doneId;
+            if(arrFile.length > 0){
+                data.add_maintenance_file = {
+                    "id": doneId,
+                    "maintenance_file": arrFile
+                }
+            }
+            if(doneId.length > 0) {
+                $.ajax({
+                    beforeSend: load_animate(),
+                    data: data,
+                    success: function (data) {
+                        load_animate();
+                        location.reload();
+                    }
+                });
+                //console.log(data);
+            }
+        });
+
     });
 
 });

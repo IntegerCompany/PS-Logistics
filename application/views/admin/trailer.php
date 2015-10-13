@@ -30,7 +30,7 @@
 					</div>
 					<div class="col-md-6">
 						<label for="trailer">Truck#</label>
-						<input name="trailer" class="form-control" data-valid placeholder="track" type="text"
+						<input name="car_number" class="form-control" data-valid placeholder="track" type="text"
 							   autocomplete="off">
 					</div>
 					<div class="col-md-6">
@@ -219,7 +219,7 @@
 							</a>
 						</td>
 						<td class="td-icon-width">
-							<a href="javascript:void(0);" class="edit-icon" title="history" >
+							<a href="/history/<?= $val['vin'] ?>" class="edit-icon" title="history" >
 								<i class="fa fa-history"></i>
 							</a>
 						</td>

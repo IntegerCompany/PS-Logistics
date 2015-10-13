@@ -89,7 +89,7 @@ input[type="radio"] {
     background: #aaaaaa;
 }
  input[type=checkbox] {
-    opacity: 0;
+    opacity: 1;
     /*float:left;*/
 }
     input[type=checkbox] + label {
@@ -153,7 +153,7 @@ input[type="radio"] {
 /*select*/ 
 
 /*add-file-section*/
-#myFile{
+.myFile{
     margin: 10px 0px;
     padding-left:10px;
 }
@@ -181,9 +181,9 @@ input[type="radio"] {
     }
     .msg_error{
         color: #FF0000;
-        display: block;
         padding-left: 10px;
         font-style: italic;
+        display: none;
     }
     .remove-btn{
         padding-left: 10px;
@@ -195,6 +195,9 @@ input[type="radio"] {
         /*background-size: contain;
         height: 15px;
         margin-left: 20px;*/
+    }
+    .loaded{
+        color: #215605;
     }
     .load{
         display: none;

@@ -55,7 +55,48 @@ class Controller_Admin extends Controller {
 		// if(Session::instance()->get('user')){
 		$data['truck'] = Model::factory('Truck')->get_truck();
 		$data['trailer'] = Model::factory('Trailer')->get_trailer();
+		$data['info'] = Model::factory('Maintenance')->get_maintenance();
+		$data['file'] = Model::factory('Maintenancefile')->get_maintenance_file();
 		$this->response->body(View::factory('/admin/maintenance',$data));
+		// } else {
+		// HTTP::redirect(URL::base_url());
+		// }
+	}
+	public function action_history()
+	{
+		$vin = $this->request->param('id');
+		$data['vin'] = $vin;
+		// if(Session::instance()->get('user')){
+//		$data['truck'] = Model::factory('Truck')->get_truck();
+		$arr_maintenance = Model::factory('Maintenance')->get_maintenance_from_vin($vin);
+		$arr = array();
+		foreach($arr_maintenance as $val){
+			$date = $val['date'];
+			if(!isset($arr[$date])){
+				$arr[$date] = array();
+			}
+			foreach($arr_maintenance as $val2){
+				if($val2['date'] == $date){
+					$id = $val2['id'];
+					if(!isset($arr[$date][$id])){
+						$arr[$date][$id] = array();
+					}
+					$arr[$date][$id]['description'] = $val2['description'];
+					$arr[$date][$id]['file'] = array();
+				}
+				foreach ($arr_maintenance as $val3 ) {
+					$file = $val3['maintenance_file'];
+					if(!empty($file) && $val3['date'] == $date && $val3['id'] == $id ){
+						$arr[$date][$id]['file'][] = $val3['maintenance_file'];
+					}
+				}
+
+			}
+
+		}
+		$data['data'] = $arr;
+//		$data['trailer'] = Model::factory('Trailer')->get_trailer();
+		$this->response->body(View::factory('/admin/history',$data));
 		// } else {
 		// HTTP::redirect(URL::base_url());
 		// }
