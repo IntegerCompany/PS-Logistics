@@ -1,0 +1,363 @@
+[{
+        "Email address":"Email cím",
+
+        "Remember me":"Emlékezz rám",
+
+        "Sign in":"Bejelentkezés",
+
+        "Add parents type":"Kategória hozzáadása",
+
+        "Text":"Szöveg",
+
+        "role":"Szerep",
+
+        "Close":"Bezár",
+
+        "Add":"Hozzáad",
+
+        "Hi,":"Szia,",
+
+        "logout":"Kijelentkezés",
+
+        "Orders":"Megbízások",
+
+        "Emloyers":"Munkaadók",
+
+        "All":"Összes",
+
+        "Checked":"Ellenőrzés",
+
+        "Clients":"Ügyfelek",
+
+        "Services":"Szolgáltatások",
+
+        "Products":"Termékek",
+
+        "Drinks":"Italok",
+
+        "Make order":"Rendelés leadása",
+
+        "Finance":"Pénzügy",
+
+        "History":"Történelem",
+
+        "Staff":"Alkalmazottak",
+
+        "Total price drinks":"Teljes árú italok",
+
+        "Drink":"Ital",
+
+        "buy":"Vásárolni",
+
+        "Add staff":"Alkalmazott hozzáadása",
+
+        "First name":"Keresztnév",
+
+        "Last name":"Családnév",
+
+        "Date of birth":"Születési idő",
+
+        "Phone number":"Telefonszám",
+
+        "Email":"E-mail",
+
+        "Password":"Jelszó",
+
+        "Own products":"Saját termékek",
+
+        "Resize image":"kép átméretezése",
+
+        "telephone:":"Telefon:",
+
+        "e-mail:":"E-mail:",
+
+        "Total price:":"Teljes ár:",
+
+        "Percentage service:":"Százalékos szolgáltatás:",
+
+        "Salon`s products":"Szalon termékei",
+
+        "Client`s products":"Ügyfeleink termékei",
+
+        "Percentage pruducts":"Százalékos termékek",
+
+        "page not found":"az oldal nem található",
+
+        "Clients(check-in)":"Az ügyfelek (bejelentkezve)",
+
+        "Home":"Kezdőlap",
+
+        "Add client":"Ügyfél hozzáadása",
+
+        "Discount":"Kedvezmény",
+
+        "Description":"Leírás",
+
+        "delete":"Törlés",
+
+        "check-in":"Bejelentkezés",
+
+        "Fire Employer":"Dolgozó elbocsátása",
+
+        "Last salary:" :"utolsó fizetése:",
+
+        "Pay salary":"Munkabér kifizetése",
+
+        "Turnover from last salary:": "Az utolsó fizetés visszatérítése:",
+
+        "Tip:":"Borravaló",
+
+        "Need to pay:":"Fizetési kötelezettség:",
+
+        "Products&Services":"Termékek és Szolgáltatások",
+
+        "Edit info":"információk szerkesztése",
+
+        "First name:":"Keresztnév:",
+
+        "Last name:":"Családnév:",
+
+        "Date of birth:":"Születési idő:",
+
+        "Phone number:":"Telefonszám:",
+
+        "Email:":"Email:",
+
+        "Password:":"Jelszó:",
+
+        "Percentage service(own product)": "Százalékos szolgáltatás (saját termék)",
+
+        "Percentage service(salon`s product)":"Százalékos szolgáltatás (üzlet termékei)",
+
+        "Percentage service(client`s product)":"Százalékos szolgáltatás (vendég saját terméke)",
+
+        "Percentage products":"Százalékos termékek",
+
+        "Change picture":"kép módosítása",
+
+        "Edit":"Szerkesztés",
+
+        "Service":"Szolgáltatás",
+
+        "Delete services":"Szolgáltatások törlése",
+
+        "Are you sure to delete this type service? Input service for delete":"Biztos, hogy törölni szeretnéd ezt a szolgáltatás típust? Betáplált szolgáltatás törlése",
+
+        "Add services":"Szolgáltatások hozzáadása",
+
+        "Delete products":"Termékek törlése",
+
+        "Are you sure to delete this type products? Input product for delete":"Biztos, hogy törölni szeretnéd ezt a termék típust? Betáplált termék törlése",
+
+        "Product":"Termék",
+
+        "Complete order":"Rendelés teljesítése",
+
+        "Do you want complete this order? Total price:":"Biztos, hogy teljesíteni szeretnéd a rendelést? Teljes összeg",
+
+        "Complete":"Teljesített",
+
+        "Sel price":"Eladási ár",
+
+        "Select client":"Ügyfél kiválasztása",
+
+        "1. Select client:":"1.ügyfél kiválasztása:",
+
+        "2. Select staff:":"2.dolgozó kiválasztása :",
+
+        "Select staff":"Dolgozó kiválasztása",
+
+        "Total:":"Teljes:",
+
+        "Confirm":"Megerősítés",
+
+        "Orders waiting...":"Várakozó rendelések",
+
+        "Pay:":"Fizetés",
+
+        "Cash":"Készpénz",
+
+        "Tip":"Borravaló",
+
+        "without surrender":"anélkül megadás",
+
+        "Surrender":"nélkül maradt pénz",
+
+        "pay":"fizetés",
+
+        "Please sign in":"Kérjük, jelentkezzen be",
+
+        "For last Week":"Múlt héten",
+
+        "For last Month":"Múlt hónapban",
+
+        "For today":"a mai napon",
+
+        "Name":"Név",
+
+        "Price":"Ár",
+
+        "Total amount salon:":"Teljes összeg szalon:",
+
+        "Total amount staff:":"Teljes összeg személyzet:",
+
+        "Filter by:":"Szűrés:",
+
+        "all":"Összes",
+
+        "week":"hét",
+
+        "month":"hónap",
+
+        "today":"ma",
+
+        "Best employee:":"legjobb dolgozó :",
+
+        "Services:":"Szolgáltatások:",
+
+        "Product:":"Termék:",
+
+        "Salary has been paid:":"Fizetett munkabér:",
+
+        "Best customer:":"legjobb ügyfél :",
+
+        "Discount:":"Kedvezmény:",
+
+        "Total cash:":"Teljes készpénz:",
+
+        "Total services:":"Összesen szolgáltatás:",
+
+        "Total products:":"Összes termék :",
+
+        "Total drinks:":"Összes ital:",
+
+        "Salaries has been paid:":"Kifizetett munkabérek:",
+
+        "Profit:":"Nyereség :",
+
+        "Total salarys:":"összes munkabér :",
+
+        "Salary payed":"Fizetett munkabér",
+
+        "Employee name":"Alkalmazott Neve",
+
+        "From date":"Kezdő dátum",
+
+        "Paid":"Fizetett",
+
+        "to date":"a mai napig",
+
+        "Delete drink":"Ital törlése",
+
+        "Are you sure to delete this type drink? Input drink for delete":"Biztos, hogy törölni szeretnéd ezt az ital típust? Betáplált ital törlése",
+
+        "Add drink":"Ital hozzáadása",
+
+        "Price for staff":"Ár (alkalmazottaknak)",
+
+        "Price for client":"Ár (ügyfélnek)",
+
+        "Delete":"Törlés",
+
+        "Search":"Keresés",
+
+        "Delete product":"Termék törlése",
+
+        "Buy drinks":"Italok vásárlása",
+
+        "Price 1":"Ár 1",
+
+        "Price 2":"Ár 2",
+
+        "Price 3":"Ár 3",
+
+        "Price 4":"Ár 4",
+
+        "Received a cashier:":"Kapott egy pénztáros:",
+
+        "Calculate":"Számolás",
+
+        "Finance operations":"Pénzügyi műveletek",
+
+        "Money":"Pénz",
+
+        "To date":"Dátumig",
+
+        "Cash register":"Pénztárgép",
+
+        "Reason":"Indok",
+
+        "make order":"Rendelés leadása",
+
+        "open order":"Rendelés nyitása",
+
+        "back":"vissza",
+
+        "Salary staff:":"Személyzeti fizetés:",
+
+        "Expenses:":"Költségek:",
+
+        "Other inputs:":"egyéb bevételek:",
+
+        "Total cash register:":"Pénztárgép összes:",
+
+        "Turnover:":"Forgalom:",
+
+        "check-out":"kijelentkezés",
+
+        "Bought drinks:":"Megvett italok:",
+
+        "Percentage":"Százalék",
+
+        "Name Service":"Szolgáltatás megnevezése",
+
+        "Name Product":"Termék megnevezése",
+
+        "Sold drinks":"Eladott italok",
+
+        "Bought drinks":"Megvett italok",
+
+        "client Name":"Ügyfél neve",
+
+        "client ID":"ügyfél-azonosító",
+
+        "date":"dátum",
+
+        "price product":"Termék ára",
+
+        "price service":"Szolgáltatás ára",
+
+        "Client id":"Ügyfél-azonosító",
+
+        "Delete client":"Ügyfél törlése",
+
+        "Are you sure to delete this client Input client id for delete him":"Biztos, hogy törölni szeretnéd ezt az ügyfelet? Betáplált ügyfél törlése",
+
+        "Other":"Egyéb",
+
+        "own product":"saját termék",
+
+        "clients product":"Ügyfél terméke",
+
+        "salons product":"Szalon terméke",
+
+        "Payed salary":"Kifizetett munkabér",
+
+        "Staff's name":"Alkalmazott neve",
+
+        "The action has been successfully completed!!!":"A művelet sikeresen befejeződött!!!",
+
+        "You can not delete yourself":"Nem vagy jogosult a törlésre",
+
+        "Dayly cash register:":"Napi pénztárgép:",
+
+        "Input include min 2 symbol, first symbol is latin letter. Input text can include latin letter and number" :"Input közé perc 2 szimbólum, első szimbólum latin levél. Szöveget is tartalmaznak latin betűt és számot",
+
+        "Incorrect email": "Hibás e-mail",
+        "Incorrect date": "Hibás dátum",
+        "Incorrect number":"Hibás szám",
+        "Phone must include 11 number":"Telefon tartalmaznia kell a 11 számú",
+        "Percentage fields must include one or two number without any symbol":"Százalékos mezők tartalmaznia kell egy vagy két számot nélkül szimbólum",
+        "Password must include min 2 numbers, symbols or letters": "Jelszó tartalmaznia kell min 2 számok, szimbólumok vagy betűk"
+
+}]

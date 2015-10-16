@@ -5,8 +5,11 @@ class Controller_Admin extends Controller {
 
 	public function action_shipping()
 	{
-		//if(Session::instance()->get('user')){
-		$this->response->body(View::factory('/admin/shipping'));
+//		if(Session::instance()->get('user')){
+		$data['company'] = Model::factory('Company')->get_company();
+		$data['broker'] = Model::factory('Broker')->get_broker();
+		$data['truck'] = Model::factory('Truck')->get_truck();
+		$this->response->body(View::factory('/admin/shipping',$data));
 		//	} else {
 		//		HTTP::redirect(URL::base_url());
 		//	}
@@ -14,7 +17,8 @@ class Controller_Admin extends Controller {
 	public function action_broker()
 	{
 		// if(Session::instance()->get('user')){
-			$this->response->body(View::factory('/admin/broker'));
+		$data['info'] = Model::factory('Company')->get_company();
+			$this->response->body(View::factory('/admin/broker',$data));
 		// } else {
 			// HTTP::redirect(URL::base_url());
 		// }
@@ -103,8 +107,11 @@ class Controller_Admin extends Controller {
 	}
 	public function action_brokerspage()
 	{
+		$id = $this->request->param('id');
+		$data['id'] = $id;
+        $data['info'] = Model::factory('Broker')->get_broker();
 		// if(Session::instance()->get('user')){
-		$this->response->body(View::factory('/admin/brokerspage'));
+		$this->response->body(View::factory('/admin/brokerspage',$data));
 		// } else {
 		// HTTP::redirect(URL::base_url());
 		// }

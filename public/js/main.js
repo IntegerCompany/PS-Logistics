@@ -6,15 +6,26 @@ $(document).ready(function () {
             url: window.location.origin + "/ajax"
         });
         var datepicker = $('.datepicker'),
-            year = $('.datepicker-year');
+            year = $('.datepicker-year'),
+            time = $('.timepicker');
         if (datepicker.length) {
-            datepicker.datepicker({format: 'mm/dd/yyyy'}).on('changeDate', function () {
+            datepicker.datepicker({
+                format: 'mm/dd/yyyy'
+            }).on('changeDate', function () {
                 $(this).datepicker('hide');
+            });
+        }
+        if (time.length) {
+            time.timepicker({
+                showMeridian: false,
+                maxHours : 24,
+                minuteStep: 5,
+                explicitMode: true
             });
         }
         if (year.length) {
             year.datepicker({
-                format: " yyyy", // Notice the Extra space at the beginning
+                format: "yyyy", // Notice the Extra space at the beginning
                 viewMode: "years",
                 minViewMode: "years"
             }).on('changeDate', function () {
@@ -215,6 +226,18 @@ $(document).ready(function () {
             triger_modal(el);
             el.modal('show');
         });
+        $('.add_broker').on('click', function () {
+            var el = $('#addBroker');
+            el.removeClass('mode-edit');
+            triger_modal(el);
+            el.modal('show');
+        });
+        $('.add_shipping').on('click', function () {
+            var el = $('#addShipping');
+            el.removeClass('mode-edit');
+            triger_modal(el);
+            el.modal('show');
+        });
 
         $('.add_new_stuff').on('click', function () {
 
@@ -252,8 +275,32 @@ $(document).ready(function () {
 
             }
         });
-        $('.add_new_truck').on('click', function () {
+        $('.add_new_company').on('click', function () {
+            var c = $(this);
+            var result = validate($('#addCompany .valid-form'));
+            if (Object.keys(result).length > 4) {
+                console.log(result);
+                var id = undefined;
+                if (c.parents('.modal').hasClass('mode-edit')) {
+                    id = c.data('id');
+                }
+                $.ajax({
+                    beforeSend: load_animate(),
+                    data: {
+                        'add-edit-company': {
+                            "data": result,
+                            "id": id
+                        }
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        location.reload();
+                    }
+                });
 
+            }
+        });
+        $('.add_new_truck').on('click', function () {
             var c = $(this);
             var result = validate($('#addTruck .valid-form'));
             if (Object.keys(result).length > 4) {
@@ -275,7 +322,6 @@ $(document).ready(function () {
                         location.reload();
                     }
                 });
-
             }
         });
         $('.add_new_maintenance').on('click', function () {
@@ -293,6 +339,87 @@ $(document).ready(function () {
                     beforeSend: load_animate(),
                     data: {
                         'add-edit-maintenance': {
+                            "data": result,
+                            "id": id
+                        }
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        location.reload();
+                    }
+                });
+
+            }
+        });
+        $('.add_new_shipping').on('click', function () {
+            var c = $(this),
+                objP = {},
+                arrF = [],
+                data = {};
+            var result = validate($('#addShipping .valid-form'));
+            if (Object.keys(result).length > 2) {
+                console.log(result);
+                var id = undefined;
+                if (c.parents('.modal').hasClass('mode-edit')) {
+                    id = c.data('id');
+                }
+
+                $('.list-place').each(function(){
+                    var c = $(this),
+                        t  = c.data('type'),
+                        ch = c.children(),
+                        res = [];
+
+                    ch.each(function(){
+                        c = $(this);
+                        var v = c.data('info');
+                        if(v){
+                            res.push(v);
+                            if(res.length == ch.length){
+                                objP[t] = res;
+                            }
+                        }
+                    });
+                });
+                if(Object.keys(objP).length > 0){
+                    data.place = objP;
+                }
+                arrF = create_arr_file(c.parents('.row').find('.add-file-section'));
+                if(arrF.length > 0){
+                    data.file = arrF;
+                }
+                data.data = result;
+                data.id = id;
+                console.log(objP);
+                $.ajax({
+                    beforeSend: load_animate(),
+                    data: {
+                        'add-edit-shipping': data
+                    },
+                    success: function (d) {
+                        console.log(d);
+                        load_animate();
+                        //location.reload();
+                    }
+                });
+
+            }
+        });
+        $('.add_new_broker').on('click', function () {
+
+            var c = $(this);
+            var result = validate($('#addBroker .valid-form'));
+            if (Object.keys(result).length > 3) {
+                console.log(result);
+
+                var id = undefined;
+                if (c.parents('.modal').hasClass('mode-edit')) {
+                    id = c.data('id');
+                }
+                $.ajax({
+                    beforeSend: load_animate(),
+                    data: {
+                        'add-edit-broker': {
                             "data": result,
                             "id": id
                         }
@@ -332,11 +459,13 @@ $(document).ready(function () {
             }
         });
 
+
         function triger_modal(el, data) {
             el.find('form')[0].reset();
-
+            el.find('.file-name').remove();
+            el.find('.list-place').children().remove();
             if (el.hasClass('mode-edit')) {
-                el.find('input[name]').add('select[name]').each(function () {
+                el.find('input[name]').add('select[name]').add('textarea[name]').each(function () {
                     var c = $(this);
                     var name = c.prop('name');
                     c.val(data[0][name]);
@@ -357,9 +486,7 @@ $(document).ready(function () {
                 el.find('.remove-attach-button').children('span').prop('class', 'glyphicon glyphicon-remove');
                 el.find('.cropit-image-preview').css('background-image', '');
                 el.find('.btn-success').removeClass('btn-success');
-
             }
-
         }
 
         $('.setting-stuff').on('click', function () {
@@ -406,6 +533,48 @@ $(document).ready(function () {
 
                 }
             });
+        });
+        $('.setting-company').on('click', function () {
+            $.ajax({
+                data: {
+                    'get_company_info': $(this).data('id')
+                },
+                async: false,
+                success: function (data) {
+                    var el = $('#addCompany');
+                    el.addClass('mode-edit');
+                    triger_modal(el, JSON.parse(data));
+                    el.modal('show');
+
+                }
+            });
+        });
+        $('.setting_broker').on('click', function () {
+            $.ajax({
+                data: {
+                    'get_broker_info': $(this).data('id')
+                },
+                async: false,
+                success: function (data) {
+                    var el = $('#addBroker');
+                    el.addClass('mode-edit');
+                    triger_modal(el, JSON.parse(data));
+                    el.modal('show');
+
+                }
+            });
+        });
+        $('.delete_broker').on('click', function () {
+            var c = $(this),
+                id = c.data('id');
+            if(id){
+                $.ajax({
+                    data: {
+                        "delete_broker": id
+                    }
+                });
+            }
+            c.parents('tr').remove();
         });
 
 
@@ -562,6 +731,43 @@ $(document).ready(function () {
                 });
                 //console.log(data);
             }
+        });
+        $('.add-place').on('click',function(){
+            var c = $(this),
+                obj = {},
+                p = c.parents('.col-md-6'),
+                e = p.prevAll('h4').nextAll('div:lt(3)').find('input'),
+                l = p.next('.list-place'),
+                n = l.children().length + 1,
+                t = '';
+
+            e.each(function(){
+                var c = $(this),
+                    n = c.prop('name'),
+                    v = c.val();
+                if(v){
+                    obj[n] = v;
+                    t += ' ' + v;
+                }
+            });
+            if(Object.keys(obj).length > 2 && n <= 25){
+                l.append('<span class="form-control"><i class="fa fa-map-marker" ></i>' + t + '</span>');
+                l.children().last().data('info',obj);
+                e.val('');
+            }
+        });
+        $(document).on('click','.list-place span',function(){
+            $(this).remove();
+        });
+        $('form').on('keyup keypress', function(e) {
+            var code = e.keyCode || e.which;
+            if (code == 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        $('.click-file').on('click',function(){
+            $('.myFile').click();
         });
 
     });

@@ -151,10 +151,16 @@ Route::set('ajax', 'ajax')
 		'controller' => 'ajax',
 		'action'     => 'request',
 	));
+Route::set('brokerpage', 'broker/brokerlist(/<id>)')
+	->defaults(array(
+		'controller' => 'admin',
+		'action'     => 'brokerspage',
+	));
 Route::set('admin', '<action>(/<id>)', array('action' => 'shipping|truck|trailer|stuff|broker|logout|maintenance|brokerspage|history'))
 	->defaults(array(
 		'controller' => 'admin',
 	));
+
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
 		'controller' => 'main',

@@ -33,3 +33,44 @@
 	background-color: rgba(128, 128, 128, 0.38);
 	background-position: 50%;
 }
+.broker-rate{
+	font-size: 19px;
+	color: #AAAAAA;
+	line-height: 17px;
+	text-align: center;
+}
+.broker-rate i{
+	cursor: pointer;
+}
+.active-rate{
+	color: #FBC02D;
+}
+.shipping-time *{
+	float:left;
+	width: 100%;
+}
+.shipping-time button{
+	width: 15%;
+	height: 34px;
+}
+.shipping-time input{
+	width: 85%;
+}
+.pac-container{
+	z-index: 100000!important;
+}
+.list-place span{
+	cursor: pointer;
+	height: auto;
+	padding: 10px;
+	margin-top: 5px;
+}
+.list-place span:hover{
+	background-color: rgba(193, 188, 186, 0.18);
+}
+.list-place i{
+	margin-right: 5px;
+}
+
+
+

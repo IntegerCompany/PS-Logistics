@@ -32,10 +32,6 @@ class Controller_Ajax extends Controller
         }
         return $v;
     }
-    protected function adaptive_array(){
-
-    }
-
     public function action_request()
     {
         if (is_array($_POST)) {
@@ -104,7 +100,34 @@ class Controller_Ajax extends Controller
                             print_r($v['data']);
                             Model::factory('Maintenance')->add_maintenance($v['data']);
                         }
-//                        print_r($v);
+                        break;
+                    case 'add-edit-company':
+                        if (!empty($v['id'])) {
+                            Model::factory('Company')->edit_company($v['id'], $v['data']);
+                            print_r($v);
+                        } else {
+                            Model::factory('Company')->add_company($v['data']);
+                            print_r($v['data']);
+                        }
+                        break;
+                    case 'add-edit-broker':
+                        if (!empty($v['id'])) {
+                            Model::factory('Broker')->edit_broker($v['id'], $v['data']);
+                            print_r($v);
+                        } else {
+                            Model::factory('Broker')->add_broker($v['data']);
+                            print_r($v['data']);
+                        }
+                        break;
+                    case 'add-edit-shipping':
+//                        if (!empty($v['id'])) {
+//                            Model::factory('Broker')->edit_broker($v['id'], $v['data']);
+//                            print_r($v);
+//                        } else {
+//                            Model::factory('Broker')->add_broker($v['data']);
+//                            print_r($v['data']);
+//                        }
+                        echo json_encode($v);
                         break;
                     case 'add_maintenance_file':
                         $dirName = 'maintenance/'.date("m.d.Y");
@@ -122,6 +145,9 @@ class Controller_Ajax extends Controller
                     case "delete_file":
                         Model::factory('Maintenancefile')->delete_file($v);
                         break;
+                    case "delete_broker":
+                        Model::factory('Broker')->delete_broker($v);
+                        break;
                     case "get_stuff_info":
                         echo json_encode(Model::factory('Stuff')->get_stuff_info($v));
                         break;
@@ -131,8 +157,14 @@ class Controller_Ajax extends Controller
                     case "get_trailer_info":
                         echo json_encode(Model::factory('Trailer')->get_trailer_info($v));
                         break;
+                    case "get_company_info":
+                        echo json_encode(Model::factory('Company')->get_company_info($v));
+                        break;
                     case "get_maintenance_info":
                         echo json_encode(Model::factory('Maintenance')->get_maintenance_info($v));
+                        break;
+                    case "get_broker_info":
+                        echo json_encode(Model::factory('Broker')->get_broker_info($v));
                         break;
                 }
             };
